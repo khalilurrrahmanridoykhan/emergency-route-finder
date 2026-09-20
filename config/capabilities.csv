@@ -1,0 +1,6 @@
+facility_level,minor_illness,childbirth_complication,snakebite,injury_drowning,basis
+community_clinic,yes,no,no,first_aid,assumption
+union_health_family_welfare_centre,yes,basic,no,first_aid,assumption
+upazila_health_complex,yes,yes,yes,yes,assumption
+district_general_hospital,yes,yes,yes,yes,assumption
+medical_college_hospital,yes,yes,yes,yes,assumption
