@@ -50,6 +50,8 @@ def accessibility(season, max_minutes):
         "typeAnalysis": "anisotropic",
         "knightMove": True,
         "towardsFacilities": True,
+        "addNearest": True,  # without this AccessMod drops the nearest-facility raster
+        "joinField": "cat",
         "maxTravelTime": max_minutes,
         "useMaxSpeedMask": False,
         "timeoutValue": -1,
@@ -69,7 +71,8 @@ def referral(season):
         "outputNearestTime": f"tReferralTime__{season}",
         "outputNetDist": f"vReferralNetwork__{season}",
     }
-    conf["output"] = [names[k] for k in ("outputReferral", "outputNearestTime", "outputNearestDist", "outputNetDist")]
+    exported = ("outputReferral", "outputNearestTime", "outputNearestDist", "outputNetDist")
+    conf["output"] = [names[k] for k in exported]
     conf["args"] = {
         "inputHfFrom": f"vFacility__{PROJECT}",
         "inputHfTo": f"vFacility__{PROJECT}",
