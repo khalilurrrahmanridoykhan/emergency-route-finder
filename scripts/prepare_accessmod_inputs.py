@@ -34,6 +34,7 @@ ROAD_CLASSES = [
 ]
 FACILITY_KINDS = {"hospital", "clinic"}
 DEDUP_METRES = 150
+SNAP_LIMIT_CELLS = 10  # move a facility on an impassable cell at most this far (1 km at 100 m)
 
 
 def write_raster(path, array, transform, dtype, nodata=None):
@@ -77,6 +78,40 @@ def roads_gdf():
     return gpd.GeoDataFrame(rows, crs="EPSG:4326").to_crs(CRS)
 
 
+def impassable_classes():
+    """Classes with speed 0 in every season they apply to, plus 0 (no data)."""
+    with open(ROOT / "config" / "speeds.csv", newline="") as f:
+        return {0} | {int(r["class"]) for r in csv.DictReader(f) if float(r["speed_kmh"]) == 0}
+
+
+def snap_to_passable(fac, lc, transform):
+    """Move facilities that sit on an impassable cell to the nearest passable cell centre."""
+    blocked = np.isin(lc, list(impassable_classes()))
+    snapped = []
+    for point in fac.geometry:
+        row, col = rasterio.transform.rowcol(transform, point.x, point.y)
+        if not blocked[row, col]:
+            snapped.append((point, 0.0))
+            continue
+        best = None
+        for dr in range(-SNAP_LIMIT_CELLS, SNAP_LIMIT_CELLS + 1):
+            for dc in range(-SNAP_LIMIT_CELLS, SNAP_LIMIT_CELLS + 1):
+                r, c = row + dr, col + dc
+                if 0 <= r < lc.shape[0] and 0 <= c < lc.shape[1] and not blocked[r, c]:
+                    dist = (dr * dr + dc * dc) ** 0.5 * RES
+                    if best is None or dist < best[0]:
+                        best = (dist, r, c)
+        if best is None:
+            snapped.append((None, None))
+        else:
+            x, y = rasterio.transform.xy(transform, best[1], best[2])
+            snapped.append((type(point)(x, y), best[0]))
+    fac = fac.copy()
+    fac["snap_m"] = [d for _, d in snapped]
+    fac["geometry"] = [g for g, _ in snapped]
+    return fac[fac.geometry.notna()]
+
+
 def facilities_gdf(country):
     src = gpd.read_file(ROOT / "data" / "raw" / "health_facilities_wide_osm_2026-09-20.geojson").to_crs(CRS)
     kind = src["amenity"].where(src["amenity"].isin(FACILITY_KINDS), src.get("healthcare"))
@@ -96,6 +131,13 @@ def facilities_gdf(country):
     out["osm_id"] = out["osm_id"].astype(str)
     out["amenity"] = out["amenity"].fillna(out["healthcare"])
     return out[["name", "osm_id", "amenity", "name_orig", "geometry"]]
+
+
+def inside_grid(fac, bounds):
+    x0, y0, x1, y1 = bounds
+    in_x = (fac.geometry.x >= x0) & (fac.geometry.x < x1)
+    in_y = (fac.geometry.y >= y0) & (fac.geometry.y < y1)
+    return fac[in_x & in_y]
 
 
 def main():
@@ -136,7 +178,11 @@ def main():
     write_raster(OUT / "population.tif", pop, transform, "float32")
     summary["population"] = {"source_window_sum": float(src_pop.sum()), "grid_sum": float(pop.sum())}
 
-    fac = facilities_gdf(country)
+    fac = inside_grid(facilities_gdf(country), bounds)
+    before = len(fac)
+    fac = snap_to_passable(fac, lc, transform)
+    summary["facilities_moved_to_passable_cell"] = int((fac["snap_m"] > 0).sum())
+    summary["facilities_dropped_no_passable_cell"] = before - len(fac)
     fac.to_file(OUT / "facilities.shp", encoding="UTF-8")
     summary["facilities"] = len(fac)
     (OUT / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
