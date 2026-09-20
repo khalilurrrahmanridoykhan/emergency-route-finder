@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 
 import geopandas as gpd
+from facility_levels import load_capabilities, qualifies
 
 ROOT = Path(__file__).resolve().parent.parent
 IN = ROOT / "data" / "interim" / "accessmod"
@@ -36,9 +37,21 @@ def base(analysis):
     return {"analysis": analysis, "location": PROJECT, "mapset": PROJECT, "args": {}}
 
 
-def accessibility(tag, season, max_minutes):
+def emergencies():
+    with open(ROOT / "config" / "emergencies.csv", newline="", encoding="utf-8") as f:
+        return {r["emergency_id"]: r["capability_column"] for r in csv.DictReader(f)}
+
+
+def accessibility(tag, season, max_minutes, emergency=None):
+    """Travel time to the nearest facility; with `emergency`, only qualifying facilities count."""
     conf = base("amTravelTimeAnalysis")
-    outputs = {k: f"{k}__{tag}" for k in ("rSpeed", "rFriction", "rTravelTime", "rNearest")}
+    out_tag = tag if emergency is None else f"{tag}_{emergency}"
+    outputs = {k: f"{k}__{out_tag}" for k in ("rSpeed", "rFriction", "rTravelTime", "rNearest")}
+    if emergency is None:
+        select = lambda r: True  # noqa: E731
+    else:
+        capabilities, column = load_capabilities(), emergencies()[emergency]
+        select = lambda r: qualifies(r["level"], column, capabilities)  # noqa: E731
     conf["output"] = list(outputs.values())
     conf["args"] = {
         "inputHf": f"vFacility__{PROJECT}",
@@ -56,7 +69,7 @@ def accessibility(tag, season, max_minutes):
         "useMaxSpeedMask": False,
         "timeoutValue": -1,
         "tableScenario": scenario_table(season),
-        "tableFacilities": facility_rows(lambda r: True),
+        "tableFacilities": facility_rows(select),
     }
     return conf
 
@@ -106,6 +119,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--tag", default="dry", help="land cover set: dry, flood0708, ...")
     parser.add_argument("--max-minutes", type=int, default=300)
+    parser.add_argument("--emergencies", nargs="*", default=[], help="ids from config/emergencies.csv")
     args = parser.parse_args()
     season = "dry" if args.tag == "dry" else "flood"
     for name, conf in (
@@ -113,6 +127,11 @@ def main():
         (f"referral_{args.tag}", referral(args.tag, season)),
     ):
         path = IN / f"replay_{name}.json"
+        path.write_text(json.dumps(conf, indent=2) + "\n")
+        print("wrote", path.relative_to(ROOT))
+    for emergency in args.emergencies:
+        conf = accessibility(args.tag, season, args.max_minutes, emergency)
+        path = IN / f"replay_accessibility_{args.tag}_{emergency}.json"
         path.write_text(json.dumps(conf, indent=2) + "\n")
         print("wrote", path.relative_to(ROOT))
 
