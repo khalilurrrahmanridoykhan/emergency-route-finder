@@ -22,6 +22,23 @@ The first five files are the inputs already prepared in
 copied here unchanged (WGS84 versions only). The wide facility file is new and was fetched
 with `scripts/queries/health_facilities_wide.overpassql`.
 
+## Fetched inputs (`cache/`, not committed)
+
+`scripts/fetch_inputs.py` downloads these into `data/cache/`. Checksums and retrieval dates are
+in `source-manifest.json` (OSM extracts change over time, so a rerun may differ slightly).
+
+| File | What it is | Source | Licence |
+|---|---|---|---|
+| `osm_roads_wide.json` | 33,229 OSM highway ways in the wider box | OpenStreetMap (Overpass) | ODbL 1.0 |
+| `bgd_ppp_2020_constrained.tif` | WorldPop 2020 constrained population, Bangladesh | WorldPop | CC BY 4.0 |
+| `worldcover_wide_4326.tif` | ESA WorldCover 2021 land cover | Microsoft Planetary Computer | CC BY 4.0 |
+| `dem_wide_4326.tif` | Copernicus DEM GLO-30 | Microsoft Planetary Computer | Copernicus DEM licence |
+| `bgd_adm0.geojson` | Bangladesh national boundary | geoBoundaries gbOpen | CC0 1.0 |
+
+`scripts/prepare_accessmod_inputs.py` turns these into AccessMod-ready layers in
+`data/interim/` (a 100 m UTM 46N grid, roads burnt into the land cover, cells outside
+Bangladesh set to no data). Nothing in `cache/` or `interim/` is committed.
+
 ## Original analysis area
 
 Bounding box `(91.15, 24.5, 91.5, 24.8)`, the box used for the flood mapping. It spans
@@ -34,8 +51,9 @@ joins here use `adm3_pcode`, never names.
 - The 13 facilities in the original area include only 2 Upazila Health Complexes and no
   district or general hospital. Emergency types that need a higher-level facility have
   very few qualifying destinations inside that area.
-- Land cover, a DEM and a river/water layer are not yet in the repo. AccessMod needs
-  them (Phase E1).
+- Land cover and DEM are now fetched (Phase E1). Water comes from the ESA WorldCover water
+  class; it is a single 2021 snapshot, so haor water extent in the dry and wet seasons is
+  approximate.
 
 ## Attribution
 

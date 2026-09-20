@@ -60,5 +60,63 @@
       "licence": "ODbL 1.0",
       "retrieved": "2026-09-20"
     }
-  ]
+  ],
+  "fetched_inputs_not_committed": [
+    {
+      "path": "data/cache/osm_roads_wide.json",
+      "sha256": "fb0bf5a042bef45f16627127403de827e52ac878b87bfe7693f612e3770594ef",
+      "bytes": 33375253,
+      "description": "All OSM highway ways in the wider box (33,229 ways)",
+      "source": "OpenStreetMap contributors via Overpass API; script scripts/fetch_inputs.py",
+      "licence": "ODbL 1.0",
+      "retrieved": "2026-09-20"
+    },
+    {
+      "path": "data/cache/bgd_ppp_2020_constrained.tif",
+      "sha256": "2b51c94af1e553d939cb89f0733e6bec950ed894ce5a62ca8914814550d5ccdb",
+      "bytes": 14696180,
+      "description": "WorldPop 2020 constrained population, Bangladesh",
+      "source": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/BGD/bgd_ppp_2020_constrained.tif",
+      "licence": "CC BY 4.0",
+      "retrieved": "2026-09-20"
+    },
+    {
+      "path": "data/cache/worldcover_wide_4326.tif",
+      "sha256": "7b9f566f6e9ffc6c47918e5a40bdae7927922b3a00ab1003616ca8e2c4f022be",
+      "bytes": 5747158,
+      "description": "ESA WorldCover 2021 v2.0.0 land cover, wider box",
+      "source": "Microsoft Planetary Computer STAC, collection esa-worldcover",
+      "licence": "CC BY 4.0",
+      "retrieved": "2026-09-20"
+    },
+    {
+      "path": "data/cache/dem_wide_4326.tif",
+      "sha256": "66d12cbb331c8e6b5bf87a4aa60b9224a737d27b2a4f4d136375e7745473ee6a",
+      "bytes": 27717392,
+      "description": "Copernicus DEM GLO-30, wider box",
+      "source": "Microsoft Planetary Computer STAC, collection cop-dem-glo-30",
+      "licence": "Copernicus DEM licence (free, attribution required)",
+      "retrieved": "2026-09-20"
+    },
+    {
+      "path": "data/cache/bgd_adm0.geojson",
+      "sha256": "7ea26da4885354041422911ee5dfc631b687792ade960b15c88b8c44f14f5470",
+      "bytes": 66748,
+      "description": "Bangladesh national boundary, used to mask cells across the border",
+      "source": "geoBoundaries gbOpen BGD ADM0 (wmgeolab/geoBoundaries)",
+      "licence": "CC0 1.0",
+      "retrieved": "2026-09-20"
+    }
+  ],
+  "analysis_grid": {
+    "crs": "EPSG:32646",
+    "resolution_m": 100,
+    "wide_bbox_wgs84": [
+      90.95,
+      24.4,
+      91.75,
+      25.2
+    ],
+    "note": "The grid is the largest UTM rectangle inside the wide box (see scripts/grid.py)"
+  }
 }
