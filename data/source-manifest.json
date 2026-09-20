@@ -1,0 +1,64 @@
+{
+  "aoi_original_bbox_wgs84": [
+    91.15,
+    24.5,
+    91.5,
+    24.8
+  ],
+  "files": [
+    {
+      "path": "data/raw/flood_extent_sunamganj_2026-07-13.geojson",
+      "sha256": "5ac62b1d385172ec68c07a803cc6c25ce6d6c26051880e44cfb71b8e57867e26",
+      "bytes": 1236491,
+      "description": "Newly flooded area from Sentinel-1 change detection, before (2026-06-19) vs during (2026-07-13)",
+      "source": "Sentinel-1 RTC via Microsoft Planetary Computer; method from geohealth-risk-mapping Phase H5 (via sunamganj-flood-accessibility-gis)",
+      "licence": "Copernicus Sentinel data, free, full and open access; derived layer",
+      "retrieved": "2026-09-16 (in source repo), copied 2026-09-20"
+    },
+    {
+      "path": "data/raw/health_facilities_sunamganj.geojson",
+      "sha256": "fe4178626b096cef3c59e28cad88ec1b34da159c1b9e8243e812f49184f4039d",
+      "bytes": 2985,
+      "description": "13 OSM health facilities inside the original analysis area",
+      "source": "OpenStreetMap contributors (via sunamganj-flood-accessibility-gis)",
+      "licence": "ODbL 1.0",
+      "retrieved": "2026-09-16 (in source repo), copied 2026-09-20"
+    },
+    {
+      "path": "data/raw/roads_sunamganj.geojson",
+      "sha256": "703bbec6926aff04ea1c8021912ebdf4ff15d805d00f774026053cec307d0dbc",
+      "bytes": 2607144,
+      "description": "3,398 OSM road segments inside the original analysis area",
+      "source": "OpenStreetMap contributors via Overpass API (via sunamganj-flood-accessibility-gis)",
+      "licence": "ODbL 1.0",
+      "retrieved": "2026-09-16 (in source repo), copied 2026-09-20"
+    },
+    {
+      "path": "data/raw/upazila_boundaries_sunamganj_aoi.geojson",
+      "sha256": "f1bb78f00838036da18edd4aa21294e25f664a4461ff1db7927b9c883aad0171",
+      "bytes": 1044188,
+      "description": "8 upazilas intersecting the analysis area, keyed on adm3_pcode",
+      "source": "HDX Bangladesh Subnational Administrative Boundaries (cod-ab-bgd), BBS/ITOS via UNOCHA ROAP",
+      "licence": "As stated on the HDX dataset page; check before redistributing outside this repo",
+      "retrieved": "2026-09-16 (in source repo), copied 2026-09-20"
+    },
+    {
+      "path": "data/raw/worldpop_2020_sunamganj_aoi.tif",
+      "sha256": "e7a2383e1d745f41f6ea52259228460f8e959cd4d05c0ce6787bfc184302859d",
+      "bytes": 99195,
+      "description": "WorldPop 2020 building-constrained population, clipped to the analysis area (717,209 people)",
+      "source": "WorldPop (University of Southampton)",
+      "licence": "CC BY 4.0",
+      "retrieved": "2026-09-16 (in source repo), copied 2026-09-20"
+    },
+    {
+      "path": "data/raw/health_facilities_wide_osm_2026-09-20.geojson",
+      "sha256": "ac41e7d9b016ee353bc9c61ba27de6d065c4277178874ea1f13ab7c92eb525c5",
+      "bytes": 13729,
+      "description": "47 OSM hospital/clinic/doctors features in a wider box (90.95,24.4,91.75,25.2), to show which higher-level facilities lie outside the original area",
+      "source": "OpenStreetMap contributors via Overpass API; query in scripts/queries/health_facilities_wide.overpassql",
+      "licence": "ODbL 1.0",
+      "retrieved": "2026-09-20"
+    }
+  ]
+}
