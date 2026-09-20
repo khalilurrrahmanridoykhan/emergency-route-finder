@@ -52,3 +52,14 @@ via Colima with 4 CPUs and about 5.8 GB memory) in Phase E1. The scripts are in
 | Referral, 15 origins x 20 destinations (300 pairs) | 20 s |
 | Referral, 1 origin nearest-only | 3 s |
 | Whole `make e1` pipeline including container start-up | about 49 s |
+
+## Flood scenario notes (Phase E2)
+
+- One AccessMod project holds several merged land covers (`rLandCoverMerged__dry`,
+  `__flood0708`, `__flood0713`) and each analysis picks one, so a flood scenario is just another
+  land-cover raster plus a scenario table.
+- Every class present in the raster needs a row in the scenario table, or the run fails.
+- With no boat mode, flooded cells use a `MOTORIZED` class at boat speed. This keeps slope from
+  affecting the boat leg; the segment's class identifies it as a boat leg in the path.
+- Boats on open water were left out on purpose. With boats faster than dry walking, flooding
+  made some areas look better off. Flooding is therefore strictly slower than dry.

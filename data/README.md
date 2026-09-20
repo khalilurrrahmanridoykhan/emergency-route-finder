@@ -34,10 +34,16 @@ in `source-manifest.json` (OSM extracts change over time, so a rerun may differ 
 | `worldcover_wide_4326.tif` | ESA WorldCover 2021 land cover | Microsoft Planetary Computer | CC BY 4.0 |
 | `dem_wide_4326.tif` | Copernicus DEM GLO-30 | Microsoft Planetary Computer | Copernicus DEM licence |
 | `bgd_adm0.geojson` | Bangladesh national boundary | geoBoundaries gbOpen | CC0 1.0 |
+| `bgd_adm3_wide.geojson` | 37 upazila boundaries with official P-codes | HDX cod-ab-bgd | CC BY-IGO |
 
 `scripts/prepare_accessmod_inputs.py` turns these into AccessMod-ready layers in
 `data/interim/` (a 100 m UTM 46N grid, roads burnt into the land cover, cells outside
 Bangladesh set to no data). Nothing in `cache/` or `interim/` is committed.
+
+Flood layers (Phase E2) are built by `scripts/build_flood_extent.py` from Sentinel-1 RTC on
+Microsoft Planetary Computer into `data/interim/flood/` (before 2026-06-19; during 2026-07-08 and
+2026-07-13). `raw/q3_population_by_upazila.csv` is a small table from the earlier road-network
+study, used only to check the results.
 
 ## Original analysis area
 

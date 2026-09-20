@@ -59,6 +59,15 @@
       "source": "OpenStreetMap contributors via Overpass API; query in scripts/queries/health_facilities_wide.overpassql",
       "licence": "ODbL 1.0",
       "retrieved": "2026-09-20"
+    },
+    {
+      "path": "data/raw/q3_population_by_upazila.csv",
+      "sha256": "17c894b96b996ab9c7a8f2d7ee055051e4c741110185620814d3622e74725dc8",
+      "bytes": 415,
+      "description": "Per-upazila population, flood-exposed population and road-access-loss population from the earlier road-network study, used only as a validation reference",
+      "source": "sunamganj-flood-accessibility-gis, data/processed/q3_population_by_upazila.csv (WorldPop, OSM, Sentinel-1 flood layer)",
+      "licence": "Derived from WorldPop CC BY 4.0, OSM ODbL",
+      "retrieved": "2026-09-20"
     }
   ],
   "fetched_inputs_not_committed": [
@@ -106,6 +115,15 @@
       "source": "geoBoundaries gbOpen BGD ADM0 (wmgeolab/geoBoundaries)",
       "licence": "CC0 1.0",
       "retrieved": "2026-09-20"
+    },
+    {
+      "path": "data/cache/bgd_adm3_wide.geojson",
+      "sha256": "e0572186a545f76755a77eed52d45f826fc6d3587e16d0fdab78cc8e9e2c7699",
+      "bytes": 4110162,
+      "description": "Upazila (ADM3) boundaries with official P-codes for the 37 upazilas in the wider box",
+      "source": "HDX cod-ab-bgd (BBS/ITOS via UNOCHA ROAP), shapefile resource, clipped to the wide box",
+      "licence": "CC BY-IGO",
+      "retrieved": "2026-09-20"
     }
   ],
   "analysis_grid": {
@@ -118,5 +136,13 @@
       25.2
     ],
     "note": "The grid is the largest UTM rectangle inside the wide box (see scripts/grid.py)"
-  }
+  },
+  "generated_not_committed": [
+    {
+      "path": "data/interim/flood/flood_<date>.tif, coverage_<date>.tif",
+      "description": "Newly flooded land (20 m, EPSG:32646) and the area observed on both dates, from Sentinel-1 RTC, dates 2026-07-08 and 2026-07-13 with 2026-06-19 as before",
+      "source": "Microsoft Planetary Computer, collection sentinel-1-rtc; scripts/build_flood_extent.py",
+      "licence": "Copernicus Sentinel data, free, full and open access; derived layer"
+    }
+  ]
 }

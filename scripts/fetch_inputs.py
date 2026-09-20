@@ -4,9 +4,13 @@ OSM roads (Overpass), WorldPop 2020 population, ESA WorldCover land cover and
 Copernicus DEM (Microsoft Planetary Computer STAC, no account needed).
 Run: .venv/bin/python scripts/fetch_inputs.py
 """
+import io
 import json
+import shutil
+import zipfile
 from pathlib import Path
 
+import geopandas as gpd
 import planetary_computer
 import rasterio
 import requests
@@ -63,6 +67,26 @@ def fetch_boundary():
     return out
 
 
+def fetch_admin3():
+    """Upazila (ADM3) boundaries with official P-codes from HDX cod-ab-bgd, clipped to the wide box."""
+    out = CACHE / "bgd_adm3_wide.geojson"
+    if out.exists():
+        return out
+    api = "https://data.humdata.org/api/3/action/package_show?id=cod-ab-bgd"
+    package = requests.get(api, headers={"User-Agent": UA}, timeout=60).json()["result"]
+    url = next(r["url"] for r in package["resources"] if r["format"] == "SHP")
+    blob = requests.get(url, headers={"User-Agent": UA}, timeout=600).content
+    with zipfile.ZipFile(io.BytesIO(blob)) as z:
+        name = next(n for n in z.namelist() if n.lower().endswith(".shp") and "admin3" in n.lower())
+        z.extractall(CACHE / "hdx_shp_tmp")
+    layer = gpd.read_file(CACHE / "hdx_shp_tmp" / name).to_crs("EPSG:4326")
+    wide = layer.cx[BBOX_WGS84[0] : BBOX_WGS84[2], BBOX_WGS84[1] : BBOX_WGS84[3]]
+    keep = ["adm3_name", "adm3_pcode", "adm2_name", "adm2_pcode", "adm1_name", "adm1_pcode", "geometry"]
+    wide[keep].to_file(out, driver="GeoJSON")
+    shutil.rmtree(CACHE / "hdx_shp_tmp")
+    return out
+
+
 def fetch_stac_mosaic(collection, asset, out_name, **search):
     """Mosaic the items of a Planetary Computer collection over BBOX_WGS84 (EPSG:4326)."""
     out = CACHE / out_name
@@ -94,6 +118,7 @@ def main():
     print("roads", roads.stat().st_size, "bytes,", len(json.loads(roads.read_text())["elements"]), "ways")
     print("worldpop", fetch_worldpop().stat().st_size, "bytes")
     print("boundary", fetch_boundary().stat().st_size, "bytes")
+    print("admin3", fetch_admin3().stat().st_size, "bytes")
     fetch_stac_mosaic(
         "esa-worldcover",
         "map",
