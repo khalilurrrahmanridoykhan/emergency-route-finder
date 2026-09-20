@@ -54,18 +54,33 @@ All are assumptions unless a source is given in `basis` or `target_basis`.
 ### `emergencies.csv`
 | Field | Meaning | Allowed values |
 |---|---|---|
-| `emergency_id` | Machine id | `childbirth_complication`, `snakebite`, `injury_drowning`, `minor_illness` |
+| `emergency_id` | Machine id | `childbirth_complication`, `snakebite`, `snakebite_hospital_only`, `injury_drowning`, `minor_illness` |
 | `label` | Display name | text |
 | `capability_column` | Column in `capabilities.csv` used for filtering | must exist in `capabilities.csv` |
 | `target_minutes` | Target travel time | positive integer, minutes |
-| `target_basis` | Where the target came from | text; currently placeholders |
+| `target_basis` | Where the target came from | text with a source link |
 
 ### `capabilities.csv`
 | Field | Meaning | Allowed values |
 |---|---|---|
-| `facility_level` | Facility level | `community_clinic`, `union_health_family_welfare_centre`, `upazila_health_complex`, `district_general_hospital`, `medical_college_hospital` |
-| `minor_illness`, `childbirth_complication`, `snakebite`, `injury_drowning` | Whether the level can handle the emergency | `yes`, `no`, `basic`, `first_aid`. Only `yes` qualifies as the destination; `basic` and `first_aid` are fallbacks |
+| `facility_level` | Facility level | `community_clinic`, `union_health_family_welfare_centre`, `upazila_health_complex`, `district_general_hospital`, `medical_college_hospital`, `private_or_unclassified` |
+| `minor_illness`, `childbirth_complication`, `snakebite`, `snakebite_hospital_only`, `injury_drowning` | Whether the level can handle the emergency | `yes`, `no`, `basic`, `first_aid`. Only `yes` qualifies as the destination; `basic` and `first_aid` are fallbacks |
 | `basis` | Source of the value | text; currently `assumption` |
+
+### `facility_rules.csv`
+| Field | Meaning | Allowed values |
+|---|---|---|
+| `priority` | Order rules are tried in | integer, lowest first |
+| `match` | Lower-case text searched in the facility name (English and Bangla) | text |
+| `level` | Level given on a match | a `facility_level` from `capabilities.csv` |
+| `note` | Why the rule exists | text |
+
+### `facility_overrides.csv`
+| Field | Meaning | Allowed values |
+|---|---|---|
+| `osm_id` | OSM id of the facility | integer |
+| `level` | Level to use instead of the rules | a `facility_level` from `capabilities.csv` |
+| `reason` | Why the override is needed | text |
 
 ### `speeds.csv`
 One row per AccessMod land-cover or road class in the scenario table.

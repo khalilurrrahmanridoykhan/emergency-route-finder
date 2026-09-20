@@ -108,15 +108,6 @@
       "retrieved": "2026-09-20"
     },
     {
-      "path": "data/cache/bgd_adm0.geojson",
-      "sha256": "7ea26da4885354041422911ee5dfc631b687792ade960b15c88b8c44f14f5470",
-      "bytes": 66748,
-      "description": "Bangladesh national boundary, used to mask cells across the border",
-      "source": "geoBoundaries gbOpen BGD ADM0 (wmgeolab/geoBoundaries)",
-      "licence": "CC0 1.0",
-      "retrieved": "2026-09-20"
-    },
-    {
       "path": "data/cache/bgd_adm3_wide.geojson",
       "sha256": "e0572186a545f76755a77eed52d45f826fc6d3587e16d0fdab78cc8e9e2c7699",
       "bytes": 4110162,
