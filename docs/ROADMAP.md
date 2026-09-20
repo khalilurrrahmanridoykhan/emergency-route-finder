@@ -7,7 +7,7 @@ ends with a "Done when" gate.
 |---|---|---|
 | E0 | Scope, data inventory and public repo setup | done |
 | E1 | AccessMod setup and dry-season baseline (includes an output spike) | done |
-| E2 | Flood scenario: flood extent, flooded roads, boat mode | not started |
+| E2 | Flood scenario: flood extent, flooded roads, boat mode | done |
 | E3 | Emergency types and the facility capability model | not started |
 | E4 | Actual paths (AccessMod referral per pair, `r.drain` as alternative) and OSRM cross-check | not started |
 | E5 | The `route(point, emergency, season)` function | not started |
@@ -42,8 +42,11 @@ Main finding: AccessMod's referral analysis does export path lines, but shared r
 not repeated, so a complete path needs one run per origin-destination pair.
 
 ### E2: Flood scenario
-Import the flood extent as a barrier or slow class, remove or slow flooded roads, add a
-boat mode, and compare dry and flood travel times and unreachable areas.
+**Done.** Sentinel-1 flood layers for the whole wider area (main date 2026-07-08, comparison
+2026-07-13), flooded land and submerged road pieces modelled at boat or wading speed, dry-vs-flood
+comparison with a check against the earlier road-network study. See `RESULTS.md`. The flood
+effect in this model is modest (mean +2.3 min, 75,000 people pushed beyond 60 min), and it is
+sensitive to the flood date.
 
 ### E3: Emergency types and the capability model
 Classify facilities into levels, apply `config/capabilities.csv`, and run the analysis per
