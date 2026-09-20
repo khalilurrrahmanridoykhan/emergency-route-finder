@@ -27,11 +27,11 @@ appears twice as two nodes) and **Sunamganj General Hospital at (91.411, 25.065)
 of the original box. `Khaled General Hospital` is probably private and its capabilities are
 unknown.
 
-## 3. Flood layer covers only the original box
+## 3. Flood layer covered only the original box (resolved in Phase E2)
 
-The 2026-07-13 flood extent was mapped for the original box only. In a wider analysis
-area, flooding outside the box is unmapped and would be treated as "no flood", which
-understates flood-season travel times near the edge.
+The 2026-07-13 flood extent was mapped for the original box only. Phase E2 mapped the flood
+for the wider area from Sentinel-1 on 2026-07-08 (98% of the area observed). The 2026-07-13
+scene still misses the east, so results built on it understate flooding there.
 
 ## 4. Missing AccessMod inputs (resolved in Phase E1)
 
