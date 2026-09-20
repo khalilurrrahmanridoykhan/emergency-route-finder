@@ -8,7 +8,7 @@ ends with a "Done when" gate.
 | E0 | Scope, data inventory and public repo setup | done |
 | E1 | AccessMod setup and dry-season baseline (includes an output spike) | done |
 | E2 | Flood scenario: flood extent, flooded roads, boat mode | done |
-| E3 | Emergency types and the facility capability model | not started |
+| E3 | Emergency types and the facility capability model | done |
 | E4 | Actual paths (AccessMod referral per pair, `r.drain` as alternative) and OSRM cross-check | not started |
 | E5 | The `route(point, emergency, season)` function | not started |
 | E6 | Click-a-point web map | not started |
@@ -49,8 +49,16 @@ effect in this model is modest (mean +2.3 min, 75,000 people pushed beyond 60 mi
 sensitive to the flood date.
 
 ### E3: Emergency types and the capability model
-Classify facilities into levels, apply `config/capabilities.csv`, and run the analysis per
-emergency type using only qualifying facilities.
+**Done.** Facilities are classified into levels (keyword rules plus manual overrides), mapped to
+emergencies through an editable assumption table, and AccessMod is run once per emergency type and
+season with only the qualifying facilities selected. Target times now cite sources. See
+`RESULTS.md` and `docs/capabilities.md`. Main findings: three emergency types share the same 13
+qualifying facilities under the current table, and a strict antivenom assumption cuts 2-hour coverage
+from 94.3% to 56.1%.
+
+**Open before relying on these numbers:** extend the analysis area with a facility buffer, because the
+Habiganj, Sylhet, Moulvibazar, Netrokona and Kishoreganj hospitals lie just outside the current box
+(`docs/data-gaps.md`, item 5).
 
 ### E4: Actual paths and cross-check
 Complete paths from AccessMod's referral analysis, one run per origin-destination pair (start

@@ -6,32 +6,33 @@ not for real emergencies.
 ## Phase E1: dry-season baseline (AccessMod)
 
 Area: the wider box (90.95, 24.4, 91.75, 25.2), analysed on a 100 m UTM 46N grid of 797 x 875
-cells, 5,113,180 people (WorldPop 2020, cells outside Bangladesh removed). Travel to the nearest
-of 37 facilities of any level, anisotropic, knight move, with the dry speed table in
-`config/speeds.csv` (all speeds are assumptions).
+cells, 5,084,411 people (WorldPop 2020, cells outside the official upazila polygons removed).
+Travel to the nearest of 35 facilities of any level, anisotropic, knight move, with the dry speed
+table in `config/speeds.csv` (all speeds are assumptions).
 
 | Reach a facility within | People | Share |
 |---|---|---|
-| 30 min | 2,824,022 | 55.2% |
-| 60 min | 4,494,324 | 87.9% |
-| 120 min | 4,839,362 | 94.6% |
-| 240 min | 4,924,917 | 96.3% |
-| No route within 300 min | 175,236 | 3.4% |
+| 30 min | 2,710,868 | 53.3% |
+| 60 min | 4,449,270 | 87.5% |
+| 120 min | 4,810,594 | 94.6% |
+| 240 min | 4,896,148 | 96.3% |
+| No route within 300 min | 175,236 | 3.45% |
 
-Mean travel time over reachable cells: 46.1 min. The longest times are in the haor area in the
+Mean travel time over reachable cells: 46.7 min. The longest times are in the haor area in the
 south-west, where permanent water blocks routes (`docs/img/e1_dry_travel_time.png`).
 
 Files: `results/e1_coverage_dry.csv`, `results/e1_catchments_dry.csv` (people per nearest
 facility) and `results/e1_referral_nearest_by_time_dry.csv` (nearest hospital-type destination
 for each of 15 clinics).
 
+**Correction made in Phase E3.** The first E1 and E2 runs included two "PHC" features on the
+border line ("Dangar, PHC" and "Ryngku, PHC", Indian-style names) that lie in no official upazila
+polygon; Ryngku alone had a 193,000-person catchment. They are now excluded, the country mask uses
+the official upazila polygons, and the E1 and E2 numbers here were regenerated.
+
 Caveats:
-- "Any facility" includes community clinics. Emergency-specific results (only qualifying
-  facilities) come in Phase E3.
-- The 37 facilities include name-guessed levels; the "hospital" group in the referral test mixes
-  health complexes, union centres and general hospitals.
+- "Any facility" includes community clinics. Emergency-specific results are in Phase E3.
 - The land cover is a single 2021 snapshot, so dry-season haor water is approximate.
-- Sunamganj General Hospital serves about 284,000 people in the nearest-facility catchment.
 
 ## Phase E2: flood scenario (AccessMod)
 
@@ -53,26 +54,26 @@ box).
 (boat or wading, slower than dry walking); open water stays impassable in both seasons, so the
 difference isolates the flood. All speeds are assumptions in `config/speeds.csv`.
 
-**People within reach of a facility (any level; 5.1 million people):**
+**People within reach of a facility (any level; 5.08 million people):**
 
 | Within | Dry | Flood 07-08 | Flood 07-13 (partial) |
 |---|---|---|---|
-| 30 min | 55.2% | 52.4% | 53.8% |
-| 60 min | 87.9% | 86.4% | 86.8% |
-| 120 min | 94.6% | 94.2% | 94.3% |
-| No route within 300 min | 3.43% | 3.51% | 3.58% |
+| 30 min | 53.3% | 50.5% | 51.9% |
+| 60 min | 87.5% | 86.0% | 86.4% |
+| 120 min | 94.6% | 94.2% | 94.2% |
+| No route within 300 min | 3.45% | 3.53% | 3.60% |
 
-**Flood 2026-07-08 impact:** mean travel time 46.1 to 48.4 min; 155,193 people gain at least
-15 min; nobody gains 60 min or more; 75,393 people are pushed from within 60 min to beyond it;
-4,239 lose every route; 241,396 people get a different nearest facility.
+**Flood 2026-07-08 impact:** mean travel time 46.7 to 49.0 min; 155,504 people gain at least
+15 min; nobody gains 60 min or more; 78,212 people are pushed from within 60 min to beyond it;
+4,239 lose every route; 239,302 people get a different nearest facility.
 
 **Referral, 15 clinics to hospital-type destinations:** no clinic changes its nearest
-destination and the median extra time is 0 min (one clinic gains 1 min). Their short routes
-avoid the flooded stretches.
+destination; 14 keep the same time and one gains 1 min. Their short routes avoid the flooded
+stretches.
 
 **Largest upazila effects (people pushed beyond 60 min, 07-08):** Moulvibazar Sadar 34,207
 (eastern area only observed on 07-08, not cross-checked), Madan 5,879, Nabiganj 5,327,
-Baniachong 4,849, Ajmiriganj 4,128, Derai 3,541. Shalla, the top priority in the earlier
+Dowarabazar 4,924, Baniachong 4,849, Ajmiriganj 4,128, Derai 3,541. Shalla, the top priority in the earlier
 road-network study, changes very little here: mean 22.0 to 22.3 min, 42 people pushed beyond 60.
 
 **Check against the earlier road-network study (same flood date, 8 upazilas):**
@@ -101,3 +102,56 @@ it also uses facilities outside the original box and lets people walk off-road.
 
 Files: `results/e2_coverage.csv`, `e2_flood_impact.csv`, `e2_upazila_change.csv`,
 `e2_referral_change.csv`, `e2_validation_vs_earlier_study.csv`, map `docs/img/e2_dry_vs_flood.png`.
+
+## Phase E3: emergency types and the capability model
+
+**Facility levels.** The 35 facilities are classified from OSM names with keyword rules
+(`config/facility_rules.csv`) and 5 manual overrides (`config/facility_overrides.csv`), then mapped to
+emergencies through the assumption table `config/capabilities.csv` (also in `docs/capabilities.md`):
+13 community clinics, 5 union health and family welfare centres, 12 Upazila Health Complexes, 1
+district hospital (Sunamganj General Hospital, assumed to be the district hospital) and 4 private or
+unclassified facilities (2 have no name). The list is in `results/e3_facility_levels.csv`.
+
+**Target times (sources in `config/emergencies.csv`):** 120 min for childbirth complication (WHO 2-hour
+emergency obstetric care access indicator), snakebite (2 hours is the usual maximum ideal time to
+antivenom in accessibility studies) and injury or drowning (Lancet Commission on Global Surgery, 2 hours
+to essential surgical care); 60 min for minor illness (common primary-care convention). These are
+population access standards, not clinical time limits. The sources were checked through search
+summaries, not read in full.
+
+**People within the target time (5.08 million people):**
+
+| Emergency | Qualifying facilities | Target | Dry | Flood 07-08 | Flood 07-13 (partial) |
+|---|---|---|---|---|---|
+| Childbirth complication | 13 | 120 min | 94.3% | 93.6% | 93.9% |
+| Snakebite | 13 | 120 min | 94.3% | 93.6% | 93.9% |
+| Injury or drowning | 13 | 120 min | 94.3% | 93.6% | 93.9% |
+| Minor illness | 35 | 60 min | 87.5% | 86.0% | 86.4% |
+| Snakebite, antivenom only at the district hospital | 1 | 120 min | 56.1% | 51.2% | 55.2% |
+
+**What this shows**
+- Under the current assumption table, childbirth, snakebite and injury or drowning qualify the same 13
+  facilities (12 Upazila Health Complexes and the district hospital), so their results are identical.
+  They would only differ if a source shows that some health complexes lack emergency obstetric care,
+  antivenom or surgery. Public OSM data cannot show that.
+- The antivenom assumption matters most. If only the district hospital stocks antivenom, coverage in
+  2 hours falls from 94.3% to 56.1% in the dry season, and to 51.2% in the flood; 244,477 people would be
+  pushed beyond 2 hours by the flood and 27,823 would lose every route (5.6% have no route within 300
+  min even in the dry season).
+- The flood effect for the 13-facility emergencies: 33,625 people pushed beyond 2 hours, a
+  population-weighted 3.7 extra minutes.
+- Upazilas with the lowest childbirth coverage in the dry season are mostly ones cut by the edge of the
+  analysis area (see below). Among sizeable ones: Itna 48.2%, Mithamain 75.0%, Khaliajuri 85.4%, Madan
+  88.7% (73.7% in the flood), Baniachong 93.5%.
+
+**Caveats**
+- **Facilities outside the box are not modelled.** The Habiganj district hospital lies just south of the
+  box and the Sylhet, Moulvibazar, Netrokona and Kishoreganj hospitals just outside it. This lowers
+  coverage near the edges and hits the one-facility snakebite case hardest. Extending the area (with a
+  facility buffer) is the main improvement to make before relying on these numbers.
+- The capability table is an assumption. So is treating "Sunamganj General Hospital" as the district
+  hospital.
+- Facilities are assumed open and reachable in the flood, and hospital capacity is not modelled.
+
+Files: `results/e3_coverage.csv`, `e3_flood_effect.csv`, `e3_facility_levels.csv` (with each facility's
+nearest-qualifying catchment), `e3_upazila_within_target.csv`, and `docs/img/e3_emergency_types.png`.
