@@ -78,7 +78,13 @@ def main():
     roads = fetch_roads()
     print("roads", roads.stat().st_size, "bytes,", len(json.loads(roads.read_text())["elements"]), "ways")
     print("worldpop", fetch_worldpop().stat().st_size, "bytes")
-    fetch_stac_mosaic("esa-worldcover", "map", "worldcover_wide_4326.tif", query={"esa_worldcover:product_version": {"eq": "2.0.0"}}, datetime="2021-01-01/2021-12-31")
+    fetch_stac_mosaic(
+        "esa-worldcover",
+        "map",
+        "worldcover_wide_4326.tif",
+        query={"esa_worldcover:product_version": {"eq": "2.0.0"}},
+        datetime="2021-01-01/2021-12-31",
+    )
     fetch_stac_mosaic("cop-dem-glo-30", "data", "dem_wide_4326.tif")
 
 
