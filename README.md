@@ -61,6 +61,28 @@ boundaries, and a Sentinel-1 flood extent. Start points are synthetic. Provenanc
 licences and checksums are in [data/README.md](data/README.md) and
 [data/source-manifest.json](data/source-manifest.json).
 
+## Data provenance
+
+Each data source, its access date, licence and checksum are recorded in
+[data/README.md](data/README.md) and [data/source-manifest.json](data/source-manifest.json).
+Variables, units and allowed values are in [data/DATA_DICTIONARY.md](data/DATA_DICTIONARY.md).
+Transformations are done by scripts in `scripts/`, so any derived file can be regenerated.
+
+## Privacy
+
+The data are public and aggregate (OpenStreetMap features, a population raster, boundary
+polygons and a satellite-derived flood extent). There is no person-level, patient or
+incident data. Emergency start points are synthetic, sampled from populated cells. Do not
+add real patient, incident, ambulance or household data to this repository.
+
+## Ethics
+
+The project uses only public, non-identifiable data and involves no human participants, so
+no institutional review or participant consent was required. The main ethical risk is
+misuse: a model of travel time and facility capability could be mistaken for a real
+dispatch tool. That is why the outputs are labeled as assumptions, the capability table is
+public and editable, and the README states that the tool is not for real emergencies.
+
 ## Quick start
 
 ```sh
