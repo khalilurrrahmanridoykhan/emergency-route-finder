@@ -1,0 +1,12 @@
+priority,match,level,note
+1,medical college,medical_college_hospital,name keyword
+2,sadar hospital,district_general_hospital,name keyword
+3,district hospital,district_general_hospital,name keyword
+4,উপজেলা স্বাস্থ্য কমপ্লেক্স,upazila_health_complex,Bangla name keyword
+5,ঊপজেলা স্বাস্থ্য কমপ্লেক্স,upazila_health_complex,Bangla name keyword (variant spelling seen in OSM)
+6,upazila health complex,upazila_health_complex,name keyword
+7,family welfare,union_health_family_welfare_centre,name keyword
+8,union,union_health_family_welfare_centre,name keyword
+9,community clinic,community_clinic,name keyword
+10,commuinity clinic,community_clinic,name keyword (misspelling seen in OSM)
+11,community health,community_clinic,name keyword
