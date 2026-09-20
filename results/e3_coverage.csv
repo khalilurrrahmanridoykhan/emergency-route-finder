@@ -1,0 +1,16 @@
+scenario,emergency,qualifying_facilities,target_minutes,people_within_target,percent_within_target,percent_within_60,percent_within_120,percent_within_240,percent_no_route_within_300,mean_minutes_pop_weighted
+dry,childbirth_complication,13,120,4794600,94.3,78.5,94.3,96.3,3.45,42.2
+dry,snakebite,13,120,4794600,94.3,78.5,94.3,96.3,3.45,42.2
+dry,snakebite_hospital_only,1,120,2849906,56.1,18.1,56.1,91.2,5.59,108.0
+dry,injury_drowning,13,120,4794600,94.3,78.5,94.3,96.3,3.45,42.2
+dry,minor_illness,35,60,4449270,87.5,87.5,94.6,96.3,3.45,33.7
+flood0708,childbirth_complication,13,120,4760975,93.6,74.8,93.6,96.2,3.53,45.7
+flood0708,snakebite,13,120,4760975,93.6,74.8,93.6,96.2,3.53,45.7
+flood0708,snakebite_hospital_only,1,120,2605429,51.2,16.6,51.2,90.5,6.14,115.1
+flood0708,injury_drowning,13,120,4760975,93.6,74.8,93.6,96.2,3.53,45.7
+flood0708,minor_illness,35,60,4371058,86.0,86.0,94.2,96.2,3.53,35.6
+flood0713,childbirth_complication,13,120,4773275,93.9,77.3,93.9,96.1,3.6,43.6
+flood0713,snakebite,13,120,4773275,93.9,77.3,93.9,96.1,3.6,43.6
+flood0713,snakebite_hospital_only,1,120,2806208,55.2,17.1,55.2,90.7,6.31,110.0
+flood0713,injury_drowning,13,120,4773275,93.9,77.3,93.9,96.1,3.6,43.6
+flood0713,minor_illness,35,60,4393697,86.4,86.4,94.2,96.1,3.6,35.0
