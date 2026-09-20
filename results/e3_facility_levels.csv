@@ -1,0 +1,36 @@
+cat,name,osm_id,amenity,level,level_source,childbirth_complication,people_nearest_childbirth_complication_dry,snakebite,people_nearest_snakebite_dry,snakebite_hospital_only,people_nearest_snakebite_hospital_only_dry,injury_drowning,people_nearest_injury_drowning_dry,minor_illness,people_nearest_minor_illness_dry
+1,koitok hospital,539203370,hospital,private_or_unclassified,override,False,0,False,0,False,0,False,0,True,313837
+2,Atgao community clinic,6124500161,clinic,community_clinic,rule: community clinic,False,0,False,0,False,0,False,0,True,2295
+3,Loularchar Commuinity Clinic,6123345342,clinic,community_clinic,rule: commuinity clinic,False,0,False,0,False,0,False,0,True,80635
+4,Shamarchar commuinity Clinic,6123345366,clinic,community_clinic,rule: commuinity clinic,False,0,False,0,False,0,False,0,True,12634
+5,Kartikpur Commuinity Clinic,6123345380,clinic,community_clinic,rule: commuinity clinic,False,0,False,0,False,0,False,0,True,0
+6,Sreepur Health Complex,6124467111,clinic,union_health_family_welfare_centre,override,False,0,False,0,False,0,False,0,True,26112
+7,Vojendroganj up health and family welfare centre,6124500126,hospital,union_health_family_welfare_centre,rule: family welfare,False,0,False,0,False,0,False,0,True,13840
+8,Uzanyarabad community clinic,6124500135,clinic,community_clinic,rule: community clinic,False,0,False,0,False,0,False,0,True,2586
+9,Kashipur Community Clinic,6124500144,clinic,community_clinic,rule: community clinic,False,0,False,0,False,0,False,0,True,26220
+10,Union health and family welfare center,6124500176,hospital,union_health_family_welfare_centre,rule: family welfare,False,0,False,0,False,0,False,0,True,19681
+11,Uzangao community clinic,6120359804,clinic,community_clinic,rule: community clinic,False,0,False,0,False,0,False,0,True,28938
+12,Srihile community clinic,6125239779,clinic,community_clinic,rule: community clinic,False,0,False,0,False,0,False,0,True,31604
+13,Adittopur community clinic,6125242925,clinic,community_clinic,rule: community clinic,False,0,False,0,False,0,False,0,True,20861
+14,Achanpur community clinic,6281151376,clinic,community_clinic,rule: community clinic,False,0,False,0,False,0,False,0,True,235066
+15,OSM 6574122409 (bangla name),6574122409,hospital,upazila_health_complex,rule: উপজেলা স্বাস্থ্য কমপ্লেক্স,True,165535,True,165535,False,0,True,165535,True,25920
+16,Mamudnagar Community clinic,6120359805,clinic,community_clinic,rule: community clinic,False,0,False,0,False,0,False,0,True,6681
+17,Mithamoin Upazila Health Complex,5866203323,hospital,upazila_health_complex,rule: upazila health complex,True,112797,True,112797,False,0,True,112797,True,93888
+18,Jagannathpur Upazila Health Complex,2332872337,hospital,upazila_health_complex,rule: upazila health complex,True,570367,True,570367,False,0,True,570367,True,303780
+19,Jamalganj Upazila Health Complex,2332872344,hospital,upazila_health_complex,rule: upazila health complex,True,146499,True,146499,False,0,True,146499,True,101961
+20,Dighalbak Union Family Clinic & Health Center,795286625,hospital,union_health_family_welfare_centre,rule: union,False,0,False,0,False,0,False,0,True,611418
+21,Dowarbazar Upazila Health Complex,2332856879,hospital,upazila_health_complex,rule: upazila health complex,True,513697,True,513697,False,0,True,513697,True,452707
+22,Sunamganj General Hospital,2332856927,hospital,district_general_hospital,override,True,675166,True,675166,True,4808194,True,675166,True,288192
+23,Tahirpur Upazila Health Complex,2332856931,hospital,upazila_health_complex,rule: upazila health complex,True,188488,True,188488,False,0,True,188488,True,44508
+24,OSM 2332872329 (bangla name),2332872329,hospital,upazila_health_complex,rule: উপজেলা স্বাস্থ্য কমপ্লেক্স,True,391960,True,391960,False,0,True,391960,True,207000
+25,Kamarkandi Community Clinic,5793761342,clinic,community_clinic,rule: community clinic,False,0,False,0,False,0,False,0,True,72452
+26,Mohanganj Upazila Health Complex,2332872347,hospital,upazila_health_complex,rule: upazila health complex,True,628854,True,628854,False,0,True,628854,True,620268
+27,Bishwamvarpur Upazila Health Complex,1075303043,hospital,upazila_health_complex,rule: upazila health complex,True,220392,True,220392,False,0,True,220392,True,203169
+28,Ajmiriganj Upazila Health Complex,2332892994,hospital,upazila_health_complex,rule: upazila health complex,True,264812,True,264812,False,0,True,264812,True,158574
+29,OSM 2332892995 (bangla name),2332892995,hospital,upazila_health_complex,rule: ঊপজেলা স্বাস্থ্য কমপ্লেক্স,True,165649,True,165649,False,0,True,165649,True,159374
+30,Khaled General Hospital,2616255489,hospital,private_or_unclassified,override,False,0,False,0,False,0,False,0,True,125964
+31,Nabiganj Upazila Health Complex,5619077147,hospital,upazila_health_complex,rule: upazila health complex,True,865772,True,865772,False,0,True,865772,True,322166
+32,Sastho Poribar Kollan Kendro,5781372419,clinic,union_health_family_welfare_centre,override,False,0,False,0,False,0,False,0,True,55738
+33,Community Clinic Puran Varanga,5781372420,clinic,community_clinic,rule: community clinic,False,0,False,0,False,0,False,0,True,49773
+34,OSM 539361524 (unnamed),539361524,hospital,private_or_unclassified,default,False,0,False,0,False,0,False,0,True,82598
+35,OSM 9916643514 (unnamed),9916643514,hospital,private_or_unclassified,default,False,0,False,0,False,0,False,0,True,109550

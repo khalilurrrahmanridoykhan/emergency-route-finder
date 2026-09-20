@@ -2,33 +2,33 @@ adm3_pcode,adm3_name,district,population_in_grid,mean_minutes_dry,mean_minutes_f
 BD60580074,Moulvibazar Sadar,Moulvibazar,215426,57.1,69.0,34207,57.1,0
 BD45720056,Madan,Netrakona,72144,96.9,107.6,5879,126.1,7217
 BD60360077,Nabiganj,Habiganj,393582,36.2,40.5,5327,36.4,333
+BD60900033,Dowarabazar,Sunamganj,216642,34.1,35.1,4924,34.1,0
 BD60360011,Baniachong,Habiganj,313044,49.4,56.3,4849,52.9,2245
 BD60360002,Ajmiriganj,Habiganj,146944,41.8,50.3,4128,46.7,1993
 BD60900029,Derai,Sunamganj,280247,43.4,44.1,3541,44.6,2388
-BD60900023,Chhatak,Sunamganj,472530,32.6,33.6,3386,32.6,0
 BD60580083,Sreemangal,Moulvibazar,5200,66.1,89.8,3347,66.1,0
-BD60910027,Companiganj,Sylhet,61862,59.0,61.8,2521,59.0,0
+BD60910027,Companiganj,Sylhet,61862,59.2,62.2,2521,59.2,0
+BD60900023,Chhatak,Sunamganj,472530,32.6,33.7,2510,32.6,0
 BD60910060,Osmaninagar,Sylhet,186861,39.8,42.0,1724,39.8,0
 BD60900047,Jagannathpur,Sunamganj,286486,35.2,36.2,1606,35.2,0
 BD45720063,Mohanganj,Netrakona,205415,39.8,41.2,1279,44.8,6442
-BD60900033,Dowarabazar,Sunamganj,216484,29.8,30.7,1041,29.8,0
 BD60900050,Jamalganj,Sunamganj,183463,49.8,50.1,757,51.7,4587
 BD30480059,Mithamain,Kishoreganj,105631,61.4,63.6,677,61.8,84
 BD30480033,Itna,Kishoreganj,152580,129.2,129.5,271,129.0,130
 BD45720038,Khaliajuri,Netrakona,115913,50.6,50.8,252,56.7,20151
+BD60900089,Sunamganj Sadar,Sunamganj,398803,34.4,35.5,165,35.6,0
 BD60910020,Bishwanath,Sylhet,176510,26.3,27.9,95,26.3,0
-BD60900063,Madhyanagar,Sunamganj,65473,67.4,67.5,64,68.2,64
+BD60900063,Madhyanagar,Sunamganj,65473,67.5,67.7,64,68.4,64
 BD60910062,Sylhet Sadar,Sylhet,41847,49.0,51.0,47,49.0,0
 BD60900086,Shalla,Sunamganj,123616,22.0,22.3,42,22.3,63
-BD60900018,Bishwambharpur,Sunamganj,185764,24.1,24.3,0,26.1,0
-BD60360044,Habiganj Sadar,Habiganj,3313,47.3,47.8,0,48.3,0
+BD60900018,Bishwambharpur,Sunamganj,185764,24.3,24.6,0,26.5,0
 BD60900032,Dharmapasha,Sunamganj,171528,40.2,40.3,0,40.8,30
+BD60360044,Habiganj Sadar,Habiganj,3313,47.3,47.8,0,48.3,0
 BD60360005,Bahubal,Habiganj,7924,65.8,70.3,0,66.0,0
-BD45720040,Kalmakanda,Netrakona,3992,80.2,80.7,0,82.6,0
+BD45720040,Kalmakanda,Netrakona,3992,81.9,82.9,0,86.2,0
 BD45720009,Barhatta,Netrakona,11816,21.4,21.4,0,22.2,0
-BD45720004,Atpara,Netrakona,10838,57.8,58.7,0,71.9,8485
 BD60900087,Shantiganj,Sunamganj,219714,28.5,28.6,0,28.6,0
-BD60900089,Sunamganj Sadar,Sunamganj,398803,28.4,29.5,0,29.5,0
+BD45720004,Atpara,Netrakona,10838,57.8,58.7,0,71.9,8485
 BD60900092,Tahirpur,Sunamganj,224028,32.2,32.9,0,33.6,1360
 BD60910008,Balaganj,Sylhet,2993,36.0,37.3,0,36.0,0
 BD30480092,Tarail,Kishoreganj,1721,207.4,229.6,0,250.5,0

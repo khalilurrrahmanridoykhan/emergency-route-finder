@@ -63,3 +63,13 @@ via Colima with 4 CPUs and about 5.8 GB memory) in Phase E1. The scripts are in
   affecting the boat leg; the segment's class identifies it as a boat leg in the path.
 - Boats on open water were left out on purpose. With boats faster than dry walking, flooding
   made some areas look better off. Flooding is therefore strictly slower than dry.
+
+## Emergency-type runs (Phase E3)
+
+- An accessibility run counts only the facilities whose `amSelect` is true in `tableFacilities`, so an
+  emergency type is just another run with a different selection. The exported nearest-facility raster
+  (`raster_cost_allocation`) then holds the nearest *qualifying* facility.
+- All configs run in one container session (`run_analysis.R` takes many configs), which avoids the
+  start-up cost of a container per run: 21 analyses in about 2 minutes.
+- Facility levels are stored in the facility shapefile (`level`), so the config builder needs nothing
+  beyond the shapefile and `config/`.

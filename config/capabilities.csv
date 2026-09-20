@@ -1,6 +1,7 @@
-facility_level,minor_illness,childbirth_complication,snakebite,injury_drowning,basis
-community_clinic,yes,no,no,first_aid,assumption
-union_health_family_welfare_centre,yes,basic,no,first_aid,assumption
-upazila_health_complex,yes,yes,yes,yes,assumption
-district_general_hospital,yes,yes,yes,yes,assumption
-medical_college_hospital,yes,yes,yes,yes,assumption
+facility_level,minor_illness,childbirth_complication,snakebite,snakebite_hospital_only,injury_drowning,basis
+community_clinic,yes,no,no,no,first_aid,assumption
+union_health_family_welfare_centre,yes,basic,no,no,first_aid,assumption
+upazila_health_complex,yes,yes,yes,no,yes,assumption; antivenom at every Upazila Health Complex is uncertain (see snakebite_hospital_only)
+district_general_hospital,yes,yes,yes,yes,yes,assumption
+medical_college_hospital,yes,yes,yes,yes,yes,assumption
+private_or_unclassified,yes,no,no,no,first_aid,assumption; capabilities unknown so specialist emergencies are not assumed

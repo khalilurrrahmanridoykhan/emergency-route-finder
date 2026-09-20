@@ -12,6 +12,7 @@ from pathlib import Path
 import geopandas as gpd
 import numpy as np
 import rasterio
+from facility_levels import classify
 from grid import BBOX_WGS84, CRS, RES, target_grid
 from rasterio.features import rasterize, shapes
 from rasterio.warp import Resampling, reproject
@@ -69,7 +70,12 @@ def warp(src_path, dst_shape, dst_transform, resampling, dtype, window_bounds=No
 
 
 def bangladesh_polygon():
-    return gpd.read_file(CACHE / "bgd_adm0.geojson").to_crs(CRS).union_all()
+    """Union of the official upazila polygons (HDX). Anything outside it is treated as another country.
+
+    The national boundary (geoBoundaries) kept two "PHC" features on the border line ("Dangar, PHC"
+    and "Ryngku, PHC", Indian-style names); the official upazila polygons do not contain them.
+    """
+    return gpd.read_file(CACHE / "bgd_adm3_wide.geojson").to_crs(CRS).union_all()
 
 
 def roads_gdf():
@@ -168,7 +174,10 @@ def facilities_gdf(country):
     ]
     out["osm_id"] = out["osm_id"].astype(str)
     out["amenity"] = out["amenity"].fillna(out["healthcare"])
-    return out[["name", "osm_id", "amenity", "name_orig", "geometry"]]
+    levels = [classify(i, n, o) for i, n, o in zip(out["osm_id"], out["name"], out["name_orig"])]
+    out["level"] = [level for level, _ in levels]
+    out["lvl_src"] = [source for _, source in levels]
+    return out[["name", "osm_id", "amenity", "level", "lvl_src", "name_orig", "geometry"]]
 
 
 def inside_grid(fac, bounds):
@@ -232,6 +241,7 @@ def main():
     summary["facilities_dropped_no_passable_cell"] = before - len(fac)
     fac.to_file(OUT / "facilities.shp", encoding="UTF-8")
     summary["facilities"] = len(fac)
+    summary["facility_levels"] = {k: int(v) for k, v in fac["level"].value_counts().items()}
     (OUT / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary, indent=2))
 

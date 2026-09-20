@@ -38,6 +38,14 @@ scene still misses the east, so results built on it understate flooding there.
 Land cover (ESA WorldCover 2021) and a DEM (Copernicus GLO-30) are now fetched by
 `scripts/fetch_inputs.py`. Water is the WorldCover water class, one 2021 snapshot.
 
+## 5. Higher-level facilities just outside the wider box (found in Phase E3)
+
+Only one district-level hospital (Sunamganj General Hospital) lies inside the wider box. The Habiganj
+district hospital sits just south of it, and the Sylhet, Moulvibazar, Netrokona and Kishoreganj
+hospitals just outside its other edges. Travel to them is not modelled, which lowers coverage near
+the edges and matters most for emergencies that need a district hospital. Fix: extend the grid
+with a facility buffer (roads, land cover, DEM, population and flood mapping all follow).
+
 ## Decision taken in Phase E1
 
 - Use the **wider box for facilities and roads**, so district and upazila hospitals outside

@@ -1,0 +1,6 @@
+osm_id,level,reason
+2332856927,district_general_hospital,"OSM name is 'Sunamganj General Hospital'; assumed to be the district (Sadar) hospital"
+6124467111,union_health_family_welfare_centre,"'Sreepur Health Complex' is tagged clinic and lies in Tahirpur, where a separate Upazila Health Complex exists; assumed union level"
+5781372419,union_health_family_welfare_centre,"'Sastho Poribar Kollan Kendro' is the Bangla term for a health and family welfare centre"
+2616255489,private_or_unclassified,"'Khaled General Hospital' looks like a private hospital; capabilities unknown"
+539203370,private_or_unclassified,"'koitok hospital' looks like a private hospital; capabilities unknown"

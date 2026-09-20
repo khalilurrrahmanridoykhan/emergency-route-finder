@@ -1,0 +1,6 @@
+emergency,target_minutes,people_pushed_beyond_target,people_lose_all_routes,extra_minutes_pop_weighted
+childbirth_complication,120,33625,4239,3.68
+snakebite,120,33625,4239,3.68
+snakebite_hospital_only,120,244477,27823,8.21
+injury_drowning,120,33625,4239,3.68
+minor_illness,60,78212,4239,2.11

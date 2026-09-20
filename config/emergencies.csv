@@ -1,5 +1,6 @@
 emergency_id,label,capability_column,target_minutes,target_basis
-childbirth_complication,Childbirth complication,childbirth_complication,120,placeholder; set from a cited source in Phase E3
-snakebite,Snakebite,snakebite,120,placeholder; set from a cited source in Phase E3
-injury_drowning,Injury or drowning,injury_drowning,60,placeholder; set from a cited source in Phase E3
-minor_illness,Minor illness,minor_illness,60,placeholder; set from a cited source in Phase E3
+childbirth_complication,Childbirth complication,childbirth_complication,120,"WHO indicator: geographic access to emergency obstetric care within 2 hours of travel time (https://www.who.int/data/gho/indicator-metadata-registry/imr-details/geographic-access-to-emergency-obstetric-care-(emoc)-health-facilities-within-2-hours-of-travel-time)"
+snakebite,Snakebite,snakebite,120,"About 2 hours is the maximum ideal time to antivenom used in accessibility studies (https://pmc.ncbi.nlm.nih.gov/articles/PMC8757981/); a population standard, not a clinical limit"
+snakebite_hospital_only,Snakebite (antivenom only at district hospitals),snakebite_hospital_only,120,"Same 2 hour basis as snakebite; strict case because not every upazila hospital has antivenom"
+injury_drowning,Injury or drowning,injury_drowning,120,"Lancet Commission on Global Surgery: 2 hours to essential surgical care such as open fracture care (https://www.thelancet.com/commissions-do/global-surgery); drowning also needs first aid at the scene"
+minor_illness,Minor illness,minor_illness,60,"Common 60-minute primary-care access convention in accessibility studies (e.g. https://pmc.ncbi.nlm.nih.gov/articles/PMC12557955/); not a clinical threshold"
