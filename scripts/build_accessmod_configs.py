@@ -2,7 +2,7 @@
 
 Reads config/speeds.csv for the scenario table and data/interim/accessmod/facilities.shp for the
 facility table. AccessMod numbers imported facilities 1..n in file order, which is used as `cat`.
-Run: .venv/bin/python scripts/build_accessmod_configs.py --season dry
+Run: .venv/bin/python scripts/build_accessmod_configs.py --tag flood0708
 """
 import argparse
 import csv
@@ -32,17 +32,17 @@ def facility_rows(select):
     ]
 
 
-def base(analysis, tag):
-    return {"analysis": analysis, "location": PROJECT, "mapset": PROJECT, "args": {}, "tag": tag}
+def base(analysis):
+    return {"analysis": analysis, "location": PROJECT, "mapset": PROJECT, "args": {}}
 
 
-def accessibility(season, max_minutes):
-    conf = base("amTravelTimeAnalysis", season)
-    outputs = {k: f"{k}__{season}" for k in ("rSpeed", "rFriction", "rTravelTime", "rNearest")}
+def accessibility(tag, season, max_minutes):
+    conf = base("amTravelTimeAnalysis")
+    outputs = {k: f"{k}__{tag}" for k in ("rSpeed", "rFriction", "rTravelTime", "rNearest")}
     conf["output"] = list(outputs.values())
     conf["args"] = {
         "inputHf": f"vFacility__{PROJECT}",
-        "inputMerged": f"rLandCoverMerged__{PROJECT}",
+        "inputMerged": f"rLandCoverMerged__{tag}",
         "outputSpeed": outputs["rSpeed"],
         "outputFriction": outputs["rFriction"],
         "outputTravelTime": outputs["rTravelTime"],
@@ -61,22 +61,22 @@ def accessibility(season, max_minutes):
     return conf
 
 
-def referral(season):
-    conf = base("amAnalysisReferral", season)
+def referral(tag, season):
+    conf = base("amAnalysisReferral")
     names = {
-        "outputSpeed": f"rSpeed__ref_{season}",
-        "outputFriction": f"rFriction__ref_{season}",
-        "outputReferral": f"tReferral__{season}",
-        "outputNearestDist": f"tReferralDist__{season}",
-        "outputNearestTime": f"tReferralTime__{season}",
-        "outputNetDist": f"vReferralNetwork__{season}",
+        "outputSpeed": f"rSpeed__ref_{tag}",
+        "outputFriction": f"rFriction__ref_{tag}",
+        "outputReferral": f"tReferral__{tag}",
+        "outputNearestDist": f"tReferralDist__{tag}",
+        "outputNearestTime": f"tReferralTime__{tag}",
+        "outputNetDist": f"vReferralNetwork__{tag}",
     }
     exported = ("outputReferral", "outputNearestTime", "outputNearestDist", "outputNetDist")
     conf["output"] = [names[k] for k in exported]
     conf["args"] = {
         "inputHfFrom": f"vFacility__{PROJECT}",
         "inputHfTo": f"vFacility__{PROJECT}",
-        "inputMerged": f"rLandCoverMerged__{PROJECT}",
+        "inputMerged": f"rLandCoverMerged__{tag}",
         **names,
         "maxTravelTime": 0,
         "useMaxSpeedMask": False,
@@ -104,12 +104,13 @@ def referral(season):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--season", default="dry", choices=["dry", "flood"])
+    parser.add_argument("--tag", default="dry", help="land cover set: dry, flood0708, ...")
     parser.add_argument("--max-minutes", type=int, default=300)
     args = parser.parse_args()
+    season = "dry" if args.tag == "dry" else "flood"
     for name, conf in (
-        (f"accessibility_{args.season}", accessibility(args.season, args.max_minutes)),
-        (f"referral_{args.season}", referral(args.season)),
+        (f"accessibility_{args.tag}", accessibility(args.tag, season, args.max_minutes)),
+        (f"referral_{args.tag}", referral(args.tag, season)),
     ):
         path = IN / f"replay_{name}.json"
         path.write_text(json.dumps(conf, indent=2) + "\n")

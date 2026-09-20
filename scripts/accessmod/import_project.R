@@ -28,10 +28,14 @@ amGrassNS(location = "demo", mapset = "demo", {
   amProjectCreateFromDem(newDem, project)
   stopifnot(amIsValidLocation(project))
 
-  lc <- tmpCopy("^landcover_merged\\.tif$")
-  lcName <- paste0("rLandCoverMerged", config$sepClass, project)
-  amUploadRaster(config, lc, lcName, lc, "rLandCoverMerged", "import")
-  stopifnot(amRastExists(lcName))
+  # One merged land cover per scenario: dry, flood0708, ...
+  for (lcFile in list.files(inDir, pattern = "^landcover_merged_.*\\.tif$")) {
+    tag <- sub("^landcover_merged_(.*)\\.tif$", "\\1", lcFile)
+    lc <- tmpCopy(paste0("^", lcFile, "$"))
+    lcName <- paste0("rLandCoverMerged", config$sepClass, tag)
+    amUploadRaster(config, lc, lcName, lc, "rLandCoverMerged", "import")
+    stopifnot(amRastExists(lcName))
+  }
 
   pop <- tmpCopy("^population\\.tif$")
   popName <- paste0("rPopulation", config$sepClass, project)
