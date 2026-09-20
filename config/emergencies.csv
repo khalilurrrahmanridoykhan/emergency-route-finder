@@ -1,0 +1,5 @@
+emergency_id,label,capability_column,target_minutes,target_basis
+childbirth_complication,Childbirth complication,childbirth_complication,120,placeholder; set from a cited source in Phase E3
+snakebite,Snakebite,snakebite,120,placeholder; set from a cited source in Phase E3
+injury_drowning,Injury or drowning,injury_drowning,60,placeholder; set from a cited source in Phase E3
+minor_illness,Minor illness,minor_illness,60,placeholder; set from a cited source in Phase E3
