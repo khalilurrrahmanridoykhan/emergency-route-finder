@@ -72,7 +72,7 @@ One row per AccessMod land-cover or road class in the scenario table.
 
 | Field | Meaning | Allowed values |
 |---|---|---|
-| `class` | AccessMod class code. 10 to 100 are ESA WorldCover classes; 201 to 208 are road classes burnt into the merged land cover | positive integer, unique per season |
+| `class` | AccessMod class code. 10 to 100 are ESA WorldCover classes; 201 to 208 are road classes burnt into the merged land cover; 301 is flooded land or a submerged road (flood scenario only) | positive integer, unique per season |
 | `label` | Class name | text |
 | `speed_kmh` | Speed | number >= 0, km/h. 0 means impassable |
 | `mode` | AccessMod travel mode (controls how slope affects speed) | `WALKING`, `BICYCLING`, `MOTORIZED`. AccessMod has no boat mode, so boats are modelled as `MOTORIZED` on water classes |

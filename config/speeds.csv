@@ -5,8 +5,8 @@ class,label,speed_kmh,mode,season,basis
 40,cropland,3,WALKING,both,assumption
 50,built_up,4,WALKING,both,assumption
 60,bare_sparse_vegetation,3.5,WALKING,both,assumption
-80,permanent_water,0,WALKING,dry,assumption; impassable without a boat
-90,herbaceous_wetland,1.5,WALKING,dry,assumption
+80,permanent_water,0,WALKING,both,assumption; impassable in both seasons (open-water boat travel is not modelled, see docs)
+90,herbaceous_wetland,1.5,WALKING,both,assumption
 95,mangroves,1,WALKING,both,assumption
 201,road_primary,40,MOTORIZED,both,assumption
 202,road_secondary,30,MOTORIZED,both,assumption
@@ -16,3 +16,4 @@ class,label,speed_kmh,mode,season,basis
 206,road_service,10,MOTORIZED,both,assumption
 207,road_track,8,MOTORIZED,both,assumption
 208,road_path,4,WALKING,both,assumption
+301,flooded_land,2,MOTORIZED,flood,assumption; boat or wading over flooded land or a submerged road (slower than dry walking)
