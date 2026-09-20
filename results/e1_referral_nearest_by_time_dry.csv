@@ -1,16 +1,16 @@
 from__cat,from__name,to__cat,to__name,distance_km,time_m
-2,Mamudnagar Community clinic,27,Mithamoin Upazila Health Complex,12,90
-3,Shamarchar commuinity Clinic,6,Vojendroganj up health and family welfare centre,2,6
-4,Kartikpur Commuinity Clinic,6,Vojendroganj up health and family welfare centre,4,13
-5,Sreepur Health Complex,24,Tahirpur Upazila Health Complex,12,45
-7,Uzanyarabad community clinic,10,Union health and family welfare center,6,22
-8,Kashipur Community Clinic,6,Vojendroganj up health and family welfare centre,4,16
-9,Atgao community clinic,10,Union health and family welfare center,4,14
-11,Srihile community clinic,29,Ajmiriganj Upazila Health Complex,6,26
-12,Adittopur community clinic,14,OSM 6574122409 (bangla name),13,39
-13,Achanpur community clinic,6,Vojendroganj up health and family welfare centre,16,59
-17,Loularchar Commuinity Clinic,6,Vojendroganj up health and family welfare centre,4,14
-18,Uzangao community clinic,27,Mithamoin Upazila Health Complex,13,118
-33,Sastho Poribar Kollan Kendro,24,Tahirpur Upazila Health Complex,8,22
-34,Community Clinic Puran Varanga,24,Tahirpur Upazila Health Complex,9,27
-35,Kamarkandi Community Clinic,24,Tahirpur Upazila Health Complex,10,35
+2,Atgao community clinic,10,Union health and family welfare center,4,14
+3,Loularchar Commuinity Clinic,7,Vojendroganj up health and family welfare centre,4,14
+4,Shamarchar commuinity Clinic,7,Vojendroganj up health and family welfare centre,2,6
+5,Kartikpur Commuinity Clinic,7,Vojendroganj up health and family welfare centre,4,13
+6,Sreepur Health Complex,23,Tahirpur Upazila Health Complex,12,45
+8,Uzanyarabad community clinic,10,Union health and family welfare center,6,22
+9,Kashipur Community Clinic,7,Vojendroganj up health and family welfare centre,4,16
+11,Uzangao community clinic,17,Mithamoin Upazila Health Complex,13,118
+12,Srihile community clinic,28,Ajmiriganj Upazila Health Complex,6,26
+13,Adittopur community clinic,15,OSM 6574122409 (bangla name),13,39
+14,Achanpur community clinic,7,Vojendroganj up health and family welfare centre,16,59
+16,Mamudnagar Community clinic,17,Mithamoin Upazila Health Complex,12,90
+25,Kamarkandi Community Clinic,23,Tahirpur Upazila Health Complex,10,35
+32,Sastho Poribar Kollan Kendro,23,Tahirpur Upazila Health Complex,8,22
+33,Community Clinic Puran Varanga,23,Tahirpur Upazila Health Complex,9,27

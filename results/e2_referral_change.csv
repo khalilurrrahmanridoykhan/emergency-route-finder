@@ -1,16 +1,16 @@
 from__cat,from__name,to__cat_dry,to__name_dry,distance_km_dry,time_m_dry,to__cat_flood,to__name_flood,distance_km_flood,time_m_flood,changed_destination,extra_minutes
-2,Mamudnagar Community clinic,27,Mithamoin Upazila Health Complex,12,90,27,Mithamoin Upazila Health Complex,12,90,False,0
-3,Shamarchar commuinity Clinic,6,Vojendroganj up health and family welfare centre,2,6,6,Vojendroganj up health and family welfare centre,2,6,False,0
-4,Kartikpur Commuinity Clinic,6,Vojendroganj up health and family welfare centre,4,13,6,Vojendroganj up health and family welfare centre,4,13,False,0
-5,Sreepur Health Complex,24,Tahirpur Upazila Health Complex,12,45,24,Tahirpur Upazila Health Complex,12,45,False,0
-7,Uzanyarabad community clinic,10,Union health and family welfare center,6,22,10,Union health and family welfare center,6,22,False,0
-8,Kashipur Community Clinic,6,Vojendroganj up health and family welfare centre,4,16,6,Vojendroganj up health and family welfare centre,4,16,False,0
-9,Atgao community clinic,10,Union health and family welfare center,4,14,10,Union health and family welfare center,4,14,False,0
-11,Srihile community clinic,29,Ajmiriganj Upazila Health Complex,6,26,29,Ajmiriganj Upazila Health Complex,6,27,False,1
-12,Adittopur community clinic,14,OSM 6574122409 (bangla name),13,39,14,OSM 6574122409 (bangla name),13,39,False,0
-13,Achanpur community clinic,6,Vojendroganj up health and family welfare centre,16,59,6,Vojendroganj up health and family welfare centre,16,59,False,0
-17,Loularchar Commuinity Clinic,6,Vojendroganj up health and family welfare centre,4,14,6,Vojendroganj up health and family welfare centre,4,14,False,0
-18,Uzangao community clinic,27,Mithamoin Upazila Health Complex,13,118,27,Mithamoin Upazila Health Complex,13,118,False,0
-33,Sastho Poribar Kollan Kendro,24,Tahirpur Upazila Health Complex,8,22,24,Tahirpur Upazila Health Complex,8,22,False,0
-34,Community Clinic Puran Varanga,24,Tahirpur Upazila Health Complex,9,27,24,Tahirpur Upazila Health Complex,9,27,False,0
-35,Kamarkandi Community Clinic,24,Tahirpur Upazila Health Complex,10,35,24,Tahirpur Upazila Health Complex,10,35,False,0
+2,Atgao community clinic,10,Union health and family welfare center,4,14,10,Union health and family welfare center,4,14,False,0
+3,Loularchar Commuinity Clinic,7,Vojendroganj up health and family welfare centre,4,14,7,Vojendroganj up health and family welfare centre,4,14,False,0
+4,Shamarchar commuinity Clinic,7,Vojendroganj up health and family welfare centre,2,6,7,Vojendroganj up health and family welfare centre,2,6,False,0
+5,Kartikpur Commuinity Clinic,7,Vojendroganj up health and family welfare centre,4,13,7,Vojendroganj up health and family welfare centre,4,13,False,0
+6,Sreepur Health Complex,23,Tahirpur Upazila Health Complex,12,45,23,Tahirpur Upazila Health Complex,12,45,False,0
+8,Uzanyarabad community clinic,10,Union health and family welfare center,6,22,10,Union health and family welfare center,6,22,False,0
+9,Kashipur Community Clinic,7,Vojendroganj up health and family welfare centre,4,16,7,Vojendroganj up health and family welfare centre,4,16,False,0
+11,Uzangao community clinic,17,Mithamoin Upazila Health Complex,13,118,17,Mithamoin Upazila Health Complex,13,118,False,0
+12,Srihile community clinic,28,Ajmiriganj Upazila Health Complex,6,26,28,Ajmiriganj Upazila Health Complex,6,27,False,1
+13,Adittopur community clinic,15,OSM 6574122409 (bangla name),13,39,15,OSM 6574122409 (bangla name),13,39,False,0
+14,Achanpur community clinic,7,Vojendroganj up health and family welfare centre,16,59,7,Vojendroganj up health and family welfare centre,16,59,False,0
+16,Mamudnagar Community clinic,17,Mithamoin Upazila Health Complex,12,90,17,Mithamoin Upazila Health Complex,12,90,False,0
+25,Kamarkandi Community Clinic,23,Tahirpur Upazila Health Complex,10,35,23,Tahirpur Upazila Health Complex,10,35,False,0
+32,Sastho Poribar Kollan Kendro,23,Tahirpur Upazila Health Complex,8,22,23,Tahirpur Upazila Health Complex,8,22,False,0
+33,Community Clinic Puran Varanga,23,Tahirpur Upazila Health Complex,9,27,23,Tahirpur Upazila Health Complex,9,27,False,0

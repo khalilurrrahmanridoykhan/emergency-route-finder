@@ -1,3 +1,3 @@
 scenario,flood_date,flooded_share_of_land_percent,sar_coverage_of_grid_percent,mean_minutes_dry,mean_minutes_flood,people_time_up_15min,people_time_up_60min,people_pushed_beyond_60min,people_lose_all_routes,people_nearest_facility_changes,people_in_unmapped_flood_area
-flood0708,2026-07-08,5.4,97.9,46.1,48.4,155193,0,75393,4239,241396,87239
-flood0713,2026-07-13,2.9,57.1,46.1,47.7,183790,0,55573,7680,99363,2643815
+flood0708,2026-07-08,5.4,97.9,46.7,49.0,155504,0,78212,4239,239302,87239
+flood0713,2026-07-13,2.9,57.1,46.7,48.2,183790,0,55573,7680,99197,2619745
