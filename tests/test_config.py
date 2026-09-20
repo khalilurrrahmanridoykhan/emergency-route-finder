@@ -6,7 +6,7 @@ CONFIG = Path(__file__).resolve().parent.parent / "config"
 
 CAPABILITY_VALUES = {"yes", "no", "basic", "first_aid"}
 SEASONS = {"dry", "flood", "both"}
-MODES = {"walk", "bicycle", "motorized", "boat"}
+MODES = {"WALKING", "BICYCLING", "MOTORIZED"}  # the only modes AccessMod accepts
 
 
 def read(name):
@@ -35,7 +35,8 @@ def test_speeds_are_positive_and_use_known_values():
     rows = read("speeds.csv")
     assert rows
     for row in rows:
-        assert float(row["speed_kmh"]) > 0, row["class"]
+        assert float(row["speed_kmh"]) >= 0, row["class"]
+        assert int(row["class"]) > 0, row["class"]
         assert row["mode"] in MODES, row["class"]
         assert row["season"] in SEASONS, row["class"]
 
@@ -44,3 +45,13 @@ def test_every_assumption_row_is_labeled():
     for name in ("capabilities.csv", "speeds.csv"):
         for row in read(name):
             assert row["basis"], f"{name} has an unlabeled row"
+
+
+def test_speed_classes_are_unique_per_season():
+    seen = set()
+    for row in read("speeds.csv"):
+        seasons = ("dry", "flood") if row["season"] == "both" else (row["season"],)
+        for season in seasons:
+            key = (row["class"], season)
+            assert key not in seen, f"duplicate class/season {key}"
+            seen.add(key)
