@@ -61,6 +61,10 @@ def warp(src_path, dst_shape, dst_transform, resampling, dtype, window_bounds=No
     return dst, data
 
 
+def bangladesh_polygon():
+    return gpd.read_file(CACHE / "bgd_adm0.geojson").to_crs(CRS).union_all()
+
+
 def roads_gdf():
     ways = json.loads((CACHE / "osm_roads_wide.json").read_text())["elements"]
     lookup = {value: code for code, values in ROAD_CLASSES for value in values}
@@ -73,10 +77,10 @@ def roads_gdf():
     return gpd.GeoDataFrame(rows, crs="EPSG:4326").to_crs(CRS)
 
 
-def facilities_gdf():
+def facilities_gdf(country):
     src = gpd.read_file(ROOT / "data" / "raw" / "health_facilities_wide_osm_2026-09-20.geojson").to_crs(CRS)
     kind = src["amenity"].where(src["amenity"].isin(FACILITY_KINDS), src.get("healthcare"))
-    src = src[kind.isin(FACILITY_KINDS | {"centre"})].copy()
+    src = src[kind.isin(FACILITY_KINDS | {"centre"}) & src.within(country)].copy()
     src["named"] = src["name"].notna()
     src = src.sort_values("named", ascending=False)  # keep the named node of a duplicate pair
     keep = []
@@ -100,6 +104,10 @@ def main():
     shape = (height, width)
     summary = {"grid": {"crs": CRS, "res_m": RES, "width": width, "height": height, "bounds": bounds}}
 
+    country = bangladesh_polygon()
+    mask = rasterize([(country, 1)], out_shape=shape, transform=transform, fill=0, dtype="uint8")
+    inside = mask.astype(bool)
+
     dem, _ = warp(CACHE / "dem_wide_4326.tif", shape, transform, Resampling.bilinear, "float32")
     write_raster(OUT / "dem.tif", dem, transform, "float32")
     summary["dem_m"] = {"min": float(dem.min()), "max": float(dem.max())}
@@ -110,9 +118,11 @@ def main():
         (geom, code) for code, _ in ROAD_CLASSES for geom in roads.loc[roads["Class"] == code].geometry
     ]
     lc = rasterize(shapes, out=lc, transform=transform, all_touched=True)
-    write_raster(OUT / "landcover_merged.tif", lc, transform, "uint16")
-    classes, counts = np.unique(lc, return_counts=True)
+    lc[~inside] = 0  # outside Bangladesh: no data, so nothing can be routed across the border
+    write_raster(OUT / "landcover_merged.tif", lc, transform, "uint16", nodata=0)
+    classes, counts = np.unique(lc[inside], return_counts=True)
     summary["landcover_classes"] = {int(c): int(n) for c, n in zip(classes, counts)}
+    summary["cells_outside_bangladesh"] = int((~inside).sum())
     known = {int(r["class"]) for r in csv.DictReader(open(ROOT / "config" / "speeds.csv"))}
     missing = sorted(set(summary["landcover_classes"]) - known)
     if missing:
@@ -122,10 +132,11 @@ def main():
     pop, src_pop = warp(
         CACHE / "bgd_ppp_2020_constrained.tif", shape, transform, Resampling.sum, "float32", BBOX_WGS84
     )
+    pop[~inside] = 0
     write_raster(OUT / "population.tif", pop, transform, "float32")
     summary["population"] = {"source_window_sum": float(src_pop.sum()), "grid_sum": float(pop.sum())}
 
-    fac = facilities_gdf()
+    fac = facilities_gdf(country)
     fac.to_file(OUT / "facilities.shp", encoding="UTF-8")
     summary["facilities"] = len(fac)
     (OUT / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
