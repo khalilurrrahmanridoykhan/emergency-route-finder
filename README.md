@@ -50,9 +50,12 @@ each marked `assumption`, and are shown wherever results are shown.
 
 ## Status
 
-Phase E0 (scope, data inventory, repo setup) is done. See [docs/ROADMAP.md](docs/ROADMAP.md)
-for the phases and [docs/data-gaps.md](docs/data-gaps.md) for what the inventory found,
-including that the original area holds no district-level hospital.
+Phases E0 (scope, data inventory, repo setup) and E1 (AccessMod running headless, dry-season
+baseline) are done. See [docs/ROADMAP.md](docs/ROADMAP.md) for the phases,
+[docs/accessmod-notes.md](docs/accessmod-notes.md) for what AccessMod exports and how it is
+scripted, and [RESULTS.md](RESULTS.md) for the numbers. In the dry season about 88% of the 5.1
+million people in the area are within 60 minutes of some facility (any level, model
+assumptions).
 
 ## Data
 
@@ -88,9 +91,11 @@ public and editable, and the README states that the tool is not for real emergen
 ```sh
 make setup   # create .venv and install requirements
 make test    # run the tests
+make data    # download public inputs into data/cache/
+make e1      # build inputs, run AccessMod in Docker, summarise (needs Docker running)
 ```
 
-AccessMod runs in Docker and is set up in Phase E1.
+AccessMod runs in Docker (`fredmoser/accessmod:5.9.1`); on a Mac, Colima or Docker Desktop works.
 
 ## Related
 

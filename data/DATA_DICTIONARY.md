@@ -68,11 +68,14 @@ All are assumptions unless a source is given in `basis` or `target_basis`.
 | `basis` | Source of the value | text; currently `assumption` |
 
 ### `speeds.csv`
+One row per AccessMod land-cover or road class in the scenario table.
+
 | Field | Meaning | Allowed values |
 |---|---|---|
-| `class` | Road or land class | e.g. `highway_primary`, `off_road_dry_land`, `flooded_land`, `water_country_boat` |
-| `mode` | Travel mode | `walk`, `bicycle`, `motorized`, `boat` |
-| `speed_kmh` | Speed | positive number, km/h |
+| `class` | AccessMod class code. 10 to 100 are ESA WorldCover classes; 201 to 208 are road classes burnt into the merged land cover | positive integer, unique per season |
+| `label` | Class name | text |
+| `speed_kmh` | Speed | number >= 0, km/h. 0 means impassable |
+| `mode` | AccessMod travel mode (controls how slope affects speed) | `WALKING`, `BICYCLING`, `MOTORIZED`. AccessMod has no boat mode, so boats are modelled as `MOTORIZED` on water classes |
 | `season` | When the row applies | `dry`, `flood`, `both` |
 | `basis` | Source of the value | text; currently `assumption` |
 

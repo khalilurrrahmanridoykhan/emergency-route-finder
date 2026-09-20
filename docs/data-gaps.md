@@ -33,18 +33,21 @@ The 2026-07-13 flood extent was mapped for the original box only. In a wider ana
 area, flooding outside the box is unmapped and would be treated as "no flood", which
 understates flood-season travel times near the edge.
 
-## 4. Missing AccessMod inputs
+## 4. Missing AccessMod inputs (resolved in Phase E1)
 
-Land cover, a DEM and a river/water layer are not in the repo yet (Phase E1). Candidate
-public sources: ESA WorldCover, SRTM or Copernicus DEM, OSM water features.
+Land cover (ESA WorldCover 2021) and a DEM (Copernicus GLO-30) are now fetched by
+`scripts/fetch_inputs.py`. Water is the WorldCover water class, one 2021 snapshot.
 
-## Proposed decision (to confirm in Phase E1)
+## Decision taken in Phase E1
 
 - Use the **wider box for facilities and roads**, so district and upazila hospitals outside
   the original box are candidate destinations.
 - Keep the **original box** as the area with mapped flooding, and state plainly that the
   flood scenario is only valid there. Optionally extend the Sentinel-1 flood mapping to the
   wider box in Phase E2 using the `geohealth-risk-mapping` Phase H5 method.
-- Use the **DGHS facility registry**, if usable, to fill missing Derai and Shalla
+- Applied in E1: analysis grid is the wider box (largest UTM rectangle inside it), cells and
+  facilities outside Bangladesh are masked out (some OSM "PHC" features near the Meghalaya
+  border are in India), and 2 facilities on water cells were moved to the nearest passable cell.
+- Still open: use the **DGHS facility registry**, if usable, to fill missing Derai and Shalla
   facilities and to replace name-based level guesses. Otherwise keep OSM names and label
   the limitation.

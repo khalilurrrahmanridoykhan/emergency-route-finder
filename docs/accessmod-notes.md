@@ -1,25 +1,54 @@
 # AccessMod notes
 
-Findings about AccessMod itself. The first section comes from reading the project's public
-repository and Docker Hub metadata. **Nothing here has been verified by running AccessMod
-yet.** Phase E1 replaces it with what actually happens when it runs on this area.
+What was verified by running AccessMod 5.9.1 (`fredmoser/accessmod:5.9.1`, arm64 image, on a Mac
+via Colima with 4 CPUs and about 5.8 GB memory) in Phase E1. The scripts are in
+`scripts/accessmod/` and `scripts/run_e1.sh`.
 
-## Before running (read from the AccessMod repository, 2026-09-20)
+## How it runs
 
-- Maintained at `unige-geohealth/accessmod` (LGPL-3.0), developed by the University of
-  Geneva GeoHealth group with WHO. R + Shiny on GRASS GIS 8, packaged as Docker images.
-- The repo's `docker-compose.yml` runs `fredmoser/accessmod_base:5.9-c` and serves the app
-  on ports 3080 and 3180. The compressed image sizes on Docker Hub are about 0.2 to 0.3 GB.
-- The developer guide describes a **replay** function, `amAnalysisReplayExec("<config>.json")`,
-  that reruns a saved analysis from its parameter file. This suggests runs may be scriptable
-  without the UI. To be confirmed in E1.
-- Outputs, barrier and land-cover import, and whether path lines can be exported are not
-  yet confirmed.
+- Maintained at `unige-geohealth/accessmod` (LGPL-3.0), by the University of Geneva GeoHealth
+  group with WHO. R + Shiny on GRASS GIS 8.3.2, packaged as Docker images. The image includes
+  AccessMod's own `r.walk.accessmod` module.
+- The image is native arm64 (928 MB on disk), so no emulation is needed on Apple silicon.
+- The shipped test suite (`Rscript tests/start.R`) passes all 44 checks headless in about 79 s.
+- **Everything can be scripted without the web UI.** From R inside the container:
+  `amProjectCreateFromDem` creates a project from a DEM, `amUploadRaster` and `amUploadVector`
+  import layers, and `amAnalysisReplayExec` runs an analysis from a JSON config and exports the
+  results. Configs are plain JSON (`scripts/build_accessmod_configs.py`).
+- The upload functions delete the files they are given, so scripts pass temporary copies.
 
-## Spike questions for Phase E1
+## Spike answers
 
-1. What does an accessibility run export (travel-time raster, nearest-facility table)?
-2. What does the referral analysis export, and can it give paths or only times?
-3. How are barriers and land-cover speed classes imported?
-4. Can a run be replayed headless from a saved config, and what does the config contain?
-5. How long does a run take on this area at the chosen resolution?
+1. **Accessibility outputs.** `rTravelTime` (uint16 minutes, 65535 = no data), `rSpeed` (int32,
+   speed and mode encoded), `rFriction` (isotropic runs only) and `rNearest`, exported as
+   `raster_cost_allocation` (the `cat` of the nearest facility per cell). `rNearest` is only
+   produced when the config sets `"addNearest": true`.
+2. **Referral outputs.** `table_referral` (every from x to pair with `distance_km` and `time_m`),
+   `table_referral_nearest_by_time` and `..._by_dist`, and `vReferralNetwork`, a GeoPackage of
+   path lines with `from__cat`, `to__cat`, `km` and `m`. **AccessMod does export path lines.**
+3. **Path caveat.** When one run has several destinations, path pieces shared between routes are
+   not repeated. In the dry test 128 of 300 path geometries were only about 28 m long even
+   though their distance and time were correct. A run with one origin and `limitClosest: true`
+   (or a single destination) gives one complete line: the test path was 1.48 km against a table
+   distance of 2 km (rounded up). Complete paths therefore need one run per origin-destination
+   pair (see Phase E4).
+4. **Travel modes.** The scenario table accepts only `WALKING`, `BICYCLING` and `MOTORIZED`.
+   There is no boat mode, so boats will be modelled as `MOTORIZED` on water classes in Phase E2.
+5. **Barriers.** Cells with no data (or a class with speed 0) are impassable. E1 sets cells
+   outside Bangladesh to no data and gives permanent water speed 0. Roads are burnt into the
+   land cover raster and imported as the merged land cover, so no separate road layer is needed.
+6. **Referral origins are points in the facility layer.** Arbitrary emergency start points must
+   be imported as a facility layer before they can be referral origins.
+7. **Facilities on impassable cells fail.** A facility on a water cell made the referral run stop
+   with "No start points found in vector map". The preparation script moves such facilities to
+   the nearest passable cell and records the distance.
+
+## Run times (this Mac, 697,000 cells at 100 m, 37 facilities)
+
+| Step | Time |
+|---|---|
+| Import (DEM, land cover, population, facilities) | about 2 s of R work |
+| Accessibility, anisotropic, knight move, 300 min cap | 2.3 s |
+| Referral, 15 origins x 20 destinations (300 pairs) | 20 s |
+| Referral, 1 origin nearest-only | 3 s |
+| Whole `make e1` pipeline including container start-up | about 49 s |
