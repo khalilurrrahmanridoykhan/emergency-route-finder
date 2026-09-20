@@ -1,0 +1,5 @@
+* text=auto
+*.geojson linguist-language=JSON
+*.gpkg binary
+*.tif binary
+*.png binary
