@@ -26,10 +26,6 @@ WORLDPOP = (
     "2020/BSGM/BGD/bgd_ppp_2020_constrained.tif"
 )
 STAC = "https://planetarycomputer.microsoft.com/api/stac/v1"
-BOUNDARY = (
-    "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/BGD/ADM0/"
-    "geoBoundaries-BGD-ADM0.geojson"
-)
 
 
 def fetch_roads():
@@ -53,17 +49,6 @@ def fetch_worldpop():
         with open(out, "wb") as f:
             for chunk in r.iter_content(1 << 20):
                 f.write(chunk)
-    return out
-
-
-def fetch_boundary():
-    """Bangladesh national boundary (geoBoundaries gbOpen, CC0), used to exclude cross-border cells."""
-    out = CACHE / "bgd_adm0.geojson"
-    if out.exists():
-        return out
-    r = requests.get(BOUNDARY, headers={"User-Agent": UA}, timeout=300)
-    r.raise_for_status()
-    out.write_bytes(r.content)
     return out
 
 
@@ -117,7 +102,6 @@ def main():
     roads = fetch_roads()
     print("roads", roads.stat().st_size, "bytes,", len(json.loads(roads.read_text())["elements"]), "ways")
     print("worldpop", fetch_worldpop().stat().st_size, "bytes")
-    print("boundary", fetch_boundary().stat().st_size, "bytes")
     print("admin3", fetch_admin3().stat().st_size, "bytes")
     fetch_stac_mosaic(
         "esa-worldcover",
