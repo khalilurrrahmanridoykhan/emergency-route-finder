@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Emergency Route Finder: Flood-Aware Referral Routing with AccessMod"
+type: software
+authors:
+  - family-names: "Khan"
+    given-names: "Khalilur Rahman Ridoy"
+    alias: "khalilurrrahmanridoykhan"
+repository-code: "https://github.com/khalilurrrahmanridoykhan/emergency-route-finder"
+license: Apache-2.0
+abstract: >-
+  Flood-aware emergency referral routing for Sunamganj, Bangladesh. For a start point,
+  an emergency type and a season (dry or flood), reports the right facility, travel
+  time, path, mode and backup facility, using WHO AccessMod for the travel-time surface.
+keywords:
+  - accessmod
+  - health accessibility
+  - emergency referral
+  - flood response
+  - Bangladesh
