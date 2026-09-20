@@ -55,3 +55,9 @@ def test_speed_classes_are_unique_per_season():
             key = (row["class"], season)
             assert key not in seen, f"duplicate class/season {key}"
             seen.add(key)
+
+
+def test_every_target_time_has_a_source():
+    for row in read("emergencies.csv"):
+        assert row["target_basis"].strip(), row["emergency_id"]
+        assert "placeholder" not in row["target_basis"].lower(), row["emergency_id"]

@@ -1,4 +1,4 @@
-.PHONY: setup data e1 e2 test lint
+.PHONY: setup data e1 e2 e3 test lint
 
 setup:
 	python3 -m venv .venv
@@ -19,6 +19,15 @@ e2:
 	cd scripts && ../.venv/bin/python build_flood_extent.py --during 2026-07-13
 	TAGS="dry flood0708 flood0713" FLOOD_DATES="2026-07-08 2026-07-13" scripts/run_accessmod.sh
 	.venv/bin/python scripts/summarize_e2.py
+
+# Phase E3: dry and flood scenarios plus one run per emergency type, then all summaries
+e3:
+	TAGS="dry flood0708 flood0713" FLOOD_DATES="2026-07-08 2026-07-13" \
+	EMERGENCIES="childbirth_complication snakebite snakebite_hospital_only injury_drowning minor_illness" \
+	scripts/run_accessmod.sh
+	.venv/bin/python scripts/summarize_e1.py
+	.venv/bin/python scripts/summarize_e2.py
+	.venv/bin/python scripts/summarize_e3.py
 
 test:
 	.venv/bin/python -m pytest -q
