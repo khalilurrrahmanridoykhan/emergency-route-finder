@@ -1,4 +1,4 @@
-"""Download the public inputs for the wider area into data/cache/ (not committed).
+"""Download the public inputs for the analysis area into data/cache/ (not committed).
 
 OSM roads (Overpass), WorldPop 2020 population, ESA WorldCover land cover and
 Copernicus DEM (Microsoft Planetary Computer STAC, no account needed).
@@ -7,6 +7,7 @@ Run: .venv/bin/python scripts/fetch_inputs.py
 import io
 import json
 import shutil
+import time
 import zipfile
 from pathlib import Path
 
@@ -18,7 +19,8 @@ from grid import BBOX_WGS84
 from pystac_client import Client
 from rasterio.merge import merge
 
-CACHE = Path(__file__).resolve().parent.parent / "data" / "cache"
+ROOT = Path(__file__).resolve().parent.parent
+CACHE = ROOT / "data" / "cache"
 UA = "emergency-route-finder/0.1 (github.com/khalilurrrahmanridoykhan)"
 OVERPASS = "https://overpass-api.de/api/interpreter"
 WORLDPOP = (
@@ -28,15 +30,65 @@ WORLDPOP = (
 STAC = "https://planetarycomputer.microsoft.com/api/stac/v1"
 
 
+def overpass(query):
+    """POST an Overpass query, retrying a few times because the public servers are often busy."""
+    for attempt in range(4):
+        r = requests.post(OVERPASS, data={"data": query}, headers={"User-Agent": UA}, timeout=600)
+        if r.status_code == 200:
+            return r.json()
+        time.sleep(30 * (attempt + 1))
+    r.raise_for_status()
+
+
+def tiles(bbox, nx=3, ny=2):
+    west, south, east, north = bbox
+    xs = [west + (east - west) * i / nx for i in range(nx + 1)]
+    ys = [south + (north - south) * j / ny for j in range(ny + 1)]
+    return [(xs[i], ys[j], xs[i + 1], ys[j + 1]) for i in range(nx) for j in range(ny)]
+
+
 def fetch_roads():
+    """All OSM highway ways in the analysis area, fetched in tiles and merged by way id."""
     out = CACHE / "osm_roads_wide.json"
     if out.exists():
         return out
-    s, w, n, e = BBOX_WGS84[1], BBOX_WGS84[0], BBOX_WGS84[3], BBOX_WGS84[2]
-    query = f'[out:json][timeout:240];way["highway"]({s},{w},{n},{e});out geom tags;'
-    r = requests.post(OVERPASS, data={"data": query}, headers={"User-Agent": UA}, timeout=300)
-    r.raise_for_status()
-    out.write_bytes(r.content)
+    ways = {}
+    for w, s, e, n in tiles(BBOX_WGS84):
+        data = overpass(f'[out:json][timeout:300];way["highway"]({s},{w},{n},{e});out geom tags;')
+        for element in data["elements"]:
+            ways[element["id"]] = element
+        print(f"  roads tile ({w:.2f},{s:.2f},{e:.2f},{n:.2f}): {len(data['elements'])} ways")
+    out.write_text(json.dumps({"elements": list(ways.values())}))
+    return out
+
+
+def fetch_facilities():
+    """OSM hospital, clinic and doctors features in the analysis area, saved as a frozen snapshot.
+
+    The snapshot lives in data/raw/ and is committed, because Overpass results change over time.
+    """
+    out = ROOT / "data" / "raw" / "health_facilities_osm_extended.geojson"
+    if out.exists():
+        return out
+    w, s, e, n = BBOX_WGS84
+    query = (
+        f"[out:json][timeout:300];("
+        f'nwr["amenity"~"hospital|clinic|doctors"]({s},{w},{n},{e});'
+        f'nwr["healthcare"~"hospital|clinic|centre"]({s},{w},{n},{e});'
+        f");out center tags;"
+    )
+    features = []
+    for element in overpass(query)["elements"]:
+        centre = element.get("center") or {"lat": element.get("lat"), "lon": element.get("lon")}
+        tags = element.get("tags", {})
+        props = {"osm_type": element["type"], "osm_id": element["id"]}
+        keep = ("amenity", "healthcare", "name", "name:en", "name:bn", "operator")
+        props.update({k: tags[k] for k in keep if k in tags})
+        features.append({"type": "Feature", "properties": props,
+                         "geometry": {"type": "Point", "coordinates": [centre["lon"], centre["lat"]]}})
+    features.sort(key=lambda f: f["properties"]["osm_id"])
+    collection = {"type": "FeatureCollection", "features": features}
+    out.write_text(json.dumps(collection, ensure_ascii=False, indent=1))
     return out
 
 
@@ -101,6 +153,8 @@ def main():
     CACHE.mkdir(parents=True, exist_ok=True)
     roads = fetch_roads()
     print("roads", roads.stat().st_size, "bytes,", len(json.loads(roads.read_text())["elements"]), "ways")
+    facilities = fetch_facilities()
+    print("facilities", len(json.loads(facilities.read_text())["features"]), "features")
     print("worldpop", fetch_worldpop().stat().st_size, "bytes")
     print("admin3", fetch_admin3().stat().st_size, "bytes")
     fetch_stac_mosaic(
