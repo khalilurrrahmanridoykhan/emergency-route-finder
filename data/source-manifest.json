@@ -52,15 +52,6 @@
       "retrieved": "2026-09-16 (in source repo), copied 2026-09-20"
     },
     {
-      "path": "data/raw/health_facilities_wide_osm_2026-09-20.geojson",
-      "sha256": "ac41e7d9b016ee353bc9c61ba27de6d065c4277178874ea1f13ab7c92eb525c5",
-      "bytes": 13729,
-      "description": "47 OSM hospital/clinic/doctors features in a wider box (90.95,24.4,91.75,25.2), to show which higher-level facilities lie outside the original area",
-      "source": "OpenStreetMap contributors via Overpass API; query in scripts/queries/health_facilities_wide.overpassql",
-      "licence": "ODbL 1.0",
-      "retrieved": "2026-09-20"
-    },
-    {
       "path": "data/raw/q3_population_by_upazila.csv",
       "sha256": "17c894b96b996ab9c7a8f2d7ee055051e4c741110185620814d3622e74725dc8",
       "bytes": 415,
@@ -68,17 +59,26 @@
       "source": "sunamganj-flood-accessibility-gis, data/processed/q3_population_by_upazila.csv (WorldPop, OSM, Sentinel-1 flood layer)",
       "licence": "Derived from WorldPop CC BY 4.0, OSM ODbL",
       "retrieved": "2026-09-20"
+    },
+    {
+      "path": "data/raw/health_facilities_osm_extended.geojson",
+      "sha256": "271b19c1a2accc0df39cbd769c32f7d45fffd38535aa822af451797e7902c1b6",
+      "bytes": 65824,
+      "description": "221 OSM hospital, clinic and doctors features in the analysis area (frozen snapshot); classified and de-duplicated by scripts/prepare_accessmod_inputs.py",
+      "source": "OpenStreetMap contributors via Overpass API; query in scripts/fetch_inputs.py",
+      "licence": "ODbL 1.0",
+      "retrieved": "2026-09-21"
     }
   ],
   "fetched_inputs_not_committed": [
     {
       "path": "data/cache/osm_roads_wide.json",
-      "sha256": "fb0bf5a042bef45f16627127403de827e52ac878b87bfe7693f612e3770594ef",
-      "bytes": 33375253,
-      "description": "All OSM highway ways in the wider box (33,229 ways)",
-      "source": "OpenStreetMap contributors via Overpass API; script scripts/fetch_inputs.py",
+      "sha256": "52e5ba4902c8919d13c9b097762a21265543f1ba21ed68bea1c2445a3c01da98",
+      "bytes": 62359589,
+      "description": "All OSM highway ways in the analysis area (73,559 ways, fetched in 6 tiles)",
+      "source": "OpenStreetMap contributors via Overpass API; scripts/fetch_inputs.py",
       "licence": "ODbL 1.0",
-      "retrieved": "2026-09-20"
+      "retrieved": "2026-09-21"
     },
     {
       "path": "data/cache/bgd_ppp_2020_constrained.tif",
@@ -87,51 +87,61 @@
       "description": "WorldPop 2020 constrained population, Bangladesh",
       "source": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/BGD/bgd_ppp_2020_constrained.tif",
       "licence": "CC BY 4.0",
-      "retrieved": "2026-09-20"
+      "retrieved": "2026-09-21"
     },
     {
       "path": "data/cache/worldcover_wide_4326.tif",
-      "sha256": "7b9f566f6e9ffc6c47918e5a40bdae7927922b3a00ab1003616ca8e2c4f022be",
-      "bytes": 5747158,
-      "description": "ESA WorldCover 2021 v2.0.0 land cover, wider box",
+      "sha256": "406020eef1127f031254dc3523b29871d0c4a132c04368a81ecf2441951c9909",
+      "bytes": 13092318,
+      "description": "ESA WorldCover 2021 v2.0.0 land cover, analysis area",
       "source": "Microsoft Planetary Computer STAC, collection esa-worldcover",
       "licence": "CC BY 4.0",
-      "retrieved": "2026-09-20"
+      "retrieved": "2026-09-21"
     },
     {
       "path": "data/cache/dem_wide_4326.tif",
-      "sha256": "66d12cbb331c8e6b5bf87a4aa60b9224a737d27b2a4f4d136375e7745473ee6a",
-      "bytes": 27717392,
-      "description": "Copernicus DEM GLO-30, wider box",
+      "sha256": "4223179372fbfc59bf20d27ab138dd558aee98ee973276050891b1a728744c5b",
+      "bytes": 70983630,
+      "description": "Copernicus DEM GLO-30, analysis area",
       "source": "Microsoft Planetary Computer STAC, collection cop-dem-glo-30",
       "licence": "Copernicus DEM licence (free, attribution required)",
-      "retrieved": "2026-09-20"
+      "retrieved": "2026-09-21"
     },
     {
       "path": "data/cache/bgd_adm3_wide.geojson",
-      "sha256": "e0572186a545f76755a77eed52d45f826fc6d3587e16d0fdab78cc8e9e2c7699",
-      "bytes": 4110162,
-      "description": "Upazila (ADM3) boundaries with official P-codes for the 37 upazilas in the wider box",
-      "source": "HDX cod-ab-bgd (BBS/ITOS via UNOCHA ROAP), shapefile resource, clipped to the wide box",
+      "sha256": "378eb960b54c9e3e7914ecd0432a0f71677c13d258c256393f6fd64fc13a8c62",
+      "bytes": 7771235,
+      "description": "Upazila (ADM3) boundaries with official P-codes for the 76 upazilas intersecting the analysis area",
+      "source": "HDX cod-ab-bgd (BBS/ITOS via UNOCHA ROAP), shapefile resource",
       "licence": "CC BY-IGO",
-      "retrieved": "2026-09-20"
+      "retrieved": "2026-09-21"
+    },
+    {
+      "path": "data/cache/bgd_admpop_adm3_2022.csv",
+      "sha256": "998bee25fa536ca0cb0a5e2bbc88b9dd929970fb08e4c5283131bf3e8af5399c",
+      "bytes": 200682,
+      "description": "2022 census population by upazila, used only to check WorldPop",
+      "source": "HDX cod-ps-bgd, bgd_admpop_adm3_2022.csv",
+      "licence": "CC BY-IGO",
+      "retrieved": "2026-09-21"
     }
   ],
   "analysis_grid": {
     "crs": "EPSG:32646",
     "resolution_m": 100,
-    "wide_bbox_wgs84": [
-      90.95,
-      24.4,
-      91.75,
+    "bbox_wgs84": [
+      90.6,
+      24.05,
+      92.0,
       25.2
     ],
-    "note": "The grid is the largest UTM rectangle inside the wide box (see scripts/grid.py)"
+    "cells": "1401 x 1255",
+    "note": "The grid is the largest UTM rectangle inside the box (scripts/grid.py). Phase E3b widened it from (90.95, 24.4, 91.75, 25.2)."
   },
   "generated_not_committed": [
     {
       "path": "data/interim/flood/flood_<date>.tif, coverage_<date>.tif",
-      "description": "Newly flooded land (20 m, EPSG:32646) and the area observed on both dates, from Sentinel-1 RTC, dates 2026-07-08 and 2026-07-13 with 2026-06-19 as before",
+      "description": "Newly flooded land over the analysis area (20 m, EPSG:32646) and the area observed on both dates, from Sentinel-1 RTC, dates 2026-07-08 and 2026-07-13 with 2026-06-19 as before",
       "source": "Microsoft Planetary Computer, collection sentinel-1-rtc; scripts/build_flood_extent.py",
       "licence": "Copernicus Sentinel data, free, full and open access; derived layer"
     }
