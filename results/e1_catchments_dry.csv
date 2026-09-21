@@ -1,36 +1,128 @@
 cat,name,amenity,cells,population,mean_minutes
-26,Mohanganj Upazila Health Complex,hospital,98194,620268,79.6
-20,Dighalbak Union Family Clinic & Health Center,hospital,65755,611418,46.3
-21,Dowarbazar Upazila Health Complex,hospital,43240,452707,41.0
-31,Nabiganj Upazila Health Complex,hospital,37719,322166,39.2
-1,koitok hospital,hospital,30659,313837,31.0
-18,Jagannathpur Upazila Health Complex,hospital,40605,303780,37.0
-22,Sunamganj General Hospital,hospital,18402,288192,30.1
-14,Achanpur community clinic,clinic,29054,235066,41.9
-24,OSM 2332872329 (bangla name),hospital,17106,207000,29.5
-27,Bishwamvarpur Upazila Health Complex,hospital,17314,203169,31.2
-29,OSM 2332892995 (bangla name),hospital,29081,159374,49.4
-28,Ajmiriganj Upazila Health Complex,hospital,19038,158574,54.7
-30,Khaled General Hospital,hospital,18850,125964,33.4
-35,OSM 9916643514 (unnamed),hospital,13694,109550,34.7
-19,Jamalganj Upazila Health Complex,hospital,15236,101961,46.4
-17,Mithamoin Upazila Health Complex,hospital,19710,93888,76.1
-34,OSM 539361524 (unnamed),hospital,11275,82598,21.9
-3,Loularchar Commuinity Clinic,clinic,13030,80635,36.1
-25,Kamarkandi Community Clinic,clinic,5210,72452,23.1
-32,Sastho Poribar Kollan Kendro,clinic,4140,55738,19.7
-33,Community Clinic Puran Varanga,clinic,9811,49773,40.8
-23,Tahirpur Upazila Health Complex,hospital,15585,44508,48.0
-12,Srihile community clinic,clinic,10407,31604,42.0
-11,Uzangao community clinic,clinic,5532,28938,77.9
-9,Kashipur Community Clinic,clinic,4457,26220,21.2
-6,Sreepur Health Complex,clinic,11279,26112,50.7
-15,OSM 6574122409 (bangla name),hospital,9231,25920,31.8
-13,Adittopur community clinic,clinic,7918,20861,25.8
-10,Union health and family welfare center,hospital,11334,19681,42.9
-7,Vojendroganj up health and family welfare centre,hospital,1674,13840,16.0
-4,Shamarchar commuinity Clinic,clinic,3778,12634,38.1
-16,Mamudnagar Community clinic,clinic,1480,6681,39.5
-8,Uzanyarabad community clinic,clinic,1414,2586,12.7
-2,Atgao community clinic,clinic,2536,2295,22.6
-5,Kartikpur Commuinity Clinic,clinic,94,0,4.9
+129,OSM 5730090442 (unnamed),hospital,35220,700880,37.0
+29,Mohanganj Upazila Health Complex,hospital,68466,510187,39.7
+50,Dighalbak Union Family Clinic & Health Center,hospital,42757,457878,37.3
+46,Kuliarchar Upazila Health Complex,hospital,14720,419745,31.9
+84,Maa O Shishu Clinic,clinic,29711,398804,27.5
+15,Upazila Fenchugonj Health Complex,hospital,26452,384703,31.6
+22,Dowarbazar Upazila Health Complex,hospital,32257,355487,34.9
+18,Katiyadi Upazilla Health Complex,hospital,18311,351051,22.3
+34,Nasirnagar Upazila Health Complex,hospital,32829,340502,51.2
+38,Sarail Upazila Health Complex,hospital,20318,327891,42.7
+19,Nandail Upazilla Health Complex,hospital,24131,322598,29.8
+36,Madhabpur Upazila Health Complex,hospital,23285,315859,30.3
+103,Taj Hospital,hospital,18831,299251,18.5
+27,Jagannathpur Upazila Health Complex,hospital,40436,298846,37.0
+74,koitok hospital,hospital,27602,294703,28.0
+13,Companygonj Upazila Health Complex,hospital,34454,291777,31.2
+91,OSM 6062653342 (bangla name),hospital,14648,290750,24.1
+78,Mount Adora Hospital,hospital,14362,290276,27.7
+9,Sunamganj General Hospital,hospital,18402,288031,30.1
+24,Kalmakanda Upazila Health Complex,hospital,42094,273347,38.6
+40,Nabiganj Upazila Health Complex,hospital,31174,271297,37.1
+2,Johurul Islam Medical College and Hospital,hospital,15039,270771,26.6
+21,Pakundia Upazilla Health Complex,hospital,16261,265378,21.3
+107,Habiganj Hospital Pvt. Ltd.,hospital,27199,264637,61.9
+33,Rajanagar Upazila Health Complex,hospital,30442,262193,41.4
+87,Shahid Samsuddin Ahmed Hospital,hospital,5988,253202,25.5
+3,North East Medical College Hospital,hospital,16298,252610,25.4
+45,Tarail Upazila Health Complex l,hospital,29142,251933,70.1
+41,Kendua Upazila Health Complex,hospital,24806,242087,23.7
+42,Hossainpur Upazila Health Complex,hospital,14443,239447,27.2
+68,Achanpur community clinic,clinic,29052,234773,41.9
+100,Dipshikha Infertility Center,hospital,22926,233539,50.2
+43,Mithamoin Upazila Health Complex,hospital,50499,226813,68.9
+26,OSM 2332872329 (bangla name),hospital,20881,226449,27.3
+48,Belabo Upazila Health Complex,hospital,14662,225194,20.5
+131,Sylhet Imperial Hospital LTD.,hospital,8481,208321,22.2
+14,Bishwamvarpur Upazila Health Complex,hospital,17254,201217,31.2
+126,OSM 13854283001 (bangla name),clinic,8453,192424,26.0
+39,Ishwarganj Upazila Health Complex,hospital,14257,189454,31.2
+95,Madan Hospital,hospital,33033,178999,61.1
+123,OSM 13845729801 (bangla name),hospital,9727,171735,27.7
+76,Mission Hospital Netrokona,hospital,17645,168892,29.5
+94,Life Line Hospital,hospital,20401,163779,38.7
+114,Luskerpore Garden Hospital,hospital,36717,163769,61.7
+32,Kamalganj Upazila Health Complex,hospital,27309,159857,93.5
+17,Karimganj Upazilla Health Complex,hospital,11275,159233,40.8
+30,Ajmiriganj Upazila Health Complex,hospital,19095,158719,55.0
+72,Rezaul Haque Welfare Trust Hospital,hospital,9651,156498,19.6
+20,Nikli Upazilla Health Complex,hospital,17898,143837,36.0
+44,Atpara Upazila Health Complex,hospital,17804,143400,22.9
+51,Health & Family Wlfare Center,hospital,16051,139537,30.6
+101,Sharifpur Health Center,hospital,12198,134322,42.0
+31,Baniachang Upazila Health Complex,hospital,24069,131619,45.7
+90,Matri Mangal Hospital,clinic,8356,128073,28.5
+7,OSM 13846497403 (bangla name),hospital,5062,127006,44.0
+35,Sreemangal Upazila Health Complex,hospital,15734,126109,84.5
+80,Khaled General Hospital,hospital,18852,125920,33.4
+130,OSM 9916643514 (unnamed),hospital,13694,109529,34.7
+4,Habiganj Medical College,hospital,9632,106718,40.1
+49,Balaganj Upazila Health Complex,hospital,18577,105651,36.0
+69,Sreemangal Labour Hospital,hospital,10171,105372,40.6
+125,OSM 13854242601 (bangla name),clinic,4341,103390,20.4
+28,Jamalganj Upazila Health Complex,hospital,15234,101792,46.4
+16,Gowainghat Upazila Health Complex,hospital,18211,90930,35.2
+82,D.M Digilab,clinic,8071,88483,25.5
+128,OSM 539361524 (unnamed),hospital,11275,82536,21.9
+105,Mamun Private Hospital,hospital,5881,80650,27.6
+60,Loularchar Commuinity Clinic,clinic,13029,80642,36.1
+70,Broadbank Clinic Quatere,hospital,9353,72998,29.4
+57,Kamarkandi Community Clinic,clinic,4993,69328,22.6
+121,OSM 13844354801 (bangla name),hospital,1607,67218,16.7
+23,Durgapur Upazila Health Complex,hospital,6704,63022,30.1
+127,Parkview Medical College,hospital,562,60497,4.9
+102,Family Development Center,hospital,4854,59702,15.2
+98,Morder Diogonistik Centre,clinic,6270,57681,20.5
+52,Sastho Poribar Kollan Kendro,clinic,4140,55719,19.7
+71,talukder clinic,clinic,6918,53821,31.6
+75,SUST Medical Center,clinic,1333,51247,12.7
+58,Uzangao community clinic,clinic,7295,50942,104.1
+6,Jalalabad Ragib Rabeya Medical  College  & Hospital,hospital,478,50524,7.2
+56,Community Clinic Puran Varanga,clinic,9811,49934,40.8
+79,Surjomukhi General Hospital,hospital,6190,47769,32.8
+99,Mazumder Nursing Clinic,hospital,8182,46058,40.6
+25,Tahirpur Upazila Health Complex,hospital,14838,43517,46.3
+124,OSM 13849517401 (bangla name),clinic,1467,34592,15.7
+120,OSM 13844211901 (bangla name),hospital,1211,31950,21.8
+37,Madan Upazilla Health Complex,hospital,3253,31579,19.3
+66,Srihile community clinic,clinic,10405,31356,42.0
+11,Moulvibaza Sadar Hospital,hospital,2583,30547,35.5
+117,OSM 13066251917 (bangla name),hospital,2428,26471,18.3
+64,Kashipur Community Clinic,clinic,4457,26198,21.2
+47,OSM 6574122409 (bangla name),hospital,9231,25903,31.8
+115,Mount Adora Hospital,hospital,121,25743,3.2
+81,Tori Madokasokto Niramoy Kendro,clinic,2149,23085,17.5
+77,Dowbari Clinic,clinic,8809,22798,31.6
+10,Habiganj General Hospital,hospital,2900,22278,44.2
+67,Adittopur community clinic,clinic,7918,20760,25.8
+55,Union health and family welfare center,hospital,11339,19617,42.9
+89,IBN SINA Hospital,hospital,85,19222,1.8
+1,"M.A.G Osmani Medical College Hospital, Sylhet",hospital,228,17663,3.8
+53,Sreepur Health Complex,clinic,7085,16014,36.0
+54,Vojendroganj up health and family welfare centre,hospital,1671,13843,16.0
+5,Jalalabad Ragib-Rabeya Medical College and Hospital,hospital,134,12878,5.2
+61,Shamarchar commuinity Clinic,clinic,3779,12642,38.1
+88,Central Hospital,hospital,32,12184,1.3
+104,Aysha Medicare,clinic,33,11163,1.5
+85,Police Lines Hospital,hospital,66,10660,2.2
+92,Mohanagar Hospital,hospital,28,8731,1.5
+59,Mamudnagar Community clinic,clinic,1942,8457,42.5
+108,Oyesis Hospital,hospital,28,7190,1.6
+73,OSM 537079689 (bangla name),hospital,26,5804,1.7
+106,The Lab Aid Hospital,hospital,31,5209,1.5
+122,OSM 13845120302 (bangla name),clinic,115,5170,4.5
+96,Hazrat Sumaiya Hospital,hospital,71,4208,4.5
+111,Hossen Diagonestics Center,clinic,35,4207,1.7
+86,Trust Medical Services,hospital,22,3684,1.8
+63,Uzanyarabad community clinic,clinic,1414,2592,12.7
+93,Life Care Pvt Hospital,hospital,19,2489,1.7
+65,Atgao community clinic,clinic,2536,2303,22.6
+97,Surjer Hasi Clinic,clinic,38,1947,2.6
+12,Netrokona Sadar Hospital,hospital,8,1416,1.1
+112,Medinova Health Care,clinic,16,1149,1.2
+109,Digilap Diagonestics Center,clinic,6,593,0.8
+110,Medilab Health Center,clinic,2,340,0.5
+118,OSM 13844043201 (bangla name),hospital,2,171,1.0
+8,OSM 8311261 (bangla name),hospital,1,86,0.0
+62,Kartikpur Commuinity Clinic,clinic,94,0,4.9
