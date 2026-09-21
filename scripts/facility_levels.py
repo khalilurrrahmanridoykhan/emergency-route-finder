@@ -7,6 +7,7 @@ from pathlib import Path
 
 CONFIG = Path(__file__).resolve().parent.parent / "config"
 UNCLASSIFIED = "private_or_unclassified"
+EXCLUDED = "excluded"  # not a place that treats these emergencies; dropped from the facility list
 
 
 def _read(name):
@@ -33,7 +34,7 @@ def classify(osm_id, name, name_orig, rules=None, overrides=None):
     overrides = load_overrides() if overrides is None else overrides
     if str(osm_id) in overrides:
         return overrides[str(osm_id)], "override"
-    text = f"{name or ''} {name_orig or ''}".lower()
+    text = " ".join(f"{name or ''} {name_orig or ''}".lower().split())  # lower case, single spaces
     for keyword, level in rules:
         if keyword in text:
             return level, f"rule: {keyword}"
