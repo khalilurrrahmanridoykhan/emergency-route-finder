@@ -9,6 +9,7 @@ ends with a "Done when" gate.
 | E1 | AccessMod setup and dry-season baseline (includes an output spike) | done |
 | E2 | Flood scenario: flood extent, flooded roads, boat mode | done |
 | E3 | Emergency types and the facility capability model | done |
+| E3b | Extend the analysis area with a facility buffer, check the population layer | done |
 | E4 | Actual paths (AccessMod referral per pair, `r.drain` as alternative) and OSRM cross-check | not started |
 | E5 | The `route(point, emergency, season)` function | not started |
 | E6 | Click-a-point web map | not started |
@@ -56,9 +57,11 @@ season with only the qualifying facilities selected. Target times now cite sourc
 qualifying facilities under the current table, and a strict antivenom assumption cuts 2-hour coverage
 from 94.3% to 56.1%.
 
-**Open before relying on these numbers:** extend the analysis area with a facility buffer, because the
-Habiganj, Sylhet, Moulvibazar, Netrokona and Kishoreganj hospitals lie just outside the current box
-(`docs/data-gaps.md`, item 5).
+### E3b: Extend the analysis area
+**Done.** The area now reaches west to 90.60, east to 92.00 and south to 24.05, taking in the
+neighbouring district hospitals; roads, land cover, DEM, population, facilities and flood mapping were
+refetched and E1 to E3 were rerun (`RESULTS.md` compares before and after). Two facility errors were
+fixed on the way (duplicate filter, laboratories), and WorldPop was checked against the 2022 census.
 
 ### E4: Actual paths and cross-check
 Complete paths from AccessMod's referral analysis, one run per origin-destination pair (start
