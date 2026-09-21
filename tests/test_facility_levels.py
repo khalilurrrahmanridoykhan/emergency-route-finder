@@ -2,7 +2,7 @@
 import csv
 from pathlib import Path
 
-from facility_levels import UNCLASSIFIED, classify, load_capabilities, qualifies
+from facility_levels import EXCLUDED, UNCLASSIFIED, classify, load_capabilities, qualifies
 
 CONFIG = Path(__file__).resolve().parent.parent / "config"
 
@@ -25,8 +25,20 @@ def test_override_beats_rules_and_unknown_names_are_unclassified():
     assert classify("998", "", "")[0] == UNCLASSIFIED
 
 
+def test_spelling_variants_and_word_orders_of_health_complexes():
+    assert classify("1", "Nikli Upazilla Health Complex", "")[0] == "upazila_health_complex"
+    assert classify("2", "Upazila Fenchugonj Health Complex", "")[0] == "upazila_health_complex"
+    assert classify("3", "Health & Family Wlfare Center", "")[0] == "union_health_family_welfare_centre"
+
+
+def test_laboratories_and_specialist_hospitals_are_excluded():
+    assert classify("1", "Apollo Diagonostic Center", "")[0] == EXCLUDED
+    assert classify("2", "Jalalabad Eye Hospital", "")[0] == EXCLUDED
+    assert classify("3", "Sylhet Pet Care", "")[0] == EXCLUDED
+
+
 def test_every_level_in_rules_and_overrides_has_a_capability_row():
-    levels = set(load_capabilities())
+    levels = set(load_capabilities()) | {EXCLUDED}
     with open(CONFIG / "facility_rules.csv", newline="", encoding="utf-8") as f:
         assert {r["level"] for r in csv.DictReader(f)} <= levels
     with open(CONFIG / "facility_overrides.csv", newline="", encoding="utf-8") as f:

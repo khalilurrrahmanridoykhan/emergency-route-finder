@@ -4,3 +4,5 @@ osm_id,level,reason
 5781372419,union_health_family_welfare_centre,"'Sastho Poribar Kollan Kendro' is the Bangla term for a health and family welfare centre"
 2616255489,private_or_unclassified,"'Khaled General Hospital' looks like a private hospital; capabilities unknown"
 539203370,private_or_unclassified,"'koitok hospital' looks like a private hospital; capabilities unknown"
+8311261,district_general_hospital,"OSM entry 'Kishoreganj General Hospital' with Bangla 'সদর' (Sadar); assumed to be the Kishoreganj district hospital"
+2332892996,district_general_hospital,"OSM entry 'Habiganj General Hospital' with Bangla 'সরকারী হাসপাতাল' (government hospital); assumed to be the Habiganj district hospital"

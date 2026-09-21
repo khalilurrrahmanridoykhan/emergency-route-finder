@@ -153,10 +153,15 @@ def main():
     change = ref["dry"].merge(ref["flood0708"], on=["from__cat", "from__name"], suffixes=("_dry", "_flood"))
     change["changed_destination"] = change["to__cat_dry"] != change["to__cat_flood"]
     change["extra_minutes"] = change["time_m_flood"] - change["time_m_dry"]
+    # A different destination at the same travel time is a tie between neighbouring hospitals, not a re-route.
+    change["rerouted"] = change["changed_destination"] & (change["extra_minutes"] > 0)
     change.to_csv(RESULTS / "e2_referral_change.csv", index=False)
-    print("referral: clinics whose nearest hospital-type destination changes:",
-          int(change["changed_destination"].sum()), "of", len(change),
-          "| median extra minutes", float(change["extra_minutes"].median()))
+    print(
+        f"referral: {len(change)} clinics; {int((change['extra_minutes'] > 0).sum())} slower in the flood; "
+        f"{int(change['rerouted'].sum())} re-routed; "
+        f"{int((change['changed_destination'] & (change['extra_minutes'] == 0)).sum())} destination ties; "
+        f"max extra minutes {int(change['extra_minutes'].max())}"
+    )
 
     x0, y1 = transform.c, transform.f
     extent = (x0, x0 + pop.shape[1] * transform.a, y1 + pop.shape[0] * transform.e, y1)

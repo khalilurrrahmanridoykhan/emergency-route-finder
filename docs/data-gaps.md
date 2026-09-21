@@ -38,13 +38,22 @@ scene still misses the east, so results built on it understate flooding there.
 Land cover (ESA WorldCover 2021) and a DEM (Copernicus GLO-30) are now fetched by
 `scripts/fetch_inputs.py`. Water is the WorldCover water class, one 2021 snapshot.
 
-## 5. Higher-level facilities just outside the wider box (found in Phase E3)
+## 5. Higher-level facilities just outside the earlier box (resolved in Phase E3b)
 
-Only one district-level hospital (Sunamganj General Hospital) lies inside the wider box. The Habiganj
-district hospital sits just south of it, and the Sylhet, Moulvibazar, Netrokona and Kishoreganj
-hospitals just outside its other edges. Travel to them is not modelled, which lowers coverage near
-the edges and matters most for emergencies that need a district hospital. Fix: extend the grid
-with a facility buffer (roads, land cover, DEM, population and flood mapping all follow).
+Only one district-level hospital lay inside the earlier box. The analysis area now runs from
+(90.60, 24.05) to (92.00, 25.20) and includes the Habiganj, Sylhet, Moulvibazar, Netrokona and
+Kishoreganj hospitals (5 district hospitals and 8 medical college hospitals in total). Facilities
+beyond the new edge, mainly to the south-west, are still not modelled.
+
+## 6. Remaining gaps after Phase E3b
+
+- **Capabilities are guessed.** 62 of the 131 facilities are private or unclassified, and 5 district
+  hospital labels rest on overrides that read OSM names. A DGHS facility registry match would replace
+  the guesses.
+- **Flood coverage.** Sentinel-1 covers 72.8% of the area on 2026-07-08 and 33.9% on 2026-07-13;
+  unobserved cells count as not flooded. A second orbit or date could fill the west and south.
+- **Population layer.** Upazila totals match the 2022 census within 10% for 45 of 70 upazilas, with
+  large under-counts in some cities and haor upazilas; see `RESULTS.md`.
 
 ## Decision taken in Phase E1
 

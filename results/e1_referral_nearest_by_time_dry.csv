@@ -1,16 +1,52 @@
 from__cat,from__name,to__cat,to__name,distance_km,time_m
-2,Atgao community clinic,10,Union health and family welfare center,4,14
-3,Loularchar Commuinity Clinic,7,Vojendroganj up health and family welfare centre,4,14
-4,Shamarchar commuinity Clinic,7,Vojendroganj up health and family welfare centre,2,6
-5,Kartikpur Commuinity Clinic,7,Vojendroganj up health and family welfare centre,4,13
-6,Sreepur Health Complex,23,Tahirpur Upazila Health Complex,12,45
-8,Uzanyarabad community clinic,10,Union health and family welfare center,6,22
-9,Kashipur Community Clinic,7,Vojendroganj up health and family welfare centre,4,16
-11,Uzangao community clinic,17,Mithamoin Upazila Health Complex,13,118
-12,Srihile community clinic,28,Ajmiriganj Upazila Health Complex,6,26
-13,Adittopur community clinic,15,OSM 6574122409 (bangla name),13,39
-14,Achanpur community clinic,7,Vojendroganj up health and family welfare centre,16,59
-16,Mamudnagar Community clinic,17,Mithamoin Upazila Health Complex,12,90
-25,Kamarkandi Community Clinic,23,Tahirpur Upazila Health Complex,10,35
-32,Sastho Poribar Kollan Kendro,23,Tahirpur Upazila Health Complex,8,22
-33,Community Clinic Puran Varanga,23,Tahirpur Upazila Health Complex,9,27
+52,Sastho Poribar Kollan Kendro,25,Tahirpur Upazila Health Complex,8,22
+53,Sreepur Health Complex,25,Tahirpur Upazila Health Complex,12,45
+56,Community Clinic Puran Varanga,25,Tahirpur Upazila Health Complex,9,27
+57,Kamarkandi Community Clinic,25,Tahirpur Upazila Health Complex,10,35
+58,Uzangao community clinic,43,Mithamoin Upazila Health Complex,13,118
+59,Mamudnagar Community clinic,43,Mithamoin Upazila Health Complex,11,75
+60,Loularchar Commuinity Clinic,54,Vojendroganj up health and family welfare centre,4,14
+61,Shamarchar commuinity Clinic,54,Vojendroganj up health and family welfare centre,2,6
+62,Kartikpur Commuinity Clinic,54,Vojendroganj up health and family welfare centre,4,13
+63,Uzanyarabad community clinic,55,Union health and family welfare center,6,22
+64,Kashipur Community Clinic,54,Vojendroganj up health and family welfare centre,4,16
+65,Atgao community clinic,55,Union health and family welfare center,4,14
+66,Srihile community clinic,30,Ajmiriganj Upazila Health Complex,6,26
+67,Adittopur community clinic,47,OSM 6574122409 (bangla name),13,39
+68,Achanpur community clinic,54,Vojendroganj up health and family welfare centre,16,59
+71,talukder clinic,23,Durgapur Upazila Health Complex,1,1
+75,SUST Medical Center,78,Mount Adora Hospital,3,7
+77,Dowbari Clinic,16,Gowainghat Upazila Health Complex,7,26
+81,Tori Madokasokto Niramoy Kendro,12,Netrokona Sadar Hospital,1,1
+82,D.M Digilab,76,Mission Hospital Netrokona,2,2
+83,Nurjahan Digilab,76,Mission Hospital Netrokona,2,2
+84,Maa O Shishu Clinic,12,Netrokona Sadar Hospital,2,3
+84,Maa O Shishu Clinic,76,Mission Hospital Netrokona,2,3
+90,Matri Mangal Hospital,11,Moulvibaza Sadar Hospital,2,3
+90,Matri Mangal Hospital,93,Life Care Pvt Hospital,2,3
+90,Matri Mangal Hospital,94,Life Line Hospital,1,3
+97,Surjer Hasi Clinic,95,Madan Hospital,1,1
+98,Morder Diogonistik Centre,37,Madan Upazilla Health Complex,1,1
+104,Aysha Medicare,73,OSM 537079689 (bangla name),1,1
+109,Digilap Diagonestics Center,120,OSM 13844211901 (bangla name),1,1
+109,Digilap Diagonestics Center,121,OSM 13844354801 (bangla name),1,1
+110,Medilab Health Center,121,OSM 13844354801 (bangla name),1,1
+111,Hossen Diagonestics Center,118,OSM 13844043201 (bangla name),1,2
+111,Hossen Diagonestics Center,119,OSM 13844048101 (bangla name),1,2
+111,Hossen Diagonestics Center,120,OSM 13844211901 (bangla name),1,2
+111,Hossen Diagonestics Center,121,OSM 13844354801 (bangla name),1,2
+111,Hossen Diagonestics Center,123,OSM 13845729801 (bangla name),1,2
+112,Medinova Health Care,118,OSM 13844043201 (bangla name),1,1
+112,Medinova Health Care,119,OSM 13844048101 (bangla name),1,1
+112,Medinova Health Care,120,OSM 13844211901 (bangla name),1,1
+112,Medinova Health Care,123,OSM 13845729801 (bangla name),1,1
+113,The Medipath Health Care,8,OSM 8311261 (bangla name),1,0
+122,OSM 13845120302 (bangla name),120,OSM 13844211901 (bangla name),1,1
+122,OSM 13845120302 (bangla name),121,OSM 13844354801 (bangla name),1,1
+124,OSM 13849517401 (bangla name),121,OSM 13844354801 (bangla name),1,1
+125,OSM 13854242601 (bangla name),121,OSM 13844354801 (bangla name),2,3
+126,OSM 13854283001 (bangla name),118,OSM 13844043201 (bangla name),2,4
+126,OSM 13854283001 (bangla name),119,OSM 13844048101 (bangla name),2,4
+126,OSM 13854283001 (bangla name),120,OSM 13844211901 (bangla name),2,4
+126,OSM 13854283001 (bangla name),121,OSM 13844354801 (bangla name),2,4
+126,OSM 13854283001 (bangla name),123,OSM 13845729801 (bangla name),3,4

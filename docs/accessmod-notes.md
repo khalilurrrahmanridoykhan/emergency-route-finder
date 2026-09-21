@@ -73,3 +73,9 @@ via Colima with 4 CPUs and about 5.8 GB memory) in Phase E1. The scripts are in
   start-up cost of a container per run: 21 analyses in about 2 minutes.
 - Facility levels are stored in the facility shapefile (`level`), so the config builder needs nothing
   beyond the shapefile and `config/`.
+
+## Larger grid (Phase E3b)
+
+- The extended area is 1,401 x 1,255 cells (1.76 million). In the same 5.8 GB Docker VM an accessibility
+  run takes about 4 s, a referral run for 115 origins takes about 100 s, and the whole `make e3`
+  pipeline (21 analyses) takes about 7 minutes. No memory changes were needed.

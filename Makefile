@@ -1,4 +1,4 @@
-.PHONY: setup data e1 e2 e3 test lint
+.PHONY: setup data e1 e2 e3 population test lint
 
 setup:
 	python3 -m venv .venv
@@ -28,6 +28,10 @@ e3:
 	.venv/bin/python scripts/summarize_e1.py
 	.venv/bin/python scripts/summarize_e2.py
 	.venv/bin/python scripts/summarize_e3.py
+
+# Check WorldPop against the 2022 census (run after e3)
+population:
+	.venv/bin/python scripts/check_population.py
 
 test:
 	.venv/bin/python -m pytest -q

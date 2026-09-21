@@ -1,11 +1,12 @@
-"""Shared analysis grid: the wider area in UTM zone 46N at 100 m."""
+"""Shared analysis grid: the analysis area in UTM zone 46N at 100 m."""
 from math import ceil, floor
 
 from pyproj import Transformer
 from rasterio.transform import from_origin
 
-# Wider area for facilities and roads (see docs/data-gaps.md).
-BBOX_WGS84 = (90.95, 24.4, 91.75, 25.2)
+# Analysis area. Phase E3b widened it from (90.95, 24.4, 91.75, 25.2) so that the district hospitals of
+# Habiganj, Sylhet, Moulvibazar, Netrokona and Kishoreganj are inside it (see docs/data-gaps.md).
+BBOX_WGS84 = (90.60, 24.05, 92.00, 25.20)
 CRS = "EPSG:32646"
 RES = 100.0
 

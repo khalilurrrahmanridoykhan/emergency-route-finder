@@ -1,12 +1,24 @@
 priority,match,level,note
-1,medical college,medical_college_hospital,name keyword
-2,sadar hospital,district_general_hospital,name keyword
-3,district hospital,district_general_hospital,name keyword
-4,উপজেলা স্বাস্থ্য কমপ্লেক্স,upazila_health_complex,Bangla name keyword
-5,ঊপজেলা স্বাস্থ্য কমপ্লেক্স,upazila_health_complex,Bangla name keyword (variant spelling seen in OSM)
-6,upazila health complex,upazila_health_complex,name keyword
-7,family welfare,union_health_family_welfare_centre,name keyword
-8,union,union_health_family_welfare_centre,name keyword
-9,community clinic,community_clinic,name keyword
-10,commuinity clinic,community_clinic,name keyword (misspelling seen in OSM)
-11,community health,community_clinic,name keyword
+1,diagnostic,excluded,laboratory or diagnostic centre; not a place that treats emergencies
+2,diagonostic,excluded,misspelling of diagnostic seen in OSM
+3,pathology,excluded,laboratory
+4,pet care,excluded,veterinary
+5,পশু,excluded,Bangla word for animal (veterinary)
+6,eye hospital,excluded,specialist hospital that does not treat these emergencies
+7,চক্ষু,excluded,Bangla word for eye (eye hospital)
+8,imaging,excluded,imaging centre
+9,medical college,medical_college_hospital,name keyword
+10,sadar hospital,district_general_hospital,name keyword
+11,district hospital,district_general_hospital,name keyword
+12,উপজেলা স্বাস্থ্য কমপ্লেক্স,upazila_health_complex,Bangla name keyword
+13,ঊপজেলা স্বাস্থ্য কমপ্লেক্স,upazila_health_complex,Bangla name keyword (variant spelling seen in OSM)
+14,upazila health complex,upazila_health_complex,name keyword
+15,upazilla health complex,upazila_health_complex,spelling variant seen in OSM
+16,thana health complex,upazila_health_complex,older name of an Upazila Health Complex
+17,family welfare,union_health_family_welfare_centre,name keyword
+18,family wlfare,union_health_family_welfare_centre,misspelling seen in OSM
+19,union,union_health_family_welfare_centre,name keyword
+20,community clinic,community_clinic,name keyword
+21,commuinity clinic,community_clinic,misspelling seen in OSM
+22,community health,community_clinic,name keyword
+23,health complex,upazila_health_complex,generic fallback (catches other word orders such as "Upazila X Health Complex")

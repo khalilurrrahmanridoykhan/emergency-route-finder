@@ -1,0 +1,3625 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "relation",
+    "osm_id": 8311261,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Kishoreganj General Hospital কিশোরগঞ্জ সদর হাসপাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7760423,
+     24.4433482
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 224494108,
+    "amenity": "hospital",
+    "name": "Sreemangal Labour Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7380859,
+     24.3323592
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 265945386,
+    "amenity": "hospital",
+    "name": "M.A.G Osmani Medical College Hospital, Sylhet"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8532444,
+     24.9003678
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 353057753,
+    "amenity": "hospital",
+    "name": "Broadbank Clinic Quatere"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.6735831,
+     25.1088768
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 356065605,
+    "amenity": "hospital",
+    "name": "Super Diagnostic & Health Care Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.6746811,
+     25.1236486
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 356335402,
+    "amenity": "clinic",
+    "name": "talukder clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.6781457,
+     25.1269228
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 368010825,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "M.A.G Osmani Medical College Hospital, Sylhet"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8535274,
+     24.9022319
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 420113391,
+    "amenity": "hospital",
+    "name": "Rezaul Haque Welfare Trust Hospital",
+    "operator": "Rezaul Haque Welfare Trust"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.658349,
+     24.1581813
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 521300782,
+    "amenity": "hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8833856,
+     24.8866436
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 533504783,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Abedin Hospital (Pvt.)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9747891,
+     24.055768
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 537079689,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Adhunik Hospital আধুনিক হাসপাতালের"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8619681,
+     24.8976687
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 539203370,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "koitok hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.5658573,
+     24.9284426
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 539361524,
+    "amenity": "hospital",
+    "healthcare": "hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.3971794,
+     24.9451998
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 539407026,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "SUST Medical Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8335079,
+     24.923079
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 558368063,
+    "amenity": "hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7565772,
+     25.0856259
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 558368065,
+    "amenity": "hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7566595,
+     25.0853996
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 558368067,
+    "amenity": "hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7564805,
+     25.0854159
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 558368069,
+    "amenity": "hospital",
+    "name": "Companygonj Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7566201,
+     25.0853957
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 561589126,
+    "amenity": "hospital",
+    "name": "Maizbag Community Clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.6109767,
+     24.630161
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 604317881,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Mission Hospital Netrokona"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7287282,
+     24.8688878
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 656888387,
+    "amenity": "hospital",
+    "name": "Johurul Islam Medical College and Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9175834,
+     24.2003058
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 718330112,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Dowbari Clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.9858052,
+     25.0439065
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 795286625,
+    "amenity": "hospital",
+    "name": "Dighalbak Union Family Clinic & Health Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.6148309,
+     24.6351837
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 974896494,
+    "amenity": "hospital",
+    "name": "Mount Adora Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8441261,
+     24.9095639
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 986184679,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "North East Medical College Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8566197,
+     24.8647455
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 1075303043,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Bishwamvarpur Upazila Health Complex",
+    "operator": "Upazila Health"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.3034775,
+     25.1015364
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 1075303059,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Bishwamvpur Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.3035204,
+     25.1014827
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 1085835916,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Upazila Fenchugonj Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.9378608,
+     24.6977654
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 1085835917,
+    "amenity": "hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.937564,
+     24.6975948
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 1093202023,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Gowainghat Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.9799013,
+     25.0893799
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 1350001389,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Surjomukhi General Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.414676,
+     24.3715707
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 1350003313,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Habiganj Medical College"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.4170609,
+     24.3735796
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "way",
+    "osm_id": 1352899133,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "জালালাবাদ রাগিব-রাবেয়া মেডিকেল কলেজ এন্ড হাসপাতাল",
+    "name:en": "Jalalabad Ragib-Rabeya Medical College and Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8520661,
+     24.9132782
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332679003,
+    "amenity": "hospital",
+    "name": "Karimganj Upazilla Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.8718753,
+     24.4657899
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332679004,
+    "amenity": "hospital",
+    "name": "Katiyadi Upazilla Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7978091,
+     24.2443695
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332679006,
+    "amenity": "hospital",
+    "name": "Nandail Upazilla Health Complex",
+    "operator": "Government"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.6902107,
+     24.5661403
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332679007,
+    "amenity": "hospital",
+    "name": "Nikli Upazilla Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9336303,
+     24.3258926
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332679008,
+    "amenity": "hospital",
+    "name": "Pakundia Upazilla Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.6794941,
+     24.3293628
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332856859,
+    "amenity": "hospital",
+    "healthcare": "hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.3039972,
+     25.1014026
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332856867,
+    "amenity": "hospital",
+    "name": "Companygonj Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7554136,
+     25.0854567
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332856879,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Dowarbazar Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.5678367,
+     25.0429618
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332856882,
+    "amenity": "hospital",
+    "name": "Durgapur Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.6780243,
+     25.1279521
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332856898,
+    "amenity": "hospital",
+    "name": "Kalmakanda Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.8931413,
+     25.074178
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332856927,
+    "amenity": "hospital",
+    "name": "Sunamganj General Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.410647,
+     25.0651231
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332856931,
+    "amenity": "hospital",
+    "name": "Tahirpur Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.1854831,
+     25.0979172
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332872329,
+    "amenity": "hospital",
+    "name": "বিশ্বনাথ উপজেলা স্বাস্থ্য কমপ্লেক্স",
+    "name:bn": "বিশ্বনাথ উপজেলা স্বাস্থ্য কমপ্লেক্স"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7257035,
+     24.8405595
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332872337,
+    "amenity": "hospital",
+    "name": "Jagannathpur Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.5631588,
+     24.7794347
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332872344,
+    "amenity": "hospital",
+    "name": "Jamalganj Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.2356038,
+     24.9987899
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332872347,
+    "amenity": "hospital",
+    "name": "Mohanganj Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9820953,
+     24.8792089
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332892994,
+    "amenity": "hospital",
+    "name": "Ajmiriganj Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.2355889,
+     24.5515794
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332892995,
+    "amenity": "hospital",
+    "name": "বানিয়াচং ঊপজেলা স্বাস্থ্য কমপ্লেক্স",
+    "name:en": "Baniachang Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.363971,
+     24.5043956
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332892996,
+    "amenity": "hospital",
+    "name": "Habiganj General Hospital",
+    "name:bn": "হবিগঞ্জ সরকারী হাসপাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.4176425,
+     24.3735429
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332892997,
+    "amenity": "hospital",
+    "name": "Kamalganj Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8570806,
+     24.3659437
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332892999,
+    "amenity": "hospital",
+    "name": "Moulvibaza Sadar Hospital",
+    "name:bn": "মৌলভীাজার সদর হাসাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7662744,
+     24.4811474
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332893000,
+    "amenity": "hospital",
+    "name": "Rajanagar Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8529606,
+     24.5277418
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332919089,
+    "amenity": "hospital",
+    "name": "Nasirnagar Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.1962986,
+     24.1940443
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2332919090,
+    "amenity": "hospital",
+    "name": "Sreemangal Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7364249,
+     24.300898
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2333151684,
+    "amenity": "hospital",
+    "name": "Madhabpur Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.2875089,
+     24.0971494
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 2616255489,
+    "amenity": "hospital",
+    "name": "Khaled General Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.4433542,
+     24.9218234
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3558445435,
+    "amenity": "clinic",
+    "name": "Diagonostic Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7338547,
+     24.8713797
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3558445437,
+    "amenity": "hospital",
+    "name": "Netrokona Sadar Hospital",
+    "operator": "Government"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7321918,
+     24.8717249
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3558445439,
+    "amenity": "clinic",
+    "name": "Tori Madokasokto Niramoy Kendro"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7341675,
+     24.8708332
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3559007759,
+    "amenity": "clinic",
+    "name": "Apollo Diagonostic Center",
+    "operator": "Private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7315758,
+     24.869447
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3559007771,
+    "amenity": "clinic",
+    "name": "Nabila Diagonostic Center",
+    "operator": "Private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7309338,
+     24.8712454
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3559007773,
+    "amenity": "clinic",
+    "name": "Nova Diagonostic Center",
+    "operator": "Private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7304793,
+     24.8713032
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3559112805,
+    "amenity": "clinic",
+    "name": "Al Raji Diagonostic center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7318334,
+     24.8710003
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3559113604,
+    "amenity": "hospital",
+    "name": "Madan Upazilla Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9453272,
+     24.7167996
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3559115596,
+    "amenity": "clinic",
+    "name": "Fatema Diagonostic Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7318495,
+     24.8708431
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3561656512,
+    "amenity": "clinic",
+    "name": "City Digital Diagonostic Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7312357,
+     24.8794752
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3561656513,
+    "amenity": "clinic",
+    "name": "D.M Digilab"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7307965,
+     24.8786202
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3561656520,
+    "amenity": "clinic",
+    "name": "Model Diagonostic Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7312161,
+     24.8796848
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3561656524,
+    "amenity": "hospital",
+    "name": "New Swadesh Hospital and Diagonostic Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7314299,
+     24.8793661
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3561656525,
+    "amenity": "clinic",
+    "name": "Nirapod Diagonostic Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7314073,
+     24.880044
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3561656526,
+    "amenity": "clinic",
+    "name": "Nurjahan Digilab"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7308304,
+     24.87864
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3561814428,
+    "amenity": "clinic",
+    "name": "Maa O Shishu Clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7315693,
+     24.8796536
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3702053369,
+    "amenity": "hospital",
+    "name": "Health & Family Wlfare Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.6728523,
+     25.106312
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3715173181,
+    "amenity": "doctors",
+    "name": "Square Hospital Consultancy & Diagnostic Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8513238,
+     24.8997786
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3715192060,
+    "amenity": "doctors",
+    "name": "Medinova medical services, Sylhet"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8551517,
+     24.8999637
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3715197651,
+    "amenity": "doctors",
+    "name": "Comfort medical services"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8561449,
+     24.8995029
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3715197755,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Police Lines Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8592555,
+     24.899578
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3715198432,
+    "amenity": "doctors",
+    "name": "Popular medical center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8572635,
+     24.8991767
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3715212193,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Trust Medical Services"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8601202,
+     24.8983946
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3720243035,
+    "amenity": "hospital",
+    "name": "Shahid Samsuddin Ahmed Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8673142,
+     24.8990649
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3720261994,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Central Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8709395,
+     24.8985678
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 3720274144,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "IBN SINA Hospital",
+    "operator": "Private"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8777267,
+     24.8918061
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 4710195981,
+    "amenity": "hospital",
+    "name": "Sarail Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.1182935,
+     24.0711405
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 4727903891,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name:en": "Marry stopes"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.41739,
+     24.3722667
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 5211820210,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Matri Mangal Hospital",
+    "name:bn": "মাতৃ মঙ্গল হাসপাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7719261,
+     24.4896609
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 5611158563,
+    "amenity": "hospital",
+    "name": "Ishwarganj Upazila Health Complex",
+    "name:en": "Ishwarganj Upazila Health Complex",
+    "name:bn": "ইশ্বরগঞ্জ ঊপজেলা স্বাস্থ্য কেন্দ্র",
+    "operator": "Government"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.6109911,
+     24.6899634
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 5619077147,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Nabiganj Upazila Health Complex",
+    "name:bn": "নবীগঞ্জ উপজেলা স্বাস্থ্য কমপ্লেক্স"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.5139364,
+     24.5636261
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 5675833715,
+    "amenity": "hospital",
+    "name": "কটিয়াদি পশু হাসপাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7985862,
+     24.2505962
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 5730090442,
+    "amenity": "hospital",
+    "healthcare": "hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.3799022,
+     24.2718981
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 5741962598,
+    "amenity": "hospital",
+    "name": "Kendua Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.8242871,
+     24.6534535
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 5781372419,
+    "amenity": "clinic",
+    "name": "Sastho Poribar Kollan Kendro"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.2472996,
+     25.1077659
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 5781372420,
+    "amenity": "clinic",
+    "name": "Community Clinic Puran Varanga"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.2512076,
+     25.0951745
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 5793761342,
+    "amenity": "clinic",
+    "name": "Kamarkandi Community Clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.1741209,
+     25.1615076
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 5863662519,
+    "amenity": "hospital",
+    "name": "Hossainpur Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.656704,
+     24.4171738
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 5866203323,
+    "amenity": "hospital",
+    "name": "Mithamoin Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.0541001,
+     24.4156449
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 5892085937,
+    "amenity": "hospital",
+    "name": "Atpara Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.8622604,
+     24.8095701
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6062653342,
+    "amenity": "hospital",
+    "name": "আল আমিন ডেন্টাল কলেজ ও জেনারেল হাসপাতালে"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8833747,
+     24.8866372
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6062978892,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Mohanagar Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8655743,
+     24.9003241
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6063402777,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Jalalabad Eye Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.9095547,
+     24.8993354
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6120359804,
+    "amenity": "clinic",
+    "name": "Uzangao community clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.1484414,
+     24.435944
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6120359805,
+    "amenity": "clinic",
+    "name": "Mamudnagar Community clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.1404833,
+     24.4141306
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6123345342,
+    "amenity": "clinic",
+    "name": "Loularchar Commuinity Clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.259973,
+     24.7425587
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6123345366,
+    "amenity": "clinic",
+    "name": "Shamarchar commuinity Clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.2452853,
+     24.7494645
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6123345380,
+    "amenity": "clinic",
+    "name": "Kartikpur Commuinity Clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.2589565,
+     24.7459227
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6124467111,
+    "amenity": "clinic",
+    "name": "Sreepur Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.1337349,
+     25.1558958
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6124500126,
+    "amenity": "hospital",
+    "name": "Vojendroganj up health and family welfare centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.2311956,
+     24.7475304
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6124500135,
+    "amenity": "clinic",
+    "name": "Uzanyarabad community clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.167013,
+     24.7373919
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6124500144,
+    "amenity": "clinic",
+    "name": "Kashipur Community Clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.2118392,
+     24.722412
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6124500161,
+    "amenity": "clinic",
+    "name": "Atgao community clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.1865637,
+     24.751351
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6124500176,
+    "amenity": "hospital",
+    "name": "Union health and family welfare center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.1597778,
+     24.7655022
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6125239779,
+    "amenity": "clinic",
+    "name": "Srihile community clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.2113258,
+     24.5887635
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6125242925,
+    "amenity": "clinic",
+    "name": "Adittopur community clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.1978826,
+     24.6310885
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6162814797,
+    "amenity": "hospital",
+    "name": "Tarail Upazila Health Complex l"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.8872962,
+     24.5501973
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6163500243,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Kuliarchar Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9288906,
+     24.1572885
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6281151376,
+    "amenity": "clinic",
+    "name": "Achanpur community clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.3315987,
+     24.7125292
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6574122409,
+    "amenity": "hospital",
+    "name": "খালিয়াজুরী উপজেলা স্বাস্থ্য কমপ্লেক্স"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.139798,
+     24.6886047
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6787831145,
+    "amenity": "clinic",
+    "name": "Medisun Diagnostic Cente & Medical Services"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7653307,
+     24.4819785
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6787831146,
+    "amenity": "clinic",
+    "name": "Medicare Poly Clinic & Diagnostic Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.765328,
+     24.4819199
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6787831147,
+    "amenity": "clinic",
+    "name": "The Pulse Computerized Diagnostic Cente"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7655882,
+     24.481793
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6787831161,
+    "amenity": "hospital",
+    "name": "Life Care Pvt Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7650813,
+     24.4788832
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6787831177,
+    "amenity": "hospital",
+    "name": "Life Line Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.765673,
+     24.4841782
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6787831181,
+    "amenity": "clinic",
+    "name": "City Diagnostics"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7656932,
+     24.4850408
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6807632721,
+    "amenity": "hospital",
+    "name": "Shikha Diagnostic Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.776871,
+     24.4414016
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6807632725,
+    "amenity": "doctors",
+    "name": "Hamdard Laboratories (WAQF) Bangladesh"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.6797164,
+     24.3265147
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6863630193,
+    "amenity": "hospital",
+    "name": "Madan Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9572141,
+     24.7166869
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6863642392,
+    "amenity": "hospital",
+    "name": "Hazrat Sumaiya Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9500955,
+     24.7149567
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6863654835,
+    "amenity": "clinic",
+    "name": "Surjer Hasi Clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9527304,
+     24.7168312
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6880419377,
+    "amenity": "clinic",
+    "name": "Seba Pathology",
+    "name:bn": "সেবা প্যাথলজি"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9463425,
+     24.7169285
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6880490470,
+    "amenity": "clinic",
+    "name": "Niramoy Diagnostic Centre",
+    "name:bn": "নিরাময় ডায়াগনস্টিক সেন্টার"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9472557,
+     24.7164718
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6880520656,
+    "amenity": "clinic",
+    "name": "Morder Diogonistik Centre",
+    "name:bn": "মডার্ন ডায়াগনস্টিক সেন্টার"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9462191,
+     24.7169187
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6880524464,
+    "amenity": "clinic",
+    "name": "popular Diagnostic Centre",
+    "name:bn": "পপুলার ডায়াগনস্টিক সেন্টার"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9462302,
+     24.716817
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6908108239,
+    "amenity": "hospital",
+    "name": "Bimal Sinha Memorial S.D. Hospital, Dhalai"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8280891,
+     24.1973668
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 6908108252,
+    "amenity": "hospital",
+    "name": "Khowai District Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.6025823,
+     24.0715915
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7127657823,
+    "healthcare": "centre",
+    "name": "Marachara, PHC"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8550325,
+     24.1589836
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7127657840,
+    "healthcare": "centre",
+    "name": "Jamthum, PHC"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8500791,
+     24.0595745
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7127657859,
+    "amenity": "clinic",
+    "healthcare": "centre",
+    "name": "82-Mile, PHC"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.9993696,
+     24.0823027
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7127657884,
+    "healthcare": "centre",
+    "name": "Kanika Memorial, PHC"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.9846475,
+     24.2440527
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7127657890,
+    "amenity": "clinic",
+    "healthcare": "centre",
+    "name": "Nepaltilla, PHC"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.9459111,
+     24.0838016
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7127657903,
+    "healthcare": "centre",
+    "name": "Katlamara, PHC"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.39612,
+     24.067331
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7138660288,
+    "amenity": "hospital",
+    "name": "Capt. Williamson Memorial Hospital, Baghmara"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.6309637,
+     25.1987267
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7138660312,
+    "healthcare": "centre",
+    "name": "Moheshkola, PHC"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.966622,
+     25.1858091
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7138660355,
+    "healthcare": "centre",
+    "name": "Dangar, PHC"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.383455,
+     25.19115
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7138660369,
+    "healthcare": "centre",
+    "name": "Ryngku, PHC"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.5587408,
+     25.1674013
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7149273665,
+    "healthcare": "centre",
+    "name": "Health Sub Centre ,Meghliband"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.3944818,
+     24.0758361
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7149273681,
+    "healthcare": "centre",
+    "name": "Sub Centre, Bagabil"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.5150136,
+     24.0780866
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7149273698,
+    "healthcare": "centre",
+    "name": "Sub Centre, East Belchara"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.5473335,
+     24.0552186
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7149273753,
+    "amenity": "health_post",
+    "healthcare": "centre",
+    "name": "Sub Centre, Avanga"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8253633,
+     24.0679817
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7385945593,
+    "amenity": "hospital",
+    "name": "Mazumder Nursing Clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7337185,
+     24.310831
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7385965799,
+    "amenity": "hospital",
+    "name": "Dipshikha Infertility Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7335547,
+     24.3107297
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7387955487,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Abedin Hospital (Pvt.)",
+    "name:bn": "আবেদীন হাসপাতাল (প্রাঃ)"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9747936,
+     24.0557715
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7387968172,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Al-Shefa Hospital",
+    "name:bn": "আল-শেফা হাসপাতাল",
+    "operator": "A.B Siddik"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9775375,
+     24.0550343
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7388623578,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Sharifpur Health Center",
+    "operator": "Government Organization"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.9774391,
+     24.344284
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7435000339,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Family Development Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7586064,
+     24.2240301
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7483515370,
+    "amenity": "hospital",
+    "name": "Taj Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7031207,
+     24.1401563
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7621605915,
+    "amenity": "clinic",
+    "name": "Bhanu Physiotherapy Clinic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8289376,
+     24.0590304
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7621605917,
+    "amenity": "hospital",
+    "name": "Rajkandi Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.958401,
+     24.168476
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7621605919,
+    "healthcare": "centre",
+    "name": "Ishanpur Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.4049069,
+     24.0541083
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7870620038,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Aysha Medicare"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8627785,
+     24.8955822
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7968459465,
+    "healthcare": "centre",
+    "name": "SubCentre, Ichamati"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7097098,
+     25.1774905
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 7980606811,
+    "healthcare": "centre",
+    "name": "SubCentre, Moheskhola"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.973204,
+     25.1876335
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8064477261,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Mamun Private Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7656209,
+     24.4770905
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8099566985,
+    "healthcare": "centre",
+    "name": "Primary Health Centre, Moheskhola"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.9712802,
+     25.188207
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8186015683,
+    "amenity": "health_post",
+    "healthcare": "centre",
+    "name": "Manikbhandar Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8160821,
+     24.1388772
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8186387824,
+    "healthcare": "centre",
+    "name": "Marachara Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8527774,
+     24.1770674
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8186413884,
+    "healthcare": "centre",
+    "name": "Mahabir Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8561497,
+     24.1231316
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8186932604,
+    "amenity": "health_post",
+    "healthcare": "centre",
+    "name": "Nalkata Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.9991375,
+     24.0668441
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8192578326,
+    "healthcare": "centre",
+    "name": "Mohanpur Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8443231,
+     24.2064529
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8192660172,
+    "amenity": "health_post",
+    "healthcare": "centre",
+    "name": "Chulubari Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8296313,
+     24.141998
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8192828387,
+    "healthcare": "centre",
+    "name": "Chottosurma Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8686883,
+     24.1395222
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8192850095,
+    "healthcare": "centre",
+    "name": "Nakful Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8020421,
+     24.0965317
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8192922176,
+    "healthcare": "centre",
+    "name": "Aparaskar Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7826042,
+     24.1004345
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8193065894,
+    "amenity": "health_post",
+    "healthcare": "centre",
+    "name": "Baralutma Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8181233,
+     24.0832676
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8193435144,
+    "amenity": "health_post",
+    "healthcare": "centre",
+    "name": "Nepaltilla Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.9442113,
+     24.0572202
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8193705876,
+    "healthcare": "centre",
+    "name": "Baman Chara Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8415269,
+     24.1262919
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8193923442,
+    "healthcare": "centre",
+    "name": "Halhali Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8397218,
+     24.194738
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8195641228,
+    "amenity": "health_post",
+    "healthcare": "centre",
+    "name": "Kalachari Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.811049,
+     24.1665929
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8195700493,
+    "amenity": "health_post",
+    "healthcare": "centre",
+    "name": "Karatichara Sub Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.9659694,
+     24.054564
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8234473095,
+    "amenity": "hospital",
+    "name": "The Lab Aid Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.4137366,
+     24.3723066
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8234513411,
+    "amenity": "hospital",
+    "name": "Jaspus Habiganj Adhunik Eye Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.41222,
+     24.3705763
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8234519170,
+    "amenity": "hospital",
+    "name": "Habiganj Hospital Pvt. Ltd."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.4123932,
+     24.371135
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8234550770,
+    "amenity": "clinic",
+    "name": "Central Hospital & Diagnostic Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.4129221,
+     24.3809267
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8234805971,
+    "amenity": "clinic",
+    "name": "The National Diagnostic Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.4156923,
+     24.3765644
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 8234808753,
+    "amenity": "clinic",
+    "name": "Moon Diagnostic Centre"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.4156182,
+     24.3766937
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9603054353,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Oyesis Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8801888,
+     24.8878229
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9692137611,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Belabo Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.851371,
+     24.1070293
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9692896252,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Balaganj Upazila Health Complex"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8365116,
+     24.6549969
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9781212567,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Digilap Diagonestics Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7796377,
+     24.4381294
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9785782639,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Jamuna dagonestics Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7799733,
+     24.4378506
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9785782640,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Al Noor Diagonestics Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7800682,
+     24.4377665
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9785782644,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Shebangon Pathology Lab"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7802687,
+     24.4375512
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9785782645,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Medilab Health Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7806409,
+     24.4374429
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9785782656,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Hossen Diagonestics Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7808318,
+     24.4370471
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9785822964,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Al Safi Pathology"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7767142,
+     24.441941
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9785822966,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "Medinova Health Care"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7767814,
+     24.4418343
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9785822967,
+    "amenity": "clinic",
+    "healthcare": "clinic",
+    "name": "The Medipath Health Care"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.776208,
+     24.4436841
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9812388576,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Jalalabad Ragib Rabeya Medical  College  & Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8523865,
+     24.9134102
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9812654386,
+    "amenity": "hospital",
+    "name": "Sylhet Pet Care"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8620377,
+     24.9067001
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 9916643514,
+    "amenity": "hospital",
+    "healthcare": "hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.3107248,
+     24.9380432
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 10791274805,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name:en": "Parkview Medical College"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8626941,
+     24.8907868
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 10791276005,
+    "amenity": "hospital",
+    "name:en": "Sylhet Imperial Hospital LTD."
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8783304,
+     24.8943462
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 11031718905,
+    "amenity": "hospital",
+    "name": "মা ও শিশু প্রাঃ হাসপাতাল আন্ড ডায়াগনস্টিক সেন্টার",
+    "name:en": "Maa o shishu pvt hospital and diagnostic center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7706149,
+     24.4865847
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 11031718906,
+    "amenity": "doctors",
+    "name": "Moulvubazar Physiotherapy and Rehabilitation Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.7653654,
+     24.4754224
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 11449665766,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "লস্করপুর বাগান হাসপাতাল",
+    "name:en": "Luskerpore Garden Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.4741748,
+     24.1708009
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 12462035169,
+    "amenity": "hospital",
+    "name": "Ichamati Community Health Center"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.6919619,
+     25.1699082
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 12511401694,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "Mount Adora Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8739425,
+     24.9001442
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13059204801,
+    "amenity": "hospital",
+    "name": "Shah Jalal Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.8595489,
+     24.8984469
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13066251917,
+    "amenity": "hospital",
+    "healthcare": "hospital",
+    "name": "হাবিব মেডিকেল হল এন্ড চিকিৎসালয়",
+    "operator": "ডাঃ হাবিবুর রহমান"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.8812367,
+     24.1169171
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13844043201,
+    "amenity": "hospital",
+    "name": "Diabetics Hospital ডায়াবেটিক হাসপাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7769057,
+     24.4437372
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13844048101,
+    "amenity": "hospital",
+    "name": "Mother and Child Welfare Centre মা ও শিশু কল্যাণ কেন্দ্র"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.776753,
+     24.443432
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13844211901,
+    "amenity": "hospital",
+    "name": "জরুরি বিভাগ - কিশোরগঞ্জ সদর হাসপাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7766904,
+     24.4430436
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13844354801,
+    "amenity": "hospital",
+    "name": "নগর মাতৃসদন Nogor Hospital"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7758715,
+     24.4385061
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13844566001,
+    "amenity": "hospital",
+    "name": "Deen Eye Hospital দিন চক্ষু হাসপাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.776619,
+     24.4563177
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13845120302,
+    "amenity": "clinic",
+    "name": "মেডিস্ক্যান ইমেজিং সেন্টার"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7798144,
+     24.4390197
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13845729801,
+    "amenity": "hospital",
+    "name": "Tuberculosis Hospital যক্ষ্মাব্যাধি হাসপাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7769055,
+     24.4441376
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13846497403,
+    "amenity": "hospital",
+    "name": "President Abdul Hamid Medical College and Hospital রাষ্ট্রপতি আবদুল হামিদ মেডিকেল কলেজ ও হাসপাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.8555459,
+     24.4476586
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13849517401,
+    "amenity": "clinic",
+    "name": "লাইফ কেয়ার হাসপাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7785135,
+     24.4374971
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13854242601,
+    "amenity": "clinic",
+    "name": "Citylab Health Care Hospital সিটিল্যাব হেলথ কেয়ার হাসপাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.7809878,
+     24.4304023
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_type": "node",
+    "osm_id": 13854283001,
+    "amenity": "clinic",
+    "name": "The Labaid General Hospital ল্যাবএইড জেনারেল হাসপাতাল"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     90.786928,
+     24.42989
+    ]
+   }
+  }
+ ]
+}

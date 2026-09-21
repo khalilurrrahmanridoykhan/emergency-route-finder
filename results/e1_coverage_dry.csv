@@ -1,6 +1,6 @@
 season,within_minutes,population,share_percent
-dry,30,2710868,53.3
-dry,60,4449270,87.5
-dry,120,4810594,94.6
-dry,240,4896148,96.3
-dry,no_route_within_300,175236,3.45
+dry,30,12015772,69.8
+dry,60,16195879,94.1
+dry,120,16818162,97.7
+dry,240,16922594,98.3
+dry,no_route_within_300,290606,1.69

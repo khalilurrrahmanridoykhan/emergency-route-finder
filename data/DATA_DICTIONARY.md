@@ -5,7 +5,7 @@ editable assumption tables. Coordinates are WGS84 (EPSG:4326) unless stated.
 
 ## Inputs (`data/raw/`)
 
-### `health_facilities_sunamganj.geojson`, `health_facilities_wide_osm_2026-09-20.geojson`
+### `health_facilities_sunamganj.geojson`, `health_facilities_osm_extended.geojson`
 Point features from OpenStreetMap.
 
 | Field | Meaning | Allowed values / notes |
@@ -72,7 +72,7 @@ All are assumptions unless a source is given in `basis` or `target_basis`.
 |---|---|---|
 | `priority` | Order rules are tried in | integer, lowest first |
 | `match` | Lower-case text searched in the facility name (English and Bangla) | text |
-| `level` | Level given on a match | a `facility_level` from `capabilities.csv` |
+| `level` | Level given on a match | a `facility_level` from `capabilities.csv`, or `excluded` to drop laboratories, diagnostic centres, eye hospitals and veterinary features |
 | `note` | Why the rule exists | text |
 
 ### `facility_overrides.csv`
