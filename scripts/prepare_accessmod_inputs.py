@@ -7,12 +7,14 @@ Run: .venv/bin/python scripts/prepare_accessmod_inputs.py
 import argparse
 import csv
 import json
+from difflib import SequenceMatcher
 from pathlib import Path
 
 import geopandas as gpd
 import numpy as np
+import pandas as pd
 import rasterio
-from facility_levels import classify
+from facility_levels import EXCLUDED, classify
 from grid import BBOX_WGS84, CRS, RES, target_grid
 from rasterio.features import rasterize, shapes
 from rasterio.warp import Resampling, reproject
@@ -41,6 +43,7 @@ FLOOD_CELL_SHARE = 0.5  # a 100 m land cell counts as flooded if half of its 20 
 FLOOD_ROAD_MIN_M = 30  # ignore slivers of flooded road shorter than this
 FLOOD_RES = 20
 DEDUP_METRES = 150
+DEDUP_SAME_NAME_METRES = 1500  # two OSM nodes with the same name close together are one facility
 SNAP_LIMIT_CELLS = 10  # move a facility on an impassable cell at most this far (1 km at 100 m)
 
 
@@ -156,27 +159,63 @@ def flood_landcover(dry_lc, roads, date, transform):
     return lc, stats
 
 
+LEVEL_RANK = {
+    "medical_college_hospital": 0,
+    "district_general_hospital": 1,
+    "upazila_health_complex": 2,
+    "union_health_family_welfare_centre": 3,
+    "community_clinic": 4,
+    "private_or_unclassified": 5,
+}
+
+
+def same_facility(a, b, metres):
+    """True when two OSM features describe one facility.
+
+    That is: the same name within 1.5 km, or within 150 m an unnamed node beside a named one or two
+    similar names (spelling variants). Different names close together are kept as different facilities.
+    """
+    if metres > DEDUP_SAME_NAME_METRES:
+        return False
+    if a and a == b:
+        return True
+    if metres <= DEDUP_METRES:
+        return not a or not b or SequenceMatcher(None, a, b).ratio() >= 0.75
+    return False
+
+
 def facilities_gdf(country):
-    src = gpd.read_file(ROOT / "data" / "raw" / "health_facilities_wide_osm_2026-09-20.geojson").to_crs(CRS)
+    src = gpd.read_file(ROOT / "data" / "raw" / "health_facilities_osm_extended.geojson").to_crs(CRS)
     kind = src["amenity"].where(src["amenity"].isin(FACILITY_KINDS), src.get("healthcare"))
     src = src[kind.isin(FACILITY_KINDS | {"centre"}) & src.within(country)].copy()
-    src["named"] = src["name"].notna()
-    src = src.sort_values("named", ascending=False)  # keep the named node of a duplicate pair
+    src["name_orig"] = src["name"].fillna("")
+    english = src["name:en"].fillna("") if "name:en" in src else ""
+    src["osm_id"] = src["osm_id"].astype(str)
+    levels = [classify(i, n, e) for i, n, e in zip(src["osm_id"], src["name_orig"], english)]
+    src["level"] = [level for level, _ in levels]
+    src["lvl_src"] = [source for _, source in levels]
+    src = src[src["level"] != EXCLUDED].copy()  # laboratories, eye hospitals and so on
+    src["key"] = [" ".join(n.lower().split()) for n in src["name_orig"]]
+    src["rank"] = src["level"].map(LEVEL_RANK)
+    # Keep the named, higher-level node of a duplicate pair.
+    src = src.assign(named=src["key"] != "").sort_values(["named", "rank"], ascending=[False, True])
     keep = []
     for idx, row in src.iterrows():
-        if all(row.geometry.distance(src.loc[k].geometry) > DEDUP_METRES for k in keep):
+        distances = ((k, row.geometry.distance(src.loc[k].geometry)) for k in keep)
+        if not any(same_facility(row["key"], src.loc[k]["key"], d) for k, d in distances):
             keep.append(idx)
     out = src.loc[keep].copy()
-    out["name_orig"] = out["name"].fillna("")
-    out["name"] = [
-        n if n.isascii() and n else f"OSM {i} ({'bangla name' if n else 'unnamed'})"
-        for n, i in zip(out["name_orig"], out["osm_id"])
-    ]
-    out["osm_id"] = out["osm_id"].astype(str)
+    display = []
+    english = out["name:en"].fillna("") if "name:en" in out else pd.Series("", index=out.index)
+    for raw, en, osm_id in zip(out["name_orig"], english, out["osm_id"]):
+        if raw and raw.isascii():
+            display.append(raw)
+        elif en and en.isascii():
+            display.append(en)
+        else:
+            display.append(f"OSM {osm_id} ({'bangla name' if raw else 'unnamed'})")
+    out["name"] = display
     out["amenity"] = out["amenity"].fillna(out["healthcare"])
-    levels = [classify(i, n, o) for i, n, o in zip(out["osm_id"], out["name"], out["name_orig"])]
-    out["level"] = [level for level, _ in levels]
-    out["lvl_src"] = [source for _, source in levels]
     return out[["name", "osm_id", "amenity", "level", "lvl_src", "name_orig", "geometry"]]
 
 
