@@ -55,9 +55,10 @@ each marked `assumption`, and are shown wherever results are shown.
 ## Status
 
 Phases E0 (scope, data inventory, repo setup), E1 (AccessMod running headless, dry-season
-baseline), E2 (flood scenario) and E3 (emergency types and the capability model) are done. See [docs/ROADMAP.md](docs/ROADMAP.md) for the phases,
+baseline), E2 (flood scenario), E3 (emergency types and the capability model) and E3b (a larger
+analysis area with a facility buffer) are done. See [docs/ROADMAP.md](docs/ROADMAP.md) for the phases,
 [docs/accessmod-notes.md](docs/accessmod-notes.md) for what AccessMod exports and how it is
-scripted, and [RESULTS.md](RESULTS.md) for the numbers. In the dry season about 88% of the 5.1
+scripted, and [RESULTS.md](RESULTS.md) for the numbers. In the dry season about 94% of the 17.2
 million people in the area are within 60 minutes of some facility (any level, model
 assumptions).
 
@@ -99,6 +100,7 @@ make data    # download public inputs into data/cache/
 make e1      # build inputs, run AccessMod in Docker, summarise the dry season (needs Docker running)
 make e2      # map floods from Sentinel-1, then run dry and flood scenarios and compare
 make e3      # add one run per emergency type (only qualifying facilities count) and summarise
+make population  # check WorldPop against the 2022 census
 ```
 
 AccessMod runs in Docker (`fredmoser/accessmod:5.9.1`); on a Mac, Colima or Docker Desktop works.
