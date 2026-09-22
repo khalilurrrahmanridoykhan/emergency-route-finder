@@ -114,3 +114,13 @@ piece is the pre-check: sampling the Phase E3 GeoTIFFs directly with `rasterio.s
 no container) to decide whether Docker is worth starting at all. This matters because most of a
 query's cost is the two `r.walk.accessmod` reruns (primary and backup direction), not the r.drain
 step itself, so skipping them for a point with no route is a large saving, not a marginal one.
+
+## The web map's precomputed grid (Phase E6)
+
+A static GitHub Pages site cannot run Docker, so `scripts/accessmod/grid_paths.R` precomputes
+routes offline the same way Phase E4 and E5 do (`r.walk.accessmod` for a direction raster, then
+`r.drain` for the path), but for a much larger set of (point, emergency) tasks and without the
+backup-facility phase, which would multiply the run time for little benefit on a map (the backup
+stays a per-point feature of `make route`). The direction rasters are still shared: only 8 builds
+(2 seasons x 4 emergencies) regardless of how many grid points there are, so the cost scales with
+the number of `r.drain` calls, not with AccessMod re-runs.

@@ -12,7 +12,7 @@ ends with a "Done when" gate.
 | E3b | Extend the analysis area with a facility buffer, check the population layer | done |
 | E4 | Complete paths (`r.walk.accessmod` + `r.drain`) and OSRM cross-check | done |
 | E5 | The `route(point, emergency, season)` function | done |
-| E6 | Click-a-point web map | not started |
+| E6 | Click-a-point web map | done |
 | E7 | Validation, limits and release (`v0.1.0`) | not started |
 
 ## What the tool will return
@@ -79,7 +79,11 @@ pre-check on the Phase E3 rasters answers "no route" in about a second; a real r
 exactly. See `RESULTS.md`.
 
 ### E6: Click-a-point web map
-Static GitHub Pages site over a precomputed grid of start points.
+**Done.** A static page (`docs/index.html`, `docs/app.js`, Leaflet) over a precomputed grid of 335
+points x 4 emergency types x 2 seasons (2,680 evaluations, primary route only -- see
+`scripts/accessmod/grid_paths.R`). A click snaps to the nearest grid point; the page shows the
+right facility, time, mode, target status and flood warnings, with links to the assumption table
+and full results. See `RESULTS.md`.
 
 ### E7: Validation, limits and release
 Sensitivity checks on speeds and flood extent, `RESULTS.md`, and the `v0.1.0` release.

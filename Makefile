@@ -1,4 +1,4 @@
-.PHONY: setup data e1 e2 e3 population e4 route test lint
+.PHONY: setup data e1 e2 e3 population e4 route e6 test lint
 
 setup:
 	python3 -m venv .venv
@@ -39,6 +39,11 @@ e4:
 	.venv/bin/python scripts/summarize_e4.py
 	@echo "For the OSRM cross-check, start osrm-routed on ../facility-access-equity's data first, then:"
 	@echo "  .venv/bin/python scripts/cross_check_osrm.py"
+
+# Phase E6: precompute the web map's routes (the docs/ site reads docs/data/ directly)
+e6:
+	scripts/run_e6.sh
+	.venv/bin/python scripts/summarize_e6.py
 
 # Phase E5: query one point on demand (needs make e1-e3 already run; Docker only if a route exists)
 #   make route LON=91.30 LAT=24.75 EMERGENCY=snakebite
