@@ -268,3 +268,44 @@ Files: `results/e4_osrm_cross_check.csv`, `docs/img/e4_routes.png`.
   comparison (Phase E7 or a future phase could add one).
 - Backup facility is the second-nearest *qualifying* facility by the same cost model, not a real
   dispatch alternative; nothing here models facility capacity or whether it is actually open.
+
+## Phase E5: the route-finder function
+
+`scripts/route.py` answers the project's central question for one arbitrary point: given an
+emergency happens here, which facility, how long, which path, what mode, what's the backup, and
+any warning -- for both the dry season and the flood.
+
+```
+.venv/bin/python scripts/route.py --lon 91.30 --lat 24.75 --emergency snakebite
+```
+or, as a function: `from route import route; route(91.30, 24.75, "snakebite")`.
+
+**Design.** A cheap rasterio check against the already-published Phase E3 rasters decides first
+whether a route exists at all, for each season, with no Docker involved (under 1.1 s). Only if at
+least one season has a route does it start AccessMod (Phase E4's technique: rerun
+`r.walk.accessmod` for a direction raster, then `r.drain` for the path) for that one point, about
+26-33 seconds end to end. The record is assembled by the same `scripts/route_record.py` function
+Phase E4's batch summary uses, so a query through either path reads the same way.
+
+**Verified against the Phase E4 batch**, reproducing it exactly at the same coordinates:
+
+- Point 1 (childbirth complication): Belabo Upazila Health Complex, 37 min dry and flood, no
+  warning -- matches `results/e4_routes.csv` row 1 exactly.
+- Point 6 (snakebite): Sreemangal Upazila Health Complex, 60 min dry, 83 min flood (walking,
+  motorized, then boat/wading), backup Moulvibaza Sadar Hospital 90 min dry / 121 min flood (now
+  outside the 2-hour target); warnings: the flood adds 23 minutes, the backup facility is much
+  slower, the flood-season path crosses flooded ground -- matches row 6 exactly.
+- A genuine no-route point (91.9904, 24.2985; strict snakebite, no qualifying facility within 300
+  min in either season): both facility fields are null, both warnings state "no route to any
+  qualifying facility", answered in about 1 second, no Docker started.
+
+**Errors are rejected before any file is touched**, so they never start Docker: an unknown
+emergency id, or a point outside the analysis grid (both a far-away point and a point just past
+the grid edge are tested).
+
+**Caveats**
+- Each on-demand call rebuilds its own direction rasters from scratch (no cache across calls), so
+  repeated queries cost the same ~30 s each. A future phase could cache per-(season, emergency)
+  direction rasters the way the batch summary precomputes them, if this needs to be fast.
+- Same limits as E1-E4: assumption-based facility capabilities, public data only, not for real
+  emergencies.

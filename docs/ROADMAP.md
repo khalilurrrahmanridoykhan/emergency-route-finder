@@ -11,7 +11,7 @@ ends with a "Done when" gate.
 | E3 | Emergency types and the facility capability model | done |
 | E3b | Extend the analysis area with a facility buffer, check the population layer | done |
 | E4 | Complete paths (`r.walk.accessmod` + `r.drain`) and OSRM cross-check | done |
-| E5 | The `route(point, emergency, season)` function | not started |
+| E5 | The `route(point, emergency, season)` function | done |
 | E6 | Click-a-point web map | not started |
 | E7 | Validation, limits and release (`v0.1.0`) | not started |
 
@@ -72,7 +72,11 @@ traces one complete path per point with GRASS `r.drain`. 40 synthetic points, dr
 case (median overlap 0.97). See `RESULTS.md` and `docs/accessmod-notes.md`.
 
 ### E5: The route-finder function
-`route(lon, lat, emergency, season)` returning the record above, with tests.
+**Done.** `scripts/route.py`: `route(lon, lat, emergency)` returns the full dry-and-flood record
+for one point, reusing Phase E4's r.walk.accessmod + r.drain technique on demand. A fast, Docker-free
+pre-check on the Phase E3 rasters answers "no route" in about a second; a real route takes about
+30 s (fresh direction rasters, no caching yet). Verified to reproduce two of Phase E4's 40 points
+exactly. See `RESULTS.md`.
 
 ### E6: Click-a-point web map
 Static GitHub Pages site over a precomputed grid of start points.
