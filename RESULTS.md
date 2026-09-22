@@ -200,3 +200,71 @@ time and cannot be tested without household or building data. Individual 100 m c
 than upazila totals, so results should be quoted for upazilas or larger areas.
 
 Files: `results/population_vs_census.csv`, `results/population_sensitivity.csv`.
+
+## Phase E4: complete paths and the OSRM cross-check
+
+**Why not AccessMod's own referral export.** The referral analysis does export path lines
+(Phase E1), but when several destinations share one run, overlapping route segments are not
+repeated in the export, so multi-destination runs gave many degenerate (near-zero-length) paths.
+This phase instead reruns `r.walk.accessmod` itself (the exact module, same elevation, friction,
+`-s -t -k` flags AccessMod's own accessibility analysis uses) to get a movement-direction raster,
+verified to reproduce the published travel time and nearest-facility rasters exactly at every
+sample point checked, then traces one complete path per point with GRASS `r.drain -d`. See
+`docs/accessmod-notes.md` for the technique and `scripts/accessmod/e4_paths.R`.
+
+**Synthetic points.** 40 points, population-weighted, on passable land, one of the four real
+emergency types round-robin (10 each; not a claim about real incidence). Each point is evaluated
+in both the dry season and the flood (2026-07-08), primary and backup facility. All 160
+evaluations produced a route: no point had "no route to any qualifying facility" in this sample.
+Points, per-point results and all 160 path lines are in `data/interim/accessmod/e4_points.csv`
+(not committed; regenerate with `make e4`), `results/e4_routes.csv` and
+`docs/data/e4_routes.geojson`.
+
+**Example record (point 6, snakebite):** dry, Sreemangal Upazila Health Complex, 60 min,
+walking then motorized; flood, the same facility, 83 min, walking, motorized, then boat/wading;
+backup (dry) 90 min. Warnings: the flood adds 23 minutes; the backup facility is much slower than
+the first choice; the flood-season path crosses flooded ground. This is the kind of record the
+project set out to produce.
+
+**Warnings:** 18 of 40 points get at least one. The single most common is "the backup facility is
+much slower than the first choice" (13 points) -- for some emergencies (especially the small
+13-facility snakebite and 50-facility set) the second-nearest qualifying facility can be much
+farther. One point's nearest facility changes in the flood; a few points cross flooded ground or
+gain 15 minutes or more.
+
+**Route mode.** 26 of 40 dry primary routes mix walking and motorized segments, 13 are motorized
+throughout, and 1 is walking throughout -- point 40 (minor illness) never reaches a road at all on
+its way to Uzangao community clinic, a real OSM road-network gap near a small rural clinic (see
+`docs/data-gaps.md`), not a routing error.
+
+**OSRM cross-check.** The 40 dry-season primary routes were checked against OSRM (driving,
+`bangladesh-latest.osrm`, already built in the sibling `facility-access-equity` repo; read, not
+modified) between the same start point and the same facility.
+
+| Measure | Value |
+|---|---|
+| Routes OSRM could match | 40 of 40 |
+| Median path overlap within 100 m | 0.97 |
+| Median overlap excluding the two outliers below | 0.98 |
+| AccessMod minus OSRM minutes, median | +8.8 min |
+| AccessMod minus OSRM minutes, mean, excluding the two outliers | +10.4 min |
+
+AccessMod is a little slower than OSRM on most routes, which makes sense: AccessMod's routes
+include walking and off-road segments (see above) that a driving router does not use, and it also
+lacks live traffic. Two honest outliers:
+- **Point 40** (see above): AccessMod's route is entirely off-road at walking speed (208 min);
+  OSRM's road route to the same facility takes 25.5 min. Overlap 0.00. This is the real road-data
+  gap driving the difference, not a bug in either tool.
+- **Point 14** (snakebite, Sunamganj General Hospital): AccessMod is *faster* than OSRM here
+  (84 vs 112.9 min, overlap 0.36) -- the road network needs a long detour around the haor that
+  AccessMod's off-road movement does not, a case where anisotropic routing genuinely differs from
+  road-only routing rather than being wrong.
+
+Files: `results/e4_osrm_cross_check.csv`, `docs/img/e4_routes.png`.
+
+**Caveats**
+- The 40 points are a small, fixed-seed sample; a different sample would show different warnings.
+- OSRM here checks the dry, road-reachable case only; there is no flood-aware road router in this
+  comparison (Phase E7 or a future phase could add one).
+- Backup facility is the second-nearest *qualifying* facility by the same cost model, not a real
+  dispatch alternative; nothing here models facility capacity or whether it is actually open.

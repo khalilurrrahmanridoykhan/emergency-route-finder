@@ -79,3 +79,28 @@ via Colima with 4 CPUs and about 5.8 GB memory) in Phase E1. The scripts are in
 - The extended area is 1,401 x 1,255 cells (1.76 million). In the same 5.8 GB Docker VM an accessibility
   run takes about 4 s, a referral run for 115 origins takes about 100 s, and the whole `make e3`
   pipeline (21 analyses) takes about 7 minutes. No memory changes were needed.
+
+## Complete paths without the referral analysis (Phase E4)
+
+AccessMod's replay/analysis functions do not expose the direction raster `r.walk.accessmod`
+computes internally (see `outdir=` in its own source), so it cannot be read back after an
+accessibility run. `scripts/accessmod/e4_paths.R` reruns `r.walk.accessmod` itself with the exact
+inputs and flags `amAnalysisTravelTime.R` uses for an anisotropic run:
+
+```
+r.walk.accessmod -s -t -k elevation=rDem__dem@PERMANENT friction=rSpeed__<season>_<emergency> \
+  start_points=<qualifying facilities> output=... outdir=... nearest=...
+```
+
+(`-s` = friction input is a speed map, matching this project's scenario tables; `-t` = "towards
+facilities", matching `towardsFacilities: true` in every config; `-k` = knight's move, matching
+`knightMove: true`.) Checked against the published rasters at several points, in every case both
+the travel time and the nearest-facility id matched exactly. `r.drain -d` then traces one complete
+path per point using this direction raster and the already-published travel-time raster as the
+cost surface. One direction raster is shared by every point with the same (season, emergency); a
+second one, excluding the point's own nearest facility, gives the backup path.
+
+`r.what` returns pipe-separated fields `east|north|<label>|value`, with `*` for a null cell; the
+label field is present (and blank) even when only one raster is queried, so the value is at index
+4, not 3 -- worth a note, since indexing it wrong just silently returns nothing rather than an
+error.
