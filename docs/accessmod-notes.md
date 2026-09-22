@@ -104,3 +104,13 @@ second one, excluding the point's own nearest facility, gives the backup path.
 label field is present (and blank) even when only one raster is queried, so the value is at index
 4, not 3 -- worth a note, since indexing it wrong just silently returns nothing rather than an
 error.
+
+## On-demand single-point queries (Phase E5)
+
+`scripts/route.py` reuses the E4 technique for one point instead of a batch: it writes a one-row
+points CSV and calls the same `scripts/accessmod/e4_paths.R`, so there is exactly one code path
+for "trace a path" whether it is called from the batch summary or a live query. The only new
+piece is the pre-check: sampling the Phase E3 GeoTIFFs directly with `rasterio.sample` (no GRASS,
+no container) to decide whether Docker is worth starting at all. This matters because most of a
+query's cost is the two `r.walk.accessmod` reruns (primary and backup direction), not the r.drain
+step itself, so skipping them for a point with no route is a large saving, not a marginal one.
