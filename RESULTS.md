@@ -309,3 +309,35 @@ the grid edge are tested).
   direction rasters the way the batch summary precomputes them, if this needs to be fast.
 - Same limits as E1-E4: assumption-based facility capabilities, public data only, not for real
   emergencies.
+
+## Phase E6: the web map
+
+A static, click-a-point map: pick an emergency type and a season, click anywhere in the analysis
+area, and see the right facility, travel time, mode and warnings for the nearest of 335
+precomputed points (about 3 km apart, population-weighted). No Docker at view time -- everything
+is precomputed offline the same way as Phase E4 (`r.walk.accessmod` + `r.drain`), just for a much
+larger set of tasks and without the backup-facility phase (kept as a per-point feature of
+`make route` instead, to keep the precompute affordable). See `scripts/accessmod/grid_paths.R`,
+`scripts/summarize_e6.py` and `docs/index.html` / `docs/app.js`.
+
+**Scale.** 335 grid points x 4 real emergency types x 2 seasons = 2,680 route evaluations, 2,672
+with a path (334 of 335 points have a route for the three emergencies sharing the larger
+qualifying-facility set; one point at the western edge of the area has none in either season).
+The whole precompute took about 25 minutes in Docker. Paths are simplified (15 m tolerance,
+imperceptible at any usable map zoom) to keep the four per-emergency GeoJSON files at 1.1-1.3 MB
+each, loaded lazily as the emergency dropdown is used.
+
+**Sample numbers (snakebite, dry season, 334 points):** 328 within the 2-hour target. In the
+flood, 10 of 334 points gain 15 minutes or more, and the flood-season route crosses flooded
+ground for 26 points.
+
+**Caveats**
+- **Snap distance.** A click snaps to the nearest of 335 points, not the exact spot clicked; the
+  average distance to the nearest point is roughly half the 3 km spacing. This is a real,
+  intentional trade-off (see `docs/accessmod-notes.md`), and the grid points are shown as dots so
+  it is visible, not hidden.
+- **No backup on the map.** Only the primary facility and route are precomputed for the grid; the
+  backup facility, and a path for any exact point rather than the nearest grid point, need
+  `make route` run locally (Phase E5).
+- Same modelling limits as every earlier phase: assumption-based facility capabilities, a single
+  flood snapshot, public data only, not for real emergencies (stated on the page itself).

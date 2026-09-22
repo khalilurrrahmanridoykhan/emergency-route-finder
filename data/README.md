@@ -41,6 +41,10 @@ in `source-manifest.json` (OSM extracts change over time, so a rerun may differ 
 `data/interim/` (a 100 m UTM 46N grid, roads burnt into the land cover, cells outside
 the official upazila polygons set to no data). Nothing in `cache/` or `interim/` is committed.
 
+Phase E6's web-map grid (`e6_grid_points.csv`, `e6_tasks.csv`) is generated the same way and is
+also not committed; its output -- what the published map actually serves -- is committed under
+`docs/data/` instead, since GitHub Pages needs it.
+
 Flood layers (Phase E2) are built by `scripts/build_flood_extent.py` from Sentinel-1 RTC on
 Microsoft Planetary Computer into `data/interim/flood/` (before 2026-06-19; during 2026-07-08 and
 2026-07-13). `raw/q3_population_by_upazila.csv` is a small table from the earlier road-network

@@ -56,8 +56,12 @@ each marked `assumption`, and are shown wherever results are shown.
 
 Phases E0 (scope, data inventory, repo setup), E1 (AccessMod running headless, dry-season
 baseline), E2 (flood scenario), E3 (emergency types and the capability model), E3b (a larger
-analysis area with a facility buffer), E4 (complete paths, cross-checked against OSRM) and E5
-(an on-demand `route(lon, lat, emergency)` function) are done. See [docs/ROADMAP.md](docs/ROADMAP.md) for the phases,
+analysis area with a facility buffer), E4 (complete paths, cross-checked against OSRM), E5 (an
+on-demand `route(lon, lat, emergency)` function) and E6 (a click-a-point web map) are done.
+
+**[Open the map](https://khalilurrrahmanridoykhan.github.io/emergency-route-finder/)** -- pick an
+emergency type and season, click anywhere in the area, and see the right facility, travel time,
+mode and warnings for the nearest of 335 precomputed points. See [docs/ROADMAP.md](docs/ROADMAP.md) for the phases,
 [docs/accessmod-notes.md](docs/accessmod-notes.md) for what AccessMod exports and how it is
 scripted, and [RESULTS.md](RESULTS.md) for the numbers. In the dry season about 94% of the 17.2
 million people in the area are within 60 minutes of some facility (any level, model
@@ -104,6 +108,7 @@ make e3      # add one run per emergency type (only qualifying facilities count)
 make population  # check WorldPop against the 2022 census
 make e4          # trace a complete path per synthetic point (primary + backup, dry + flood)
 make route LON=91.30 LAT=24.75 EMERGENCY=snakebite  # query one point on demand
+make e6          # precompute the web map's routes (335 points x 4 emergencies x 2 seasons)
 ```
 
 AccessMod runs in Docker (`fredmoser/accessmod:5.9.1`); on a Mac, Colima or Docker Desktop works.
