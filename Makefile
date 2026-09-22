@@ -1,4 +1,4 @@
-.PHONY: setup data e1 e2 e3 population test lint
+.PHONY: setup data e1 e2 e3 population e4 test lint
 
 setup:
 	python3 -m venv .venv
@@ -32,6 +32,13 @@ e3:
 # Check WorldPop against the 2022 census (run after e3)
 population:
 	.venv/bin/python scripts/check_population.py
+
+# Phase E4: complete paths per synthetic point, cross-checked against OSRM
+e4:
+	scripts/run_e4.sh
+	.venv/bin/python scripts/summarize_e4.py
+	@echo "For the OSRM cross-check, start osrm-routed on ../facility-access-equity's data first, then:"
+	@echo "  .venv/bin/python scripts/cross_check_osrm.py"
 
 test:
 	.venv/bin/python -m pytest -q

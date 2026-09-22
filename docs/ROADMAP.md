@@ -10,7 +10,7 @@ ends with a "Done when" gate.
 | E2 | Flood scenario: flood extent, flooded roads, boat mode | done |
 | E3 | Emergency types and the facility capability model | done |
 | E3b | Extend the analysis area with a facility buffer, check the population layer | done |
-| E4 | Actual paths (AccessMod referral per pair, `r.drain` as alternative) and OSRM cross-check | not started |
+| E4 | Complete paths (`r.walk.accessmod` + `r.drain`) and OSRM cross-check | done |
 | E5 | The `route(point, emergency, season)` function | not started |
 | E6 | Click-a-point web map | not started |
 | E7 | Validation, limits and release (`v0.1.0`) | not started |
@@ -63,10 +63,13 @@ neighbouring district hospitals; roads, land cover, DEM, population, facilities 
 refetched and E1 to E3 were rerun (`RESULTS.md` compares before and after). Two facility errors were
 fixed on the way (duplicate filter, laboratories), and WorldPop was checked against the 2022 census.
 
-### E4: Actual paths and cross-check
-Complete paths from AccessMod's referral analysis, one run per origin-destination pair (start
-points imported as a facility layer), with GRASS `r.drain` on the cost surface as an
-alternative. Cross-check the dry road-only case against OSRM.
+### E4: Complete paths and cross-check
+**Done.** AccessMod's own referral export deduplicates shared route segments across a
+multi-destination run (found in E1), so this phase reruns `r.walk.accessmod` itself (verified to
+reproduce AccessMod's own published rasters exactly) to get a movement-direction raster, then
+traces one complete path per point with GRASS `r.drain`. 40 synthetic points, dry and flood
+0708, primary and backup facility, 160 complete paths, cross-checked against OSRM for the dry
+case (median overlap 0.97). See `RESULTS.md` and `docs/accessmod-notes.md`.
 
 ### E5: The route-finder function
 `route(lon, lat, emergency, season)` returning the record above, with tests.

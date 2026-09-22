@@ -66,6 +66,13 @@ data, and all joins here use `adm3_pcode`, never names.
 - WorldPop is a modelled population layer; per-upazila totals agree with the 2022 census within about
   10% for most upazilas but not for cities and haor upazilas (`RESULTS.md`).
 
+## Cross-check dependency (Phase E4, not part of this repo)
+
+`scripts/cross_check_osrm.py` reads (never modifies) the pre-built OSRM road network from the
+sibling `facility-access-equity` repo (`../facility-access-equity/data/raw/bangladesh-latest.osrm*`,
+built from a Geofabrik Bangladesh OSM extract). No code coupling; running the cross-check needs
+that repo checked out next to this one and an `osrm-routed` server started against its files.
+
 ## Attribution
 
 Contains information from OpenStreetMap contributors (ODbL 1.0), WorldPop
