@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Emergency Route Finder</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+<style>
+  :root {
+    --sidebar-bg: #ffffff;
+    --sidebar-border: #e5e7eb;
+    --ink: #111827;
+    --ink-soft: #6b7280;
+    --accent: #0f766e;
+    --accent-soft: #f0fdfa;
+    --warn: #b45309;
+    --warn-soft: #fffbeb;
+    --danger: #b91c1c;
+    --danger-soft: #fef2f2;
+    --panel-bg: #f9fafb;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; color: var(--ink); }
+  #app { position: absolute; inset: 0; display: flex; flex-direction: column; }
+
+  header {
+    flex: 0 0 auto; background: #111827; color: #fff; display: flex; align-items: center;
+    padding: 10px 20px; gap: 12px; z-index: 10; flex-wrap: wrap;
+  }
+  header .brand { display: flex; flex-direction: column; }
+  header h1 { font-size: 15px; margin: 0; font-weight: 600; letter-spacing: 0.2px; }
+  header p { margin: 0; font-size: 11.5px; color: #9ca3af; }
+  header .header-actions { margin-left: auto; display: flex; gap: 8px; }
+  header .repo-link { font-size: 12px; color: #d1d5db; text-decoration: none; border: 1px solid #374151; padding: 6px 12px; border-radius: 6px; }
+  header .repo-link:hover { background: #1f2937; }
+
+  .safety-banner {
+    flex: 0 0 auto; background: var(--danger-soft); color: var(--danger); font-size: 12.5px;
+    padding: 7px 20px; border-bottom: 1px solid #fecaca; font-weight: 600; text-align: center;
+  }
+
+  .body-row { flex: 1 1 auto; display: flex; min-height: 0; }
+
+  #sidebar {
+    width: 360px; flex: 0 0 360px; background: var(--sidebar-bg); border-right: 1px solid var(--sidebar-border);
+    display: flex; flex-direction: column; min-height: 0; overflow-y: auto;
+  }
+  #map { flex: 1 1 auto; min-height: 0; }
+
+  .section { padding: 14px 18px; border-bottom: 1px solid var(--sidebar-border); }
+  .section h2 {
+    font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--ink-soft);
+    margin: 0 0 8px; font-weight: 700;
+  }
+  label { display: block; font-size: 12.5px; font-weight: 600; margin-bottom: 4px; color: var(--ink); }
+  select {
+    width: 100%; padding: 8px 10px; font-size: 13px; border: 1px solid #d1d5db; border-radius: 6px;
+    background: #fff; margin-bottom: 12px;
+  }
+  .season-toggle { display: flex; gap: 6px; margin-bottom: 4px; }
+  .season-toggle button {
+    flex: 1; padding: 8px; font-size: 12.5px; font-weight: 600; border: 1px solid #d1d5db; background: #fff;
+    border-radius: 6px; cursor: pointer; color: var(--ink);
+  }
+  .season-toggle button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .hint { font-size: 11.5px; color: var(--ink-soft); margin-top: 6px; line-height: 1.4; }
+
+  #result { font-size: 13px; line-height: 1.5; }
+  #result .placeholder { color: var(--ink-soft); font-size: 12.5px; }
+  #result .facility { font-size: 14.5px; font-weight: 700; margin-bottom: 2px; }
+  #result .row { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px dashed #e5e7eb; }
+  #result .row span:first-child { color: var(--ink-soft); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+  .badge.ok { background: var(--accent-soft); color: var(--accent); }
+  .badge.late { background: var(--danger-soft); color: var(--danger); }
+  .warning-box {
+    margin-top: 10px; padding: 8px 10px; background: var(--warn-soft); border: 1px solid #fde68a;
+    border-radius: 6px; font-size: 12px; color: var(--warn);
+  }
+  .no-route-box {
+    margin-top: 10px; padding: 8px 10px; background: var(--danger-soft); border: 1px solid #fecaca;
+    border-radius: 6px; font-size: 12.5px; color: var(--danger); font-weight: 600;
+  }
+
+  .assumptions-list { font-size: 11.5px; color: var(--ink-soft); line-height: 1.6; margin: 0; padding-left: 16px; }
+  .assumptions-list a { color: var(--accent); }
+  footer.section { font-size: 11px; color: var(--ink-soft); line-height: 1.6; }
+
+  .legend-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .leaflet-popup-content { font-size: 12.5px; }
+
+  @media (max-width: 720px) {
+    #sidebar { width: 100%; flex-basis: auto; order: 2; max-height: 50vh; }
+    .body-row { flex-direction: column; }
+    #map { order: 1; min-height: 45vh; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div class="brand">
+      <h1>Emergency Route Finder</h1>
+      <p>Flood-aware referral routing for Sunamganj / Sylhet region, built on WHO AccessMod</p>
+    </div>
+    <div class="header-actions">
+      <a class="repo-link" href="https://github.com/khalilurrrahmanridoykhan/emergency-route-finder" target="_blank" rel="noopener">Repository</a>
+    </div>
+  </header>
+  <div class="safety-banner">
+    This is an analysis and demonstration project, not for real emergencies. Routes, times and facilities are model outputs based on public data and stated assumptions.
+  </div>
+  <div class="body-row">
+    <div id="sidebar">
+      <div class="section">
+        <h2>1. Emergency type</h2>
+        <select id="emergency-select">
+          <option value="childbirth_complication">Childbirth complication</option>
+          <option value="snakebite">Snakebite</option>
+          <option value="injury_drowning">Injury or drowning</option>
+          <option value="minor_illness">Minor illness</option>
+        </select>
+        <h2>2. Season</h2>
+        <div class="season-toggle">
+          <button id="season-dry" class="active" data-season="dry">Dry season</button>
+          <button id="season-flood" data-season="flood0708">Flood (2026-07-08)</button>
+        </div>
+        <p class="hint">Click a point on the map. It snaps to the nearest of 335 precomputed
+        points (about 3 km apart) &mdash; see <a href="#" id="about-link">how this works</a>.</p>
+      </div>
+      <div class="section" style="flex: 1 1 auto;">
+        <h2>Result</h2>
+        <div id="result"><p class="placeholder">Click a point on the map to see the right
+        facility, travel time and route.</p></div>
+      </div>
+      <div class="section" id="about-section" style="display:none;">
+        <h2>How this works</h2>
+        <p class="hint">Each emergency type is matched to facility levels assumed able to handle
+        it, and to a target travel time. Travel time and the route come from WHO AccessMod
+        (anisotropic least-cost paths on roads, tracks and open land), precomputed for 335
+        population-weighted points across the analysis area, for the dry season and a mapped
+        2026-07-08 flood. All facility capabilities and speeds are labeled assumptions, editable
+        in the repository's <code>config/</code> files.</p>
+        <ul class="assumptions-list">
+          <li><a href="https://github.com/khalilurrrahmanridoykhan/emergency-route-finder/blob/main/docs/capabilities.md" target="_blank" rel="noopener">Facility capability table and target times</a></li>
+          <li><a href="https://github.com/khalilurrrahmanridoykhan/emergency-route-finder/blob/main/RESULTS.md" target="_blank" rel="noopener">Full results and limitations, every phase</a></li>
+          <li><a href="https://github.com/khalilurrrahmanridoykhan/emergency-route-finder/blob/main/data/README.md" target="_blank" rel="noopener">Data sources and licences</a></li>
+        </ul>
+      </div>
+      <footer class="section">
+        Public data only (OpenStreetMap, WorldPop, Sentinel-1, HDX). No real patient, incident or
+        field-collected data. Start points on this map are a precomputed synthetic grid, not real
+        emergencies.
+      </footer>
+    </div>
+    <div id="map"></div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
