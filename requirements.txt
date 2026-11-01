@@ -12,4 +12,4 @@ rasterio==1.5.1
 requests==2.34.2
 ruff==0.16.8
 scipy==1.18.1
-shapely==2.1.2
+shapely==2.2.0
